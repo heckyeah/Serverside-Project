@@ -1,0 +1,285 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box; }
+
+body {
+  background-color: #e6e6e6;
+  font-family: arial; }
+
+nav {
+  background-color: #333; }
+  nav:after {
+    content: "";
+    display: table;
+    clear: both; }
+  nav .container {
+    width: 1000px;
+    margin: 0 auto; }
+    nav .container ul li {
+      float: left;
+      display: block;
+      height: 50px; }
+      nav .container ul li:hover {
+        background-color: #3d3d3d; }
+      nav .container ul li a {
+        color: #fff;
+        text-decoration: none; }
+        nav .container ul li a img {
+          float: left;
+          margin-top: 10px;
+          padding-left: 10px;
+          display: block; }
+        nav .container ul li a span {
+          line-height: 50px;
+          height: 50px;
+          display: block;
+          font-size: 0.875em;
+          padding: 0 10px;
+          float: left; }
+    nav .container .search {
+      height: 50px;
+      float: left;
+      margin-left: 180px; }
+      nav .container .search form {
+        margin: 0 auto; }
+        nav .container .search form:after {
+          content: "";
+          display: table;
+          clear: both; }
+        nav .container .search form input {
+          padding: 0; }
+        nav .container .search form input[type="text"] {
+          height: 50px;
+          width: 250px;
+          border: none;
+          outline: 0;
+          padding-left: 10px;
+          float: left; }
+        nav .container .search form button {
+          height: 50px;
+          border: 0;
+          padding: 0 20px;
+          float: left;
+          color: #333;
+          font-size: 1em;
+          background-color: #fff; }
+          nav .container .search form button:hover {
+            background-color: #3d3d3d;
+            color: #fff; }
+          nav .container .search form button:focus {
+            outline: 0; }
+    nav .container .logo {
+      float: right;
+      height: 50px; }
+      nav .container .logo img {
+        display: block; }
+
+.banner {
+  position: relative;
+  overflow: auto;
+  text-align: center; }
+  .banner ul li {
+    list-style: none;
+    float: left;
+    height: 250px; }
+    .banner ul li .description {
+      background-color: rgba(0, 0, 0, 0.5);
+      width: 500px;
+      margin: 40px auto 0 auto;
+      padding: 10px;
+      border-radius: 5px; }
+      .banner ul li .description h2 {
+        font-size: 2.5em;
+        font-weight: bold;
+        font-style: italic;
+        padding-bottom: 10px;
+        color: #fff;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); }
+      .banner ul li .description p {
+        font-size: 0.875em;
+        font-style: italic;
+        color: #fff;
+        line-height: 1.5;
+        margin: 0 auto;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); }
+      .banner ul li .description .btn {
+        display: inline-block;
+        margin: 15px 0 0;
+        padding: 9px 22px 7px;
+        clear: both;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        border-radius: 5px; }
+  .banner .dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 15px;
+    width: 100%; }
+    .banner .dots li {
+      display: inline-block;
+      *display: inline;
+      zoom: 1;
+      width: 10px;
+      height: 10px;
+      line-height: 10px;
+      margin: 0 4px;
+      text-indent: -999em;
+      *text-indent: 0;
+      border: 2px solid #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      opacity: .4;
+      -webkit-transition: background .5s, opacity .5s;
+      transition: background .5s, opacity .5s; }
+    .banner .dots li.active {
+      background: #fff;
+      opacity: 1; }
+
+.sort_panel {
+  padding: 20px 0 10px 0; }
+  .sort_panel form {
+    float: right;
+    padding: 0 10px 0 0; }
+
+article, .sort_panel {
+  width: 1000px;
+  margin: 0 auto; }
+  article:after, .sort_panel:after {
+    content: "";
+    display: table;
+    clear: both; }
+  article ul:after, .sort_panel ul:after {
+    content: "";
+    display: table;
+    clear: both; }
+  article ul li, .sort_panel ul li {
+    width: 230px;
+    background-color: #333;
+    box-shadow: 0px 0px 2px #666;
+    border-radius: 3px;
+    float: left;
+    margin: 10px; }
+    article ul li:after, .sort_panel ul li:after {
+      content: "";
+      display: table;
+      clear: both; }
+    article ul li .thumbnail, .sort_panel ul li .thumbnail {
+      border-bottom: 2px solid #686868; }
+      article ul li .thumbnail img, .sort_panel ul li .thumbnail img {
+        display: block;
+        -webkit-border-top-left-radius: 3px;
+        -webkit-border-top-right-radius: 3px;
+        -moz-border-radius-topleft: 3px;
+        -moz-border-radius-topright: 3px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px; }
+    article ul li .information, .sort_panel ul li .information {
+      padding: 10px; }
+      article ul li .information h3, .sort_panel ul li .information h3 {
+        font-weight: bold;
+        color: #ccc;
+        margin-bottom: 20px; }
+        article ul li .information h3 a, .sort_panel ul li .information h3 a {
+          text-decoration: none;
+          color: #ccc; }
+          article ul li .information h3 a:hover, .sort_panel ul li .information h3 a:hover {
+            text-decoration: underline; }
+      article ul li .information p, .sort_panel ul li .information p {
+        color: #ccc;
+        font-size: 0.775em;
+        margin-bottom: 10px; }
+        article ul li .information p a, .sort_panel ul li .information p a {
+          color: #f06d06;
+          text-decoration: none;
+          font-style: italic; }
+          article ul li .information p a:hover, .sort_panel ul li .information p a:hover {
+            text-decoration: underline; }
+      article ul li .information hr, .sort_panel ul li .information hr {
+        border: none;
+        border-bottom: 1px solid #686868;
+        margin-bottom: 5px; }
+      article ul li .information .time, .sort_panel ul li .information .time {
+        float: right; }
+      article ul li .information span, .sort_panel ul li .information span {
+        padding: 5px;
+        color: #ccc;
+        font-size: 0.775em;
+        vertical-align: text-top;
+        float: left;
+        margin-bottom: 5px; }
+        article ul li .information span i, .sort_panel ul li .information span i {
+          font-size: 1.1em; }
+  article .pages, .sort_panel .pages {
+    padding: 0 10px;
+    margin: 20px; }
+    article .pages ol, .sort_panel .pages ol {
+      margin: 0 auto;
+      display: table; }
+      article .pages ol li, .sort_panel .pages ol li {
+        display: inline-block;
+        margin: 0 5px; }
+        article .pages ol li a, .sort_panel .pages ol li a {
+          padding: 5px 7px;
+          background-color: #333;
+          color: #ccc;
+          text-decoration: none;
+          font-size: 0.875em;
+          border-radius: 5px; }
+          article .pages ol li a:hover, .sort_panel .pages ol li a:hover {
+            background-color: #f06d06; }
+
+/*# sourceMappingURL=main.css.map */
