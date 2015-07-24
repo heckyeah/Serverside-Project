@@ -1,55 +1,60 @@
+//*****************
+// CSS RESET
+//*****************
 @mixin reset {
+	/* http://meyerweb.com/eric/tools/css/reset/ 
+	   v2.0 | 20110126
+	   License: none (public domain)
+	*/
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure, 
+	footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+	body {
+		line-height: 1;
+	}
+	ol, ul {
+		list-style: none;
+	}
+	blockquote, q {
+		quotes: none;
+	}
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
 }
 
-}
+//*****************
+// CLEARFIX
+//*****************
 
 @mixin clearfix {
 	&:after {
@@ -59,9 +64,206 @@ table {
   }
 }
 
+//*****************
+// ROUND CORNERS
+//*****************
+
 @mixin roundcorner {
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 }
 
+//*****************
+// Banner
+//*****************
+
+@mixin banner {
+	ul {
+		li {
+			list-style: none;
+			float: left;
+			height: 250px;
+			.description {
+				background-color: rgba(0,0,0,0.5);
+				width: 500px;
+				margin: 40px auto 0 auto;
+				padding: 10px;
+				@include roundcorner;
+				h2 {
+					font-size: 2.5em;
+					font-weight: bold;
+					font-style: italic;
+					padding-bottom: 10px;
+					color: #fff;
+					text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+				}
+				p {
+					font-size: 0.875em;
+					font-style: italic;
+					color: #fff;
+					line-height: 1.5;
+					margin: 0 auto;
+					text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+				}
+				.btn {
+					display: inline-block;
+					margin: 15px 0 0;
+					padding: 9px 22px 7px;
+					clear: both;
+
+					color: #fff;
+					font-size: 12px;
+					font-weight: bold;
+					text-transform: uppercase;
+					text-decoration: none;
+
+					border: 2px solid rgba(255,255,255,.4);
+					border-radius: 5px;
+				}
+			}
+		}
+	}
+	.dots {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 15px;
+		width: 100%;
+		li {
+			display: inline-block;
+			*display: inline;
+			zoom: 1;
+
+			width: 10px;
+			height: 10px;
+			line-height: 10px;
+			margin: 0 4px;
+
+			text-indent: -999em;
+			*text-indent: 0;
+
+			border: 2px solid #fff;
+			border-radius: 6px;
+
+			cursor: pointer;
+			opacity: .4;
+
+			-webkit-transition: background .5s, opacity .5s;
+			-moz-transition: background .5s, opacity .5s;
+			transition: background .5s, opacity .5s;
+		}
+		li.active {
+			background: #fff;
+			opacity: 1;
+		}
+	}
+}
+
+//*****************
+// Pagination
+//*****************
+
+@mixin pagination {
+	.pages {
+		padding: 0 10px;
+		margin: 20px;
+		ol {
+			margin: 0 auto;
+			display: table;
+			li {
+				display: inline-block;
+				margin: 0 5px;
+				a {
+					padding: 5px 7px;
+					background-color: $offColour;
+					color: $lightFont;
+					text-decoration: none;
+					font-size: 0.875em;
+					@include roundcorner;
+					&:hover {
+						background-color: $thirdColour;
+					}
+				}
+			}
+		}
+	}
+}
+
+//*****************
+// FOOD CARDS
+//*****************
+
+@mixin recipeDisplay {
+	ul {
+		@include clearfix;
+		li {
+			width: 230px;
+			background-color: $offColour;
+			box-shadow: 0px 0px 2px #666;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+			float: left;
+			margin: 10px;
+			@include clearfix;
+			.thumbnail {
+				border-bottom: 2px solid #686868;
+				img {
+					display: block;
+					-webkit-border-top-left-radius: 3px;
+					-webkit-border-top-right-radius: 3px;
+					-moz-border-radius-topleft: 3px;
+					-moz-border-radius-topright: 3px;
+					border-top-left-radius: 3px;
+					border-top-right-radius: 3px;
+				}
+			}
+			.information {
+				padding: 10px;
+				h3 {
+					font-weight: bold;
+					color: $lightFont;
+					margin-bottom: 20px;
+					a {
+						text-decoration: none;
+						color: $lightFont;
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+				p {
+					color: $lightFont;
+					font-size: 0.775em;
+					margin-bottom: 10px;
+					a {
+						color: $thirdColour;
+						text-decoration: none;
+						font-style: italic;
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+				hr {
+					border: none;
+					border-bottom: 1px solid #686868;
+					margin-bottom: 5px;
+				}
+				.time { float:right;}
+				span {
+					padding: 5px;
+					color: $lightFont;
+					font-size: 0.775em;
+					vertical-align: text-top;
+					float: left;
+					margin-bottom: 5px;
+					i {
+						font-size: 1.1em;
+					}
+				}
+			}
+		}
+	}
+}

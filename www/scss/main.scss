@@ -106,85 +106,7 @@ nav {
 	position: relative;
 	overflow: auto;
 	text-align: center;
-	ul {
-		li {
-			list-style: none;
-			float: left;
-			height: 250px;
-			.description {
-				background-color: rgba(0,0,0,0.5);
-				width: 500px;
-				margin: 40px auto 0 auto;
-				padding: 10px;
-				@include roundcorner;
-				h2 {
-					font-size: 2.5em;
-					font-weight: bold;
-					font-style: italic;
-					padding-bottom: 10px;
-					color: #fff;
-					text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-				}
-				p {
-					font-size: 0.875em;
-					font-style: italic;
-					color: #fff;
-					line-height: 1.5;
-					margin: 0 auto;
-					text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-				}
-				.btn {
-					display: inline-block;
-					margin: 15px 0 0;
-					padding: 9px 22px 7px;
-					clear: both;
-
-					color: #fff;
-					font-size: 12px;
-					font-weight: bold;
-					text-transform: uppercase;
-					text-decoration: none;
-
-					border: 2px solid rgba(255,255,255,.4);
-					border-radius: 5px;
-				}
-			}
-		}
-	}
-	.dots {
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: 15px;
-		width: 100%;
-		li {
-			display: inline-block;
-			*display: inline;
-			zoom: 1;
-
-			width: 10px;
-			height: 10px;
-			line-height: 10px;
-			margin: 0 4px;
-
-			text-indent: -999em;
-			*text-indent: 0;
-
-			border: 2px solid #fff;
-			border-radius: 6px;
-
-			cursor: pointer;
-			opacity: .4;
-
-			-webkit-transition: background .5s, opacity .5s;
-			-moz-transition: background .5s, opacity .5s;
-			transition: background .5s, opacity .5s;
-		}
-		li.active {
-			background: #fff;
-			opacity: 1;
-		}
-	}
+	@include banner;
 }
 
 .sort_panel {
@@ -199,96 +121,28 @@ article, .sort_panel {
 	width: 1000px;
 	margin: 0 auto;
 	@include clearfix;
+	@include recipeDisplay;
+	@include pagination;
+}
+
+footer {
+	background-color: $offColour;
+	height: 50px;
 	ul {
-		@include clearfix;
-		li {
-			width: 230px;
-			background-color: $offColour;
-			box-shadow: 0px 0px 2px #666;
-			-webkit-border-radius: 3px;
-			-moz-border-radius: 3px;
-			border-radius: 3px;
-			float: left;
-			margin: 10px;
-			@include clearfix;
-			.thumbnail {
-				border-bottom: 2px solid #686868;
-				img {
-					display: block;
-					-webkit-border-top-left-radius: 3px;
-					-webkit-border-top-right-radius: 3px;
-					-moz-border-radius-topleft: 3px;
-					-moz-border-radius-topright: 3px;
-					border-top-left-radius: 3px;
-					border-top-right-radius: 3px;
-				}
-			}
-			.information {
-				padding: 10px;
-				h3 {
-					font-weight: bold;
-					color: $lightFont;
-					margin-bottom: 20px;
-					a {
-						text-decoration: none;
-						color: $lightFont;
-						&:hover {
-							text-decoration: underline;
-						}
-					}
-				}
-				p {
-					color: $lightFont;
-					font-size: 0.775em;
-					margin-bottom: 10px;
-					a {
-						color: $thirdColour;
-						text-decoration: none;
-						font-style: italic;
-						&:hover {
-							text-decoration: underline;
-						}
-					}
-				}
-				hr {
-					border: none;
-					border-bottom: 1px solid #686868;
-					margin-bottom: 5px;
-				}
-				.time { float:right;}
-				span {
-					padding: 5px;
-					color: $lightFont;
-					font-size: 0.775em;
-					vertical-align: text-top;
-					float: left;
-					margin-bottom: 5px;
-					i {
-						font-size: 1.1em;
-					}
-				}
-			}
-		}
-	}
-	.pages {
+		width: 1000px;
 		padding: 0 10px;
-		margin: 20px;
-		ol {
-			margin: 0 auto;
-			display: table;
-			li {
-				display: inline-block;
-				margin: 0 5px;
-				a {
-					padding: 5px 7px;
-					background-color: $offColour;
-					color: $lightFont;
-					text-decoration: none;
-					font-size: 0.875em;
-					@include roundcorner;
-					&:hover {
-						background-color: $thirdColour;
-					}
+		margin: 0 auto;
+		line-height: 50px;
+		li {
+			display: inline;
+			margin-right: 20px;
+			a {
+				color: $lightFont;
+				text-decoration: none;
+				font-weight: bold;
+				font-size: 0.875em;
+				&:hover {
+					text-decoration: underline;
 				}
 			}
 		}

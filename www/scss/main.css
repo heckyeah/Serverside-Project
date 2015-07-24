@@ -49,6 +49,8 @@ table {
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 body {
@@ -56,7 +58,7 @@ body {
   font-family: arial; }
 
 nav {
-  background-color: #333; }
+  background-color: #333333; }
   nav:after {
     content: "";
     display: table;
@@ -136,6 +138,8 @@ nav {
       width: 500px;
       margin: 40px auto 0 auto;
       padding: 10px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
       border-radius: 5px; }
       .banner ul li .description h2 {
         font-size: 2.5em;
@@ -184,6 +188,7 @@ nav {
       cursor: pointer;
       opacity: .4;
       -webkit-transition: background .5s, opacity .5s;
+      -moz-transition: background .5s, opacity .5s;
       transition: background .5s, opacity .5s; }
     .banner .dots li.active {
       background: #fff;
@@ -208,8 +213,10 @@ article, .sort_panel {
     clear: both; }
   article ul li, .sort_panel ul li {
     width: 230px;
-    background-color: #333;
+    background-color: #333333;
     box-shadow: 0px 0px 2px #666;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
     border-radius: 3px;
     float: left;
     margin: 10px; }
@@ -231,15 +238,15 @@ article, .sort_panel {
       padding: 10px; }
       article ul li .information h3, .sort_panel ul li .information h3 {
         font-weight: bold;
-        color: #ccc;
+        color: #cccccc;
         margin-bottom: 20px; }
         article ul li .information h3 a, .sort_panel ul li .information h3 a {
           text-decoration: none;
-          color: #ccc; }
+          color: #cccccc; }
           article ul li .information h3 a:hover, .sort_panel ul li .information h3 a:hover {
             text-decoration: underline; }
       article ul li .information p, .sort_panel ul li .information p {
-        color: #ccc;
+        color: #cccccc;
         font-size: 0.775em;
         margin-bottom: 10px; }
         article ul li .information p a, .sort_panel ul li .information p a {
@@ -256,7 +263,7 @@ article, .sort_panel {
         float: right; }
       article ul li .information span, .sort_panel ul li .information span {
         padding: 5px;
-        color: #ccc;
+        color: #cccccc;
         font-size: 0.775em;
         vertical-align: text-top;
         float: left;
@@ -274,12 +281,31 @@ article, .sort_panel {
         margin: 0 5px; }
         article .pages ol li a, .sort_panel .pages ol li a {
           padding: 5px 7px;
-          background-color: #333;
-          color: #ccc;
+          background-color: #333333;
+          color: #cccccc;
           text-decoration: none;
           font-size: 0.875em;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
           border-radius: 5px; }
           article .pages ol li a:hover, .sort_panel .pages ol li a:hover {
             background-color: #f06d06; }
 
-/*# sourceMappingURL=main.css.map */
+footer {
+  background-color: #333333;
+  height: 50px; }
+  footer ul {
+    width: 1000px;
+    padding: 0 10px;
+    margin: 0 auto;
+    line-height: 50px; }
+    footer ul li {
+      display: inline;
+      margin-right: 20px; }
+      footer ul li a {
+        color: #cccccc;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.875em; }
+        footer ul li a:hover {
+          text-decoration: underline; }
