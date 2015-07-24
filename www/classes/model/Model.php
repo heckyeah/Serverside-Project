@@ -2,11 +2,6 @@
 
 class Model {
 
-	// Properties
-	protected $dbc;
-	public $title;
-	public $description;
-
 	// Constructor
 	public function __construct() {
 

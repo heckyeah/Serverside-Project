@@ -7,18 +7,29 @@ session_start();
 $_GET['page'] 	= isset($_GET['page']) ? $_GET['page'] : 'home';
 $pageSelect		= $_GET['page'];
 
-switch () {
+// Require some classes
+require 'classes/view/Page.php';
+require 'classes/model/Model.php';
+
+switch ( $pageSelect ) {
 
 	// Home
 	case 'home':
+		require 'classes/view/HomePage.php';
+		require 'classes/model/HomeModel.php';
 		
-		 include 'parts/header.php'; ?>
-		 include 'parts/banner.php'; ?>
-		 include 'parts/search-result.php'; ?>
-		 include 'parts/footer.php'; ?>
-
+		$model = new HomeModel();
+		$page = new HomePage( $model );
 	break;
+
+	// Home
+	case 'default':
+		echo 'none';
+	break;
+
 }
 
-?>
+// Load the content
+$page->buildHTML();
+
 
