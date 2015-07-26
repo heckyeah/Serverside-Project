@@ -11,9 +11,7 @@ $lightFont: #ccc;
 * {
 	margin: 0;
 	padding: 0;
-
 	-webkit-font-smoothing: antialiased;
-
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -142,10 +140,78 @@ article, .sort_panel {
 	.profile_container {
 		background-color: $offColour;
 		box-shadow: 0px 0px 2px #666;
-		margin-top: 10px;
+		margin-top: 20px;
 		@include roundcorner;
 		@include clearfix;
 		.cover {
+			position: relative;
+			.cover_change {
+				position: absolute;
+				bottom: 120px;
+				left: 20px;
+				a {
+					padding: 10px 20px;
+					background-color: $thirdColour;
+					color: #fff;
+					text-decoration: none;
+					font-size: 0.875em;
+					box-shadow: 0px 0px 2px #666;
+					@include roundcorner;
+					&:hover {
+						background-color: $offColour;
+					}
+				}
+				.round-top {
+					-webkit-border-top-left-radius: 3px;
+					-webkit-border-top-right-radius: 3px;
+					-moz-border-radius-topleft: 3px;
+					-moz-border-radius-topright: 3px;
+					border-top-left-radius: 3px;
+					border-top-right-radius: 3px;
+				}
+				.message_container {
+					position: fixed;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background-color: rgba(0,0,0,.7);
+					display: none;
+					z-index: 1000;
+					@include roundcorner;
+					@include clearfix;
+					.message {
+						width: 1000px;
+						margin: 70px auto;
+						background-color: #fff;
+						text-align: left;
+						padding: 20px;
+						box-shadow: 0px 0px 2px #666;
+						@include clearfix;
+						h3 {
+							font-size: 1.5em;
+							font-weight: bold;
+							color: $offColour;
+						}
+						form {
+							input {
+								float: left;
+								clear: both;
+								margin: 10px 0;
+							}
+							input[type='file'] {
+								color: #000;
+							}
+						}
+					}
+					h2 {
+						font-size: 1.5em;
+						font-weight: bold;
+						padding-bottom: 10px;
+					}
+				}
+				.show { display: block;}
+			}
 			img {
 			display: block;
 			-webkit-border-top-left-radius: 3px;
@@ -172,12 +238,12 @@ article, .sort_panel {
 					border-bottom-left-radius: 15px;
 					box-shadow: 0px 0px 2px #666;
 					border: 1px solid #fff;
-					
+					z-index: 0;
 				}
 				.profile_details {
 					float: left;
 					margin-left: 90px;
-					@include verticalAlign;
+					@include vertical-align;
 					a {
 						text-decoration: none;
 						color: #fff;
@@ -226,3 +292,17 @@ footer {
 		}
 	}
 }
+
+.btn {
+	color: #fff;
+	padding: 10px 20px;
+	background-color: $thirdColour;
+	text-decoration: none;
+	font-size: 0.875em;
+	@include roundcorner;
+	&:hover {
+		background-color: $offColour;
+	}
+}
+
+@include modal;
