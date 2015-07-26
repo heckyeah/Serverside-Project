@@ -1,13 +1,13 @@
 <?php
 
-class HomePage extends Page {
+class ProfilePage extends Page {
 
 	// Methods
 	public function contentHTML() {
 
-		# Banner
-		include 'parts/banner.php';
-		# Home content
+		# Profile
+		include 'parts/profile.php';
+		# Work
 		include 'parts/search-result.php';
 
 	}

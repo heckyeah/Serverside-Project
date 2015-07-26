@@ -7,8 +7,6 @@ class Page {
 
 		# Header
 		include 'parts/header.php';
-		# Banner
-		include 'parts/banner.php';
 		# The content
 		$this->contentHTML();
 		# Footer

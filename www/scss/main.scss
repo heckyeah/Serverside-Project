@@ -26,6 +26,7 @@ body {
 
 nav {
 	background-color: $offColour;
+	box-shadow: 0px 0px 2px #666;
 	@include clearfix;
 	.container {
 		width: 1000px;
@@ -44,8 +45,19 @@ nav {
 					img {
 						float: left;
 						margin-top: 10px;
-						padding-left: 10px;
+						margin-left: 10px;
 						display: block;
+						-webkit-border-radius: 2px;
+						-webkit-border-top-right-radius: 7px;
+						-webkit-border-bottom-left-radius: 7px;
+						-moz-border-radius: 2px;
+						-moz-border-radius-topright: 7px;
+						-moz-border-radius-bottomleft: 7px;
+						border-radius: 2px;
+						border-top-right-radius: 7px;
+						border-bottom-left-radius: 7px;
+						border: 1px solid #fff;
+						box-shadow: 0px 0px 2px #666;
 					}
 					span {
 						line-height: 50px;
@@ -95,8 +107,11 @@ nav {
 		.logo {
 			float: right;
 			height: 50px;
-			img {
-				display: block;
+			a {
+				img {
+					display: block;
+					padding: 8px;
+				}
 			}
 		}
 	}
@@ -113,7 +128,8 @@ nav {
 	padding: 20px 0 10px 0;
 	form {
 		float: right;
-		padding: 0 10px 0 0
+		padding: 0 10px 0 0;
+		select, input { padding: 8px; }
 	}
 }
 
@@ -123,11 +139,73 @@ article, .sort_panel {
 	@include clearfix;
 	@include recipeDisplay;
 	@include pagination;
+	.profile_container {
+		background-color: $offColour;
+		box-shadow: 0px 0px 2px #666;
+		margin-top: 10px;
+		@include roundcorner;
+		@include clearfix;
+		.cover {
+			img {
+			display: block;
+			-webkit-border-top-left-radius: 3px;
+			-webkit-border-top-right-radius: 3px;
+			-moz-border-radius-topleft: 3px;
+			-moz-border-radius-topright: 3px;
+			border-top-left-radius: 3px;
+			border-top-right-radius: 3px;
+			}
+			.profile_details_container {
+				padding: 10px;
+				position: relative;
+				@include clearfix;
+				img {
+					float: left;
+					-webkit-border-radius: 3px;
+					-webkit-border-top-right-radius: 15px;
+					-webkit-border-bottom-left-radius: 15px;
+					-moz-border-radius: 3px;
+					-moz-border-radius-topright: 15px;
+					-moz-border-radius-bottomleft: 15px;
+					border-radius: 3px;
+					border-top-right-radius: 15px;
+					border-bottom-left-radius: 15px;
+					box-shadow: 0px 0px 2px #666;
+					border: 1px solid #fff;
+					
+				}
+				.profile_details {
+					float: left;
+					margin-left: 90px;
+					@include verticalAlign;
+					a {
+						text-decoration: none;
+						color: #fff;
+						h3 {
+							font-size: 1.5em;
+							font-weight: bold;
+							font-style: italic;
+							color: #fff;
+							text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+						}
+
+					}
+					span {
+						color: #fff;
+						text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+					}
+				}
+			}
+		}
+	}
+
+
 }
 
 footer {
 	background-color: $offColour;
 	height: 50px;
+	margin-top: 10px;
 	ul {
 		width: 1000px;
 		padding: 0 10px;

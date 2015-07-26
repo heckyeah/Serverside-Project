@@ -12,7 +12,7 @@
 		<div class="container">
 			<ul>
 				<li>
-					<a href="#">
+					<a href="index.php?page=profile">
 						<img src="https://i.vimeocdn.com/portrait/1069946_30x30.jpg" alt="Hekiera Mareroa">
 						<span>Hekiera Mareroa</span>
 					</a>
@@ -25,7 +25,7 @@
 				</form>	
 			</div>
 			<div class="logo">
-				<img src="http://placehold.it/150x50" alt="">
+				<a href="index.php"><img src="img/logo.jpg" alt=""></a>
 			</div>
 		</div>
 	</nav>

@@ -15,16 +15,30 @@ switch ( $pageSelect ) {
 
 	// Home
 	case 'home':
+		# Require the home classes
 		require 'classes/view/HomePage.php';
 		require 'classes/model/HomeModel.php';
-		
+		# Connect to the page and model
 		$model = new HomeModel();
 		$page = new HomePage( $model );
 	break;
 
-	// Home
-	case 'default':
-		echo 'none';
+	// Account
+	case 'profile':
+		# Require the Profile classes
+		require 'classes/view/ProfilePage.php';
+		require 'classes/model/ProfileModel.php';
+		# Connect to the page and model
+		$model = new ProfileModel();
+		$page = new ProfilePage( $model );
+	break;
+
+	// 404 Error page
+	default:
+		require 'classes/model/Error404Model.php';
+		require 'classes/view/Error404Page.php';
+		$model = new Error404Model();
+		$page = new Error404Page( $model );
 	break;
 
 }
