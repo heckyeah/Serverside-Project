@@ -8,9 +8,13 @@
 						<h3>Cover uploader</h3>
 						<form action="index.php?page=profile" method="post" enctype="multipart/form-data">
 							<input type="hidden" name="MAX_FILE_SIZE" value="1000000">
-							<input type="file" name="cover-image">
-
-							<input type="button" value="Sumbit">
+							<div>
+								<label class="btn" for="cover-image">Upload Image</label>
+								<input type="file" name="cover-image" id="cover-image">
+							</div>
+							<div>
+								<input type="button" class="btn" value="Sumbit">
+							</div>
 						</form>
 					</div>
 				</div>

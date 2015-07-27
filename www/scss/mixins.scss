@@ -121,17 +121,7 @@
 				.btn {
 					display: inline-block;
 					margin: 15px 0 0;
-					padding: 9px 22px 7px;
 					clear: both;
-
-					color: #fff;
-					font-size: 12px;
-					font-weight: bold;
-					text-transform: uppercase;
-					text-decoration: none;
-
-					border: 2px solid rgba(255,255,255,.4);
-					border-radius: 5px;
 				}
 			}
 		}
@@ -209,6 +199,11 @@
 @mixin recipeDisplay {
 	ul {
 		@include clearfix;
+		@include mobile {
+			display: block;
+			margin: 0 auto;
+			width: 230px;
+		}
 		li {
 			width: 230px;
 			background-color: $offColour;
@@ -280,6 +275,10 @@
 	}
 }
 
+//*****************
+// MODAL
+//*****************
+
 @mixin modal {
 	.message {
 		z-index: 1000;
@@ -299,5 +298,27 @@
 		-ms-transform: scale(1);
 		transform: scale(1);
 		opacity: 1;
+	}
+}
+
+//*****************
+// MODAL
+//*****************
+
+@mixin landscape {
+	@media only screen and (max-width:770px) {
+		@content;
+	}
+}
+
+@mixin tablet-landscape {
+	@media only screen and (max-width:1020px) {
+		@content;
+	}
+}
+
+@mixin mobile {
+	@media only screen and (max-width:520px) {
+		@content;
 	}
 }

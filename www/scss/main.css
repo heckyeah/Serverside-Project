@@ -58,7 +58,7 @@ body {
   font-family: arial; }
 
 nav {
-  background-color: #333;
+  background-color: #333333;
   box-shadow: 0px 0px 2px #666; }
   nav:after {
     content: "";
@@ -171,15 +171,7 @@ nav {
       .banner ul li .description .btn {
         display: inline-block;
         margin: 15px 0 0;
-        padding: 9px 22px 7px;
-        clear: both;
-        color: #fff;
-        font-size: 12px;
-        font-weight: bold;
-        text-transform: uppercase;
-        text-decoration: none;
-        border: 2px solid rgba(255, 255, 255, 0.4);
-        border-radius: 5px; }
+        clear: both; }
   .banner .dots {
     position: absolute;
     left: 0;
@@ -212,8 +204,6 @@ nav {
   .sort_panel form {
     float: right;
     padding: 0 10px 0 0; }
-    .sort_panel form select, .sort_panel form input {
-      padding: 8px; }
 
 article, .sort_panel {
   width: 1000px;
@@ -226,9 +216,14 @@ article, .sort_panel {
     content: "";
     display: table;
     clear: both; }
+  @media only screen and (max-width: 520px) {
+    article ul, .sort_panel ul {
+      display: block;
+      margin: 0 auto;
+      width: 230px; } }
   article ul li, .sort_panel ul li {
     width: 230px;
-    background-color: #333;
+    background-color: #333333;
     box-shadow: 0px 0px 2px #666;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -253,15 +248,15 @@ article, .sort_panel {
       padding: 10px; }
       article ul li .information h3, .sort_panel ul li .information h3 {
         font-weight: bold;
-        color: #ccc;
+        color: #cccccc;
         margin-bottom: 20px; }
         article ul li .information h3 a, .sort_panel ul li .information h3 a {
           text-decoration: none;
-          color: #ccc; }
+          color: #cccccc; }
           article ul li .information h3 a:hover, .sort_panel ul li .information h3 a:hover {
             text-decoration: underline; }
       article ul li .information p, .sort_panel ul li .information p {
-        color: #ccc;
+        color: #cccccc;
         font-size: 0.775em;
         margin-bottom: 10px; }
         article ul li .information p a, .sort_panel ul li .information p a {
@@ -278,7 +273,7 @@ article, .sort_panel {
         float: right; }
       article ul li .information span, .sort_panel ul li .information span {
         padding: 5px;
-        color: #ccc;
+        color: #cccccc;
         font-size: 0.775em;
         vertical-align: text-top;
         float: left;
@@ -296,8 +291,8 @@ article, .sort_panel {
         margin: 0 5px; }
         article .pages ol li a, .sort_panel .pages ol li a {
           padding: 5px 7px;
-          background-color: #333;
-          color: #ccc;
+          background-color: #333333;
+          color: #cccccc;
           text-decoration: none;
           font-size: 0.875em;
           -webkit-border-radius: 5px;
@@ -305,8 +300,17 @@ article, .sort_panel {
           border-radius: 5px; }
           article .pages ol li a:hover, .sort_panel .pages ol li a:hover {
             background-color: #f06d06; }
+  @media only screen and (max-width: 1020px) {
+    article, .sort_panel {
+      width: 750px; } }
+  @media only screen and (max-width: 770px) {
+    article, .sort_panel {
+      width: 500px; } }
+  @media only screen and (max-width: 520px) {
+    article, .sort_panel {
+      width: 100%; } }
   article .profile_container, .sort_panel .profile_container {
-    background-color: #333;
+    background-color: #333333;
     box-shadow: 0px 0px 2px #666;
     margin-top: 20px;
     -webkit-border-radius: 5px;
@@ -333,7 +337,7 @@ article, .sort_panel {
           -moz-border-radius: 5px;
           border-radius: 5px; }
           article .profile_container .cover .cover_change a:hover, .sort_panel .profile_container .cover .cover_change a:hover {
-            background-color: #333; }
+            background-color: #333333; }
         article .profile_container .cover .cover_change .round-top, .sort_panel .profile_container .cover .cover_change .round-top {
           -webkit-border-top-left-radius: 3px;
           -webkit-border-top-right-radius: 3px;
@@ -371,13 +375,23 @@ article, .sort_panel {
             article .profile_container .cover .cover_change .message_container .message h3, .sort_panel .profile_container .cover .cover_change .message_container .message h3 {
               font-size: 1.5em;
               font-weight: bold;
-              color: #333; }
+              color: #333333;
+              padding-bottom: 10px; }
+            article .profile_container .cover .cover_change .message_container .message form div, .sort_panel .profile_container .cover .cover_change .message_container .message form div {
+              margin: 10px 0; }
+              article .profile_container .cover .cover_change .message_container .message form div:after, .sort_panel .profile_container .cover .cover_change .message_container .message form div:after {
+                content: "";
+                display: table;
+                clear: both; }
+            article .profile_container .cover .cover_change .message_container .message form label, .sort_panel .profile_container .cover .cover_change .message_container .message form label {
+              cursor: pointer; }
             article .profile_container .cover .cover_change .message_container .message form input, .sort_panel .profile_container .cover .cover_change .message_container .message form input {
               float: left;
               clear: both;
-              margin: 10px 0; }
+              margin: 10px 0;
+              cursor: pointer; }
             article .profile_container .cover .cover_change .message_container .message form input[type='file'], .sort_panel .profile_container .cover .cover_change .message_container .message form input[type='file'] {
-              color: #000; }
+              display: none; }
           article .profile_container .cover .cover_change .message_container h2, .sort_panel .profile_container .cover .cover_change .message_container h2 {
             font-size: 1.5em;
             font-weight: bold;
@@ -391,7 +405,9 @@ article, .sort_panel {
         -moz-border-radius-topleft: 3px;
         -moz-border-radius-topright: 3px;
         border-top-left-radius: 3px;
-        border-top-right-radius: 3px; }
+        border-top-right-radius: 3px;
+        max-width: 100%;
+        height: auto; }
       article .profile_container .cover .profile_details_container, .sort_panel .profile_container .cover .profile_details_container {
         padding: 10px;
         position: relative; }
@@ -435,7 +451,7 @@ article, .sort_panel {
             text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
 
 footer {
-  background-color: #333;
+  background-color: #333333;
   height: 50px;
   margin-top: 10px; }
   footer ul {
@@ -447,7 +463,7 @@ footer {
       display: inline;
       margin-right: 20px; }
       footer ul li a {
-        color: #ccc;
+        color: #cccccc;
         text-decoration: none;
         font-weight: bold;
         font-size: 0.875em; }
@@ -460,11 +476,12 @@ footer {
   background-color: #f06d06;
   text-decoration: none;
   font-size: 0.875em;
+  border: none;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px; }
   .btn:hover {
-    background-color: #333; }
+    background-color: #333333; }
 
 .message {
   z-index: 1000;
@@ -484,5 +501,3 @@ footer {
   -ms-transform: scale(1);
   transform: scale(1);
   opacity: 1; }
-
-/*# sourceMappingURL=main.css.map */

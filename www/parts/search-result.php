@@ -140,6 +140,66 @@
 					<span class="time"><i class="fa fa-clock-o"></i> 30M</span>
 				</div>
 			</li>
+			<li>
+				<div class="thumbnail">
+					<a href="#">
+						<img src="http://extrawallpaper.com/wp-content/uploads/2014/11/Best-top-desktop-food-wallpapers-hd-food-wallpaper-food-pictures-image-photo-1-230x150.jpg" alt="Mac And Cheese">
+					</a>
+				</div>
+				<div class="information">
+					<h3><a href="#">Italiano Pizza</a></h3>
+					<p>by <a href="#">Hekiera Mareroa</a></p>
+					<hr>
+					<span><i class="fa fa-heart"></i> 32</span>
+					<span><i class="fa fa-comment"></i> 1</span>
+					<span class="time"><i class="fa fa-clock-o"></i> 30M</span>
+				</div>
+			</li>
+			<li>
+				<div class="thumbnail">
+					<a href="#">
+						<img src="http://www.coolfoodideas.com/wp-content/uploads/2013/08/greek-salad-recipe-cool-food-ideas-ft-230x150.jpg" alt="Mac And Cheese">
+					</a>
+				</div>
+				<div class="information">
+					<h3><a href="#">Feda cheese salad</a></h3>
+					<p>by <a href="#">Hekiera Mareroa</a></p>
+					<hr>
+					<span><i class="fa fa-heart"></i> 32</span>
+					<span><i class="fa fa-comment"></i> 1</span>
+					<span class="time"><i class="fa fa-clock-o"></i> 30M</span>
+				</div>
+			</li>
+			<li>
+				<div class="thumbnail">
+					<a href="#">
+						<img src="http://extrawallpaper.com/wp-content/uploads/2014/11/best-berry-drink-food-red-230x150.jpg" alt="Mac And Cheese">
+					</a>
+				</div>
+				<div class="information">
+					<h3><a href="#">Strawberry drink</a></h3>
+					<p>by <a href="#">Hekiera Mareroa</a></p>
+					<hr>
+					<span><i class="fa fa-heart"></i> 32</span>
+					<span><i class="fa fa-comment"></i> 1</span>
+					<span class="time"><i class="fa fa-clock-o"></i> 30M</span>
+				</div>
+			</li>
+			<li>
+				<div class="thumbnail">
+					<a href="#">
+						<img src="http://c0.thejournal.ie/media/2015/06/fast-food-ireland-230x150.jpg" alt="Mac And Cheese">
+					</a>
+				</div>
+				<div class="information">
+					<h3><a href="#">Hamburger</a></h3>
+					<p>by <a href="#">Hekiera Mareroa</a></p>
+					<hr>
+					<span><i class="fa fa-heart"></i> 32</span>
+					<span><i class="fa fa-comment"></i> 1</span>
+					<span class="time"><i class="fa fa-clock-o"></i> 30M</span>
+				</div>
+			</li>
 		</ul>
 		<div class="pages">
 			<ol>

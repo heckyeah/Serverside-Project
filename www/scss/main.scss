@@ -127,7 +127,6 @@ nav {
 	form {
 		float: right;
 		padding: 0 10px 0 0;
-		select, input { padding: 8px; }
 	}
 }
 
@@ -137,6 +136,15 @@ article, .sort_panel {
 	@include clearfix;
 	@include recipeDisplay;
 	@include pagination;
+	@include tablet-landscape {
+		width: 750px;
+	}
+	@include landscape {
+		width: 500px;
+	}
+	@include mobile {
+		width: 100%;
+	}
 	.profile_container {
 		background-color: $offColour;
 		box-shadow: 0px 0px 2px #666;
@@ -192,15 +200,24 @@ article, .sort_panel {
 							font-size: 1.5em;
 							font-weight: bold;
 							color: $offColour;
+							padding-bottom: 10px;
 						}
 						form {
+							div {
+								margin: 10px 0;
+								@include clearfix;
+							}
+							label {
+								cursor: pointer;
+							}
 							input {
 								float: left;
 								clear: both;
 								margin: 10px 0;
+								cursor: pointer;
 							}
 							input[type='file'] {
-								color: #000;
+								display: none;
 							}
 						}
 					}
@@ -220,6 +237,8 @@ article, .sort_panel {
 			-moz-border-radius-topright: 3px;
 			border-top-left-radius: 3px;
 			border-top-right-radius: 3px;
+			max-width: 100%;
+			height: auto;
 			}
 			.profile_details_container {
 				padding: 10px;
@@ -299,6 +318,7 @@ footer {
 	background-color: $thirdColour;
 	text-decoration: none;
 	font-size: 0.875em;
+	border: none;
 	@include roundcorner;
 	&:hover {
 		background-color: $offColour;
