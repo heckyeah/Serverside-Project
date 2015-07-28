@@ -119,6 +119,7 @@ nav {
 	position: relative;
 	overflow: auto;
 	text-align: center;
+	max-height: 250px;
 	@include banner;
 }
 

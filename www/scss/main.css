@@ -141,7 +141,8 @@ nav {
 .banner {
   position: relative;
   overflow: auto;
-  text-align: center; }
+  text-align: center;
+  max-height: 250px; }
   .banner ul li {
     list-style: none;
     float: left;
