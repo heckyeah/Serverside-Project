@@ -158,18 +158,6 @@ article, .sort_panel {
 				position: absolute;
 				bottom: 120px;
 				left: 20px;
-				a {
-					padding: 10px 20px;
-					background-color: $thirdColour;
-					color: #fff;
-					text-decoration: none;
-					font-size: 0.875em;
-					box-shadow: 0px 0px 2px #666;
-					@include roundcorner;
-					&:hover {
-						background-color: $offColour;
-					}
-				}
 				.round-top {
 					-webkit-border-top-left-radius: 3px;
 					-webkit-border-top-right-radius: 3px;
@@ -187,7 +175,6 @@ article, .sort_panel {
 					background-color: rgba(0,0,0,.7);
 					display: none;
 					z-index: 1000;
-					@include roundcorner;
 					@include clearfix;
 					.message {
 						width: 1000px;
@@ -197,24 +184,69 @@ article, .sort_panel {
 						padding: 20px;
 						box-shadow: 0px 0px 2px #666;
 						@include clearfix;
+						@include roundcorner;
+						@include tablet-landscape {
+							width: 750px;
+						}
+						@include landscape {
+							width: 500px;
+						}
+						@include mobile {
+							width: 100%;
+							margin: 50px 0;
+							@include removecorner;
+						}
 						h3 {
 							font-size: 1.5em;
 							font-weight: bold;
 							color: $offColour;
-							padding-bottom: 10px;
+							margin-bottom: 10px;
+						}
+						.close {
+							position: absolute;
+							top: 20px;
+							right: 20px;
+							a {
+								color: $offColour;
+								text-decoration: none;
+								&:hover {
+									color: $thirdColour;
+								}
+							}
 						}
 						form {
+							.current_image {
+								margin: 0;
+								text-align: left;
+								span {
+									font-size: 0.875em;
+								}
+								img {
+									-webkit-border-top-left-radius: 0px;
+									-webkit-border-top-right-radius: 0px;
+									-moz-border-radius-topleft: 0px;
+									-moz-border-radius-topright: 0px;
+									border-top-left-radius: 0px;
+									border-top-right-radius: 0px;
+									margin: 10px 0;
+								}
+							}
+							p {
+								font-size: 0.875em;
+								text-align: center;
+								}
 							div {
-								margin: 10px 0;
+								margin: 20px 0;
+								text-align: center;
 								@include clearfix;
 							}
 							label {
+								margin-top: 10px;
 								cursor: pointer;
 							}
 							input {
-								float: left;
 								clear: both;
-								margin: 10px 0;
+								margin: 0 auto;
 								cursor: pointer;
 							}
 							input[type='file'] {

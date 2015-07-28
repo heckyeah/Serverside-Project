@@ -86,8 +86,14 @@
 	border-radius: 5px;
 }
 
+@mixin removecorner {
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+}
+
 //*****************
-// Banner
+// BANNER
 //*****************
 
 @mixin banner {
