@@ -99,6 +99,8 @@ nav {
           font-size: 0.875em;
           padding: 0 10px;
           float: left; }
+          nav .container ul li a span i {
+            margin-left: 5px; }
     nav .container .search {
       height: 50px;
       float: left;
@@ -206,23 +208,69 @@ nav {
     float: right;
     padding: 0 10px 0 0; }
 
-article, .sort_panel {
+.recipe_container {
+  background-color: #fff;
+  padding: 10px; }
+  .recipe_container h2 {
+    font-size: 1.7em;
+    font-weight: bold;
+    padding: 10px; }
+  .recipe_container .comment_section {
+    width: 100%; }
+  .recipe_container .recipe_email, .recipe_container .recipe_directions {
+    padding: 10px;
+    width: 490px;
+    float: left; }
+    .recipe_container .recipe_email h3, .recipe_container .recipe_directions h3 {
+      font-size: 1em;
+      font-weight: bold;
+      margin-bottom: 10px; }
+    .recipe_container .recipe_email .directions p, .recipe_container .recipe_directions .directions p {
+      font-size: 0.875em;
+      line-height: 1.3;
+      margin-bottom: 10px; }
+    .recipe_container .recipe_email table tr td, .recipe_container .recipe_directions table tr td {
+      border: 2px solid #fff;
+      padding: 10px; }
+    .recipe_container .recipe_email table tr td:nth-child(odd), .recipe_container .recipe_directions table tr td:nth-child(odd) {
+      width: 1px; }
+      .recipe_container .recipe_email table tr td:nth-child(odd) input, .recipe_container .recipe_directions table tr td:nth-child(odd) input {
+        display: block; }
+    .recipe_container .recipe_email table tr td:nth-child(even), .recipe_container .recipe_directions table tr td:nth-child(even) {
+      font-size: 0.875em;
+      margin-left: 10px; }
+    .recipe_container .recipe_email table tr:nth-last-child(1) td:nth-last-child(1), .recipe_container .recipe_directions table tr:nth-last-child(1) td:nth-last-child(1) {
+      padding: 0; }
+      .recipe_container .recipe_email table tr:nth-last-child(1) td:nth-last-child(1) input, .recipe_container .recipe_directions table tr:nth-last-child(1) td:nth-last-child(1) input {
+        width: 100%;
+        border: none;
+        padding: 10px 0;
+        background-color: #333;
+        color: #fff; }
+        .recipe_container .recipe_email table tr:nth-last-child(1) td:nth-last-child(1) input:active, .recipe_container .recipe_directions table tr:nth-last-child(1) td:nth-last-child(1) input:active {
+          background-color: #666; }
+    .recipe_container .recipe_email table tr:nth-child(odd), .recipe_container .recipe_directions table tr:nth-child(odd) {
+      background-color: #dedede; }
+    .recipe_container .recipe_email table tr:nth-child(even), .recipe_container .recipe_directions table tr:nth-child(even) {
+      background-color: #f7f7f7; }
+
+article, .sort_panel, .recipe_contaier, .recipe_header {
   width: 1000px;
   margin: 0 auto; }
-  article:after, .sort_panel:after {
+  article:after, .sort_panel:after, .recipe_contaier:after, .recipe_header:after {
     content: "";
     display: table;
     clear: both; }
-  article ul:after, .sort_panel ul:after {
+  article ul:after, .sort_panel ul:after, .recipe_contaier ul:after, .recipe_header ul:after {
     content: "";
     display: table;
     clear: both; }
   @media only screen and (max-width: 520px) {
-    article ul, .sort_panel ul {
+    article ul, .sort_panel ul, .recipe_contaier ul, .recipe_header ul {
       display: block;
       margin: 0 auto;
       width: 230px; } }
-  article ul li, .sort_panel ul li {
+  article ul li, .sort_panel ul li, .recipe_contaier ul li, .recipe_header ul li {
     width: 230px;
     background-color: #333;
     box-shadow: 0px 0px 2px #666;
@@ -231,13 +279,13 @@ article, .sort_panel {
     border-radius: 3px;
     float: left;
     margin: 10px; }
-    article ul li:after, .sort_panel ul li:after {
+    article ul li:after, .sort_panel ul li:after, .recipe_contaier ul li:after, .recipe_header ul li:after {
       content: "";
       display: table;
       clear: both; }
-    article ul li .thumbnail, .sort_panel ul li .thumbnail {
+    article ul li .thumbnail, .sort_panel ul li .thumbnail, .recipe_contaier ul li .thumbnail, .recipe_header ul li .thumbnail {
       border-bottom: 2px solid #686868; }
-      article ul li .thumbnail img, .sort_panel ul li .thumbnail img {
+      article ul li .thumbnail img, .sort_panel ul li .thumbnail img, .recipe_contaier ul li .thumbnail img, .recipe_header ul li .thumbnail img {
         display: block;
         -webkit-border-top-left-radius: 3px;
         -webkit-border-top-right-radius: 3px;
@@ -245,52 +293,52 @@ article, .sort_panel {
         -moz-border-radius-topright: 3px;
         border-top-left-radius: 3px;
         border-top-right-radius: 3px; }
-    article ul li .information, .sort_panel ul li .information {
+    article ul li .information, .sort_panel ul li .information, .recipe_contaier ul li .information, .recipe_header ul li .information {
       padding: 10px; }
-      article ul li .information h3, .sort_panel ul li .information h3 {
+      article ul li .information h3, .sort_panel ul li .information h3, .recipe_contaier ul li .information h3, .recipe_header ul li .information h3 {
         font-weight: bold;
         color: #ccc;
         margin-bottom: 20px; }
-        article ul li .information h3 a, .sort_panel ul li .information h3 a {
+        article ul li .information h3 a, .sort_panel ul li .information h3 a, .recipe_contaier ul li .information h3 a, .recipe_header ul li .information h3 a {
           text-decoration: none;
           color: #ccc; }
-          article ul li .information h3 a:hover, .sort_panel ul li .information h3 a:hover {
+          article ul li .information h3 a:hover, .sort_panel ul li .information h3 a:hover, .recipe_contaier ul li .information h3 a:hover, .recipe_header ul li .information h3 a:hover {
             text-decoration: underline; }
-      article ul li .information p, .sort_panel ul li .information p {
+      article ul li .information p, .sort_panel ul li .information p, .recipe_contaier ul li .information p, .recipe_header ul li .information p {
         color: #ccc;
         font-size: 0.775em;
         margin-bottom: 10px; }
-        article ul li .information p a, .sort_panel ul li .information p a {
+        article ul li .information p a, .sort_panel ul li .information p a, .recipe_contaier ul li .information p a, .recipe_header ul li .information p a {
           color: #f06d06;
           text-decoration: none;
           font-style: italic; }
-          article ul li .information p a:hover, .sort_panel ul li .information p a:hover {
+          article ul li .information p a:hover, .sort_panel ul li .information p a:hover, .recipe_contaier ul li .information p a:hover, .recipe_header ul li .information p a:hover {
             text-decoration: underline; }
-      article ul li .information hr, .sort_panel ul li .information hr {
+      article ul li .information hr, .sort_panel ul li .information hr, .recipe_contaier ul li .information hr, .recipe_header ul li .information hr {
         border: none;
         border-bottom: 1px solid #686868;
         margin-bottom: 5px; }
-      article ul li .information .time, .sort_panel ul li .information .time {
+      article ul li .information .time, .sort_panel ul li .information .time, .recipe_contaier ul li .information .time, .recipe_header ul li .information .time {
         float: right; }
-      article ul li .information span, .sort_panel ul li .information span {
+      article ul li .information span, .sort_panel ul li .information span, .recipe_contaier ul li .information span, .recipe_header ul li .information span {
         padding: 5px;
         color: #ccc;
         font-size: 0.775em;
         vertical-align: text-top;
         float: left;
         margin-bottom: 5px; }
-        article ul li .information span i, .sort_panel ul li .information span i {
+        article ul li .information span i, .sort_panel ul li .information span i, .recipe_contaier ul li .information span i, .recipe_header ul li .information span i {
           font-size: 1.1em; }
-  article .pages, .sort_panel .pages {
+  article .pages, .sort_panel .pages, .recipe_contaier .pages, .recipe_header .pages {
     padding: 0 10px;
     margin: 20px; }
-    article .pages ol, .sort_panel .pages ol {
+    article .pages ol, .sort_panel .pages ol, .recipe_contaier .pages ol, .recipe_header .pages ol {
       margin: 0 auto;
       display: table; }
-      article .pages ol li, .sort_panel .pages ol li {
+      article .pages ol li, .sort_panel .pages ol li, .recipe_contaier .pages ol li, .recipe_header .pages ol li {
         display: inline-block;
         margin: 0 5px; }
-        article .pages ol li a, .sort_panel .pages ol li a {
+        article .pages ol li a, .sort_panel .pages ol li a, .recipe_contaier .pages ol li a, .recipe_header .pages ol li a {
           padding: 5px 7px;
           background-color: #333;
           color: #ccc;
@@ -299,42 +347,33 @@ article, .sort_panel {
           -webkit-border-radius: 5px;
           -moz-border-radius: 5px;
           border-radius: 5px; }
-          article .pages ol li a:hover, .sort_panel .pages ol li a:hover {
+          article .pages ol li a:hover, .sort_panel .pages ol li a:hover, .recipe_contaier .pages ol li a:hover, .recipe_header .pages ol li a:hover {
             background-color: #f06d06; }
-  @media only screen and (max-width: 1020px) {
-    article, .sort_panel {
-      width: 750px; } }
-  @media only screen and (max-width: 770px) {
-    article, .sort_panel {
-      width: 500px; } }
-  @media only screen and (max-width: 520px) {
-    article, .sort_panel {
-      width: 100%; } }
-  article .profile_container, .sort_panel .profile_container {
+  article .profile_container, .sort_panel .profile_container, .recipe_contaier .profile_container, .recipe_header .profile_container {
     background-color: #333;
     box-shadow: 0px 0px 2px #666;
     margin-top: 20px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px; }
-    article .profile_container:after, .sort_panel .profile_container:after {
+    article .profile_container:after, .sort_panel .profile_container:after, .recipe_contaier .profile_container:after, .recipe_header .profile_container:after {
       content: "";
       display: table;
       clear: both; }
-    article .profile_container .cover, .sort_panel .profile_container .cover {
+    article .profile_container .cover, .sort_panel .profile_container .cover, .recipe_contaier .profile_container .cover, .recipe_header .profile_container .cover {
       position: relative; }
-      article .profile_container .cover .cover_change, .sort_panel .profile_container .cover .cover_change {
+      article .profile_container .cover .cover_change, .sort_panel .profile_container .cover .cover_change, .recipe_contaier .profile_container .cover .cover_change, .recipe_header .profile_container .cover .cover_change {
         position: absolute;
         bottom: 120px;
         left: 20px; }
-        article .profile_container .cover .cover_change .round-top, .sort_panel .profile_container .cover .cover_change .round-top {
+        article .profile_container .cover .cover_change .round-top, .sort_panel .profile_container .cover .cover_change .round-top, .recipe_contaier .profile_container .cover .cover_change .round-top, .recipe_header .profile_container .cover .cover_change .round-top {
           -webkit-border-top-left-radius: 3px;
           -webkit-border-top-right-radius: 3px;
           -moz-border-radius-topleft: 3px;
           -moz-border-radius-topright: 3px;
           border-top-left-radius: 3px;
           border-top-right-radius: 3px; }
-        article .profile_container .cover .cover_change .message_container, .sort_panel .profile_container .cover .cover_change .message_container {
+        article .profile_container .cover .cover_change .message_container, .sort_panel .profile_container .cover .cover_change .message_container, .recipe_contaier .profile_container .cover .cover_change .message_container, .recipe_header .profile_container .cover .cover_change .message_container {
           position: fixed;
           top: 0;
           left: 0;
@@ -343,11 +382,11 @@ article, .sort_panel {
           background-color: rgba(0, 0, 0, 0.7);
           display: none;
           z-index: 1000; }
-          article .profile_container .cover .cover_change .message_container:after, .sort_panel .profile_container .cover .cover_change .message_container:after {
+          article .profile_container .cover .cover_change .message_container:after, .sort_panel .profile_container .cover .cover_change .message_container:after, .recipe_contaier .profile_container .cover .cover_change .message_container:after, .recipe_header .profile_container .cover .cover_change .message_container:after {
             content: "";
             display: table;
             clear: both; }
-          article .profile_container .cover .cover_change .message_container .message, .sort_panel .profile_container .cover .cover_change .message_container .message {
+          article .profile_container .cover .cover_change .message_container .message, .sort_panel .profile_container .cover .cover_change .message_container .message, .recipe_contaier .profile_container .cover .cover_change .message_container .message, .recipe_header .profile_container .cover .cover_change .message_container .message {
             width: 1000px;
             margin: 70px auto;
             background-color: #fff;
@@ -357,43 +396,43 @@ article, .sort_panel {
             -webkit-border-radius: 5px;
             -moz-border-radius: 5px;
             border-radius: 5px; }
-            article .profile_container .cover .cover_change .message_container .message:after, .sort_panel .profile_container .cover .cover_change .message_container .message:after {
+            article .profile_container .cover .cover_change .message_container .message:after, .sort_panel .profile_container .cover .cover_change .message_container .message:after, .recipe_contaier .profile_container .cover .cover_change .message_container .message:after, .recipe_header .profile_container .cover .cover_change .message_container .message:after {
               content: "";
               display: table;
               clear: both; }
             @media only screen and (max-width: 1020px) {
-              article .profile_container .cover .cover_change .message_container .message, .sort_panel .profile_container .cover .cover_change .message_container .message {
+              article .profile_container .cover .cover_change .message_container .message, .sort_panel .profile_container .cover .cover_change .message_container .message, .recipe_contaier .profile_container .cover .cover_change .message_container .message, .recipe_header .profile_container .cover .cover_change .message_container .message {
                 width: 750px; } }
             @media only screen and (max-width: 770px) {
-              article .profile_container .cover .cover_change .message_container .message, .sort_panel .profile_container .cover .cover_change .message_container .message {
+              article .profile_container .cover .cover_change .message_container .message, .sort_panel .profile_container .cover .cover_change .message_container .message, .recipe_contaier .profile_container .cover .cover_change .message_container .message, .recipe_header .profile_container .cover .cover_change .message_container .message {
                 width: 500px; } }
             @media only screen and (max-width: 520px) {
-              article .profile_container .cover .cover_change .message_container .message, .sort_panel .profile_container .cover .cover_change .message_container .message {
+              article .profile_container .cover .cover_change .message_container .message, .sort_panel .profile_container .cover .cover_change .message_container .message, .recipe_contaier .profile_container .cover .cover_change .message_container .message, .recipe_header .profile_container .cover .cover_change .message_container .message {
                 width: 100%;
                 margin: 50px 0;
                 -webkit-border-radius: 0px;
                 -moz-border-radius: 0px;
                 border-radius: 0px; } }
-            article .profile_container .cover .cover_change .message_container .message h3, .sort_panel .profile_container .cover .cover_change .message_container .message h3 {
+            article .profile_container .cover .cover_change .message_container .message h3, .sort_panel .profile_container .cover .cover_change .message_container .message h3, .recipe_contaier .profile_container .cover .cover_change .message_container .message h3, .recipe_header .profile_container .cover .cover_change .message_container .message h3 {
               font-size: 1.5em;
               font-weight: bold;
               color: #333;
               margin-bottom: 10px; }
-            article .profile_container .cover .cover_change .message_container .message .close, .sort_panel .profile_container .cover .cover_change .message_container .message .close {
+            article .profile_container .cover .cover_change .message_container .message .close, .sort_panel .profile_container .cover .cover_change .message_container .message .close, .recipe_contaier .profile_container .cover .cover_change .message_container .message .close, .recipe_header .profile_container .cover .cover_change .message_container .message .close {
               position: absolute;
               top: 20px;
               right: 20px; }
-              article .profile_container .cover .cover_change .message_container .message .close a, .sort_panel .profile_container .cover .cover_change .message_container .message .close a {
+              article .profile_container .cover .cover_change .message_container .message .close a, .sort_panel .profile_container .cover .cover_change .message_container .message .close a, .recipe_contaier .profile_container .cover .cover_change .message_container .message .close a, .recipe_header .profile_container .cover .cover_change .message_container .message .close a {
                 color: #333;
                 text-decoration: none; }
-                article .profile_container .cover .cover_change .message_container .message .close a:hover, .sort_panel .profile_container .cover .cover_change .message_container .message .close a:hover {
+                article .profile_container .cover .cover_change .message_container .message .close a:hover, .sort_panel .profile_container .cover .cover_change .message_container .message .close a:hover, .recipe_contaier .profile_container .cover .cover_change .message_container .message .close a:hover, .recipe_header .profile_container .cover .cover_change .message_container .message .close a:hover {
                   color: #f06d06; }
-            article .profile_container .cover .cover_change .message_container .message form .current_image, .sort_panel .profile_container .cover .cover_change .message_container .message form .current_image {
+            article .profile_container .cover .cover_change .message_container .message form .current_image, .sort_panel .profile_container .cover .cover_change .message_container .message form .current_image, .recipe_contaier .profile_container .cover .cover_change .message_container .message form .current_image, .recipe_header .profile_container .cover .cover_change .message_container .message form .current_image {
               margin: 0;
               text-align: left; }
-              article .profile_container .cover .cover_change .message_container .message form .current_image span, .sort_panel .profile_container .cover .cover_change .message_container .message form .current_image span {
+              article .profile_container .cover .cover_change .message_container .message form .current_image span, .sort_panel .profile_container .cover .cover_change .message_container .message form .current_image span, .recipe_contaier .profile_container .cover .cover_change .message_container .message form .current_image span, .recipe_header .profile_container .cover .cover_change .message_container .message form .current_image span {
                 font-size: 0.875em; }
-              article .profile_container .cover .cover_change .message_container .message form .current_image img, .sort_panel .profile_container .cover .cover_change .message_container .message form .current_image img {
+              article .profile_container .cover .cover_change .message_container .message form .current_image img, .sort_panel .profile_container .cover .cover_change .message_container .message form .current_image img, .recipe_contaier .profile_container .cover .cover_change .message_container .message form .current_image img, .recipe_header .profile_container .cover .cover_change .message_container .message form .current_image img {
                 -webkit-border-top-left-radius: 0px;
                 -webkit-border-top-right-radius: 0px;
                 -moz-border-radius-topleft: 0px;
@@ -401,32 +440,32 @@ article, .sort_panel {
                 border-top-left-radius: 0px;
                 border-top-right-radius: 0px;
                 margin: 10px 0; }
-            article .profile_container .cover .cover_change .message_container .message form p, .sort_panel .profile_container .cover .cover_change .message_container .message form p {
+            article .profile_container .cover .cover_change .message_container .message form p, .sort_panel .profile_container .cover .cover_change .message_container .message form p, .recipe_contaier .profile_container .cover .cover_change .message_container .message form p, .recipe_header .profile_container .cover .cover_change .message_container .message form p {
               font-size: 0.875em;
               text-align: center; }
-            article .profile_container .cover .cover_change .message_container .message form div, .sort_panel .profile_container .cover .cover_change .message_container .message form div {
+            article .profile_container .cover .cover_change .message_container .message form div, .sort_panel .profile_container .cover .cover_change .message_container .message form div, .recipe_contaier .profile_container .cover .cover_change .message_container .message form div, .recipe_header .profile_container .cover .cover_change .message_container .message form div {
               margin: 20px 0;
               text-align: center; }
-              article .profile_container .cover .cover_change .message_container .message form div:after, .sort_panel .profile_container .cover .cover_change .message_container .message form div:after {
+              article .profile_container .cover .cover_change .message_container .message form div:after, .sort_panel .profile_container .cover .cover_change .message_container .message form div:after, .recipe_contaier .profile_container .cover .cover_change .message_container .message form div:after, .recipe_header .profile_container .cover .cover_change .message_container .message form div:after {
                 content: "";
                 display: table;
                 clear: both; }
-            article .profile_container .cover .cover_change .message_container .message form label, .sort_panel .profile_container .cover .cover_change .message_container .message form label {
+            article .profile_container .cover .cover_change .message_container .message form label, .sort_panel .profile_container .cover .cover_change .message_container .message form label, .recipe_contaier .profile_container .cover .cover_change .message_container .message form label, .recipe_header .profile_container .cover .cover_change .message_container .message form label {
               margin-top: 10px;
               cursor: pointer; }
-            article .profile_container .cover .cover_change .message_container .message form input, .sort_panel .profile_container .cover .cover_change .message_container .message form input {
+            article .profile_container .cover .cover_change .message_container .message form input, .sort_panel .profile_container .cover .cover_change .message_container .message form input, .recipe_contaier .profile_container .cover .cover_change .message_container .message form input, .recipe_header .profile_container .cover .cover_change .message_container .message form input {
               clear: both;
               margin: 0 auto;
               cursor: pointer; }
-            article .profile_container .cover .cover_change .message_container .message form input[type='file'], .sort_panel .profile_container .cover .cover_change .message_container .message form input[type='file'] {
+            article .profile_container .cover .cover_change .message_container .message form input[type='file'], .sort_panel .profile_container .cover .cover_change .message_container .message form input[type='file'], .recipe_contaier .profile_container .cover .cover_change .message_container .message form input[type='file'], .recipe_header .profile_container .cover .cover_change .message_container .message form input[type='file'] {
               display: none; }
-          article .profile_container .cover .cover_change .message_container h2, .sort_panel .profile_container .cover .cover_change .message_container h2 {
+          article .profile_container .cover .cover_change .message_container h2, .sort_panel .profile_container .cover .cover_change .message_container h2, .recipe_contaier .profile_container .cover .cover_change .message_container h2, .recipe_header .profile_container .cover .cover_change .message_container h2 {
             font-size: 1.5em;
             font-weight: bold;
             padding-bottom: 10px; }
-        article .profile_container .cover .cover_change .show, .sort_panel .profile_container .cover .cover_change .show {
+        article .profile_container .cover .cover_change .show, .sort_panel .profile_container .cover .cover_change .show, .recipe_contaier .profile_container .cover .cover_change .show, .recipe_header .profile_container .cover .cover_change .show {
           display: block; }
-      article .profile_container .cover img, .sort_panel .profile_container .cover img {
+      article .profile_container .cover img, .sort_panel .profile_container .cover img, .recipe_contaier .profile_container .cover img, .recipe_header .profile_container .cover img {
         display: block;
         -webkit-border-top-left-radius: 3px;
         -webkit-border-top-right-radius: 3px;
@@ -436,14 +475,14 @@ article, .sort_panel {
         border-top-right-radius: 3px;
         max-width: 100%;
         height: auto; }
-      article .profile_container .cover .profile_details_container, .sort_panel .profile_container .cover .profile_details_container {
+      article .profile_container .cover .profile_details_container, .sort_panel .profile_container .cover .profile_details_container, .recipe_contaier .profile_container .cover .profile_details_container, .recipe_header .profile_container .cover .profile_details_container {
         padding: 10px;
         position: relative; }
-        article .profile_container .cover .profile_details_container:after, .sort_panel .profile_container .cover .profile_details_container:after {
+        article .profile_container .cover .profile_details_container:after, .sort_panel .profile_container .cover .profile_details_container:after, .recipe_contaier .profile_container .cover .profile_details_container:after, .recipe_header .profile_container .cover .profile_details_container:after {
           content: "";
           display: table;
           clear: both; }
-        article .profile_container .cover .profile_details_container img, .sort_panel .profile_container .cover .profile_details_container img {
+        article .profile_container .cover .profile_details_container img, .sort_panel .profile_container .cover .profile_details_container img, .recipe_contaier .profile_container .cover .profile_details_container img, .recipe_header .profile_container .cover .profile_details_container img {
           float: left;
           -webkit-border-radius: 3px;
           -webkit-border-top-right-radius: 15px;
@@ -457,7 +496,7 @@ article, .sort_panel {
           box-shadow: 0px 0px 2px #666;
           border: 1px solid #fff;
           z-index: 0; }
-        article .profile_container .cover .profile_details_container .profile_details, .sort_panel .profile_container .cover .profile_details_container .profile_details {
+        article .profile_container .cover .profile_details_container .profile_details, .sort_panel .profile_container .cover .profile_details_container .profile_details, .recipe_contaier .profile_container .cover .profile_details_container .profile_details, .recipe_header .profile_container .cover .profile_details_container .profile_details {
           float: left;
           margin-left: 90px;
           position: absolute;
@@ -465,18 +504,95 @@ article, .sort_panel {
           -webkit-transform: translateY(-50%);
           -ms-transform: translateY(-50%);
           transform: translateY(-50%); }
-          article .profile_container .cover .profile_details_container .profile_details a, .sort_panel .profile_container .cover .profile_details_container .profile_details a {
+          article .profile_container .cover .profile_details_container .profile_details a, .sort_panel .profile_container .cover .profile_details_container .profile_details a, .recipe_contaier .profile_container .cover .profile_details_container .profile_details a, .recipe_header .profile_container .cover .profile_details_container .profile_details a {
             text-decoration: none;
             color: #fff; }
-            article .profile_container .cover .profile_details_container .profile_details a h3, .sort_panel .profile_container .cover .profile_details_container .profile_details a h3 {
+            article .profile_container .cover .profile_details_container .profile_details a h3, .sort_panel .profile_container .cover .profile_details_container .profile_details a h3, .recipe_contaier .profile_container .cover .profile_details_container .profile_details a h3, .recipe_header .profile_container .cover .profile_details_container .profile_details a h3 {
               font-size: 1.5em;
               font-weight: bold;
               font-style: italic;
               color: #fff;
               text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
-          article .profile_container .cover .profile_details_container .profile_details span, .sort_panel .profile_container .cover .profile_details_container .profile_details span {
+          article .profile_container .cover .profile_details_container .profile_details span, .sort_panel .profile_container .cover .profile_details_container .profile_details span, .recipe_contaier .profile_container .cover .profile_details_container .profile_details span, .recipe_header .profile_container .cover .profile_details_container .profile_details span {
             color: #fff;
             text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
+  @media only screen and (max-width: 1020px) {
+    article, .sort_panel, .recipe_contaier, .recipe_header {
+      width: 750px; } }
+  @media only screen and (max-width: 770px) {
+    article, .sort_panel, .recipe_contaier, .recipe_header {
+      width: 500px; } }
+  @media only screen and (max-width: 520px) {
+    article, .sort_panel, .recipe_contaier, .recipe_header {
+      width: 100%; } }
+  article .chef_info, .sort_panel .chef_info, .recipe_contaier .chef_info, .recipe_header .chef_info {
+    position: relative; }
+    article .chef_info img, .sort_panel .chef_info img, .recipe_contaier .chef_info img, .recipe_header .chef_info img {
+      display: block;
+      -webkit-border-top-left-radius: 3px;
+      -webkit-border-top-right-radius: 3px;
+      -moz-border-radius-topleft: 3px;
+      -moz-border-radius-topright: 3px;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      max-width: 100%;
+      height: auto; }
+    article .chef_info .details_container, .sort_panel .chef_info .details_container, .recipe_contaier .chef_info .details_container, .recipe_header .chef_info .details_container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%; }
+      article .chef_info .details_container .profile_details img, .sort_panel .chef_info .details_container .profile_details img, .recipe_contaier .chef_info .details_container .profile_details img, .recipe_header .chef_info .details_container .profile_details img {
+        position: relative;
+        border: 5px solid #333;
+        display: block;
+        float: left;
+        margin: 0 20px 20px 30px;
+        z-index: 999; }
+      article .chef_info .details_container .profile_details .name, .sort_panel .chef_info .details_container .profile_details .name, .recipe_contaier .chef_info .details_container .profile_details .name, .recipe_header .chef_info .details_container .profile_details .name {
+        float: left;
+        margin-top: 30px; }
+        article .chef_info .details_container .profile_details .name h3, .sort_panel .chef_info .details_container .profile_details .name h3, .recipe_contaier .chef_info .details_container .profile_details .name h3, .recipe_header .chef_info .details_container .profile_details .name h3 {
+          font-size: 1.5em;
+          font-weight: bold;
+          font-style: italic;
+          color: #fff;
+          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
+        article .chef_info .details_container .profile_details .name h4, .sort_panel .chef_info .details_container .profile_details .name h4, .recipe_contaier .chef_info .details_container .profile_details .name h4, .recipe_header .chef_info .details_container .profile_details .name h4 {
+          color: #fff;
+          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
+      article .chef_info .details_container .recipe_details, .sort_panel .chef_info .details_container .recipe_details, .recipe_contaier .chef_info .details_container .recipe_details, .recipe_header .chef_info .details_container .recipe_details {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        padding: 10px 0; }
+        article .chef_info .details_container .recipe_details .icon_container, .sort_panel .chef_info .details_container .recipe_details .icon_container, .recipe_contaier .chef_info .details_container .recipe_details .icon_container, .recipe_header .chef_info .details_container .recipe_details .icon_container {
+          float: right; }
+          article .chef_info .details_container .recipe_details .icon_container ul:after, .sort_panel .chef_info .details_container .recipe_details .icon_container ul:after, .recipe_contaier .chef_info .details_container .recipe_details .icon_container ul:after, .recipe_header .chef_info .details_container .recipe_details .icon_container ul:after {
+            content: "";
+            display: table;
+            clear: both; }
+          article .chef_info .details_container .recipe_details .icon_container ul li, .sort_panel .chef_info .details_container .recipe_details .icon_container ul li, .recipe_contaier .chef_info .details_container .recipe_details .icon_container ul li, .recipe_header .chef_info .details_container .recipe_details .icon_container ul li {
+            padding: 0;
+            margin: 0 10px;
+            width: auto;
+            box-shadow: 0 0 0 transparent; }
+            article .chef_info .details_container .recipe_details .icon_container ul li:after, .sort_panel .chef_info .details_container .recipe_details .icon_container ul li:after, .recipe_contaier .chef_info .details_container .recipe_details .icon_container ul li:after, .recipe_header .chef_info .details_container .recipe_details .icon_container ul li:after {
+              content: "";
+              display: table;
+              clear: both; }
+            article .chef_info .details_container .recipe_details .icon_container ul li .numbers, .sort_panel .chef_info .details_container .recipe_details .icon_container ul li .numbers, .recipe_contaier .chef_info .details_container .recipe_details .icon_container ul li .numbers, .recipe_header .chef_info .details_container .recipe_details .icon_container ul li .numbers {
+              float: left;
+              line-height: 19px;
+              color: #ccc;
+              font-size: 0.775em;
+              padding-left: 5px;
+              font-weight: bold; }
+
+.recipe_header {
+  margin: 20px auto 0 auto; }
 
 footer {
   background-color: #333;
@@ -510,6 +626,30 @@ footer {
   border-radius: 5px; }
   .btn:hover {
     background-color: #333; }
+
+.favorite {
+  background-image: url(../img/assets/icons.png);
+  background-position: 0px 0px;
+  width: 23px;
+  height: 19px;
+  display: block;
+  float: left; }
+
+.comments {
+  background-image: url(../img/assets/icons.png);
+  background-position: 32px 0px;
+  width: 20px;
+  height: 19px;
+  display: block;
+  float: left; }
+
+.time {
+  background-image: url(../img/assets/icons.png);
+  background-position: 12px 0px;
+  width: 12px;
+  height: 19px;
+  display: block;
+  float: left; }
 
 .message {
   z-index: 1000;

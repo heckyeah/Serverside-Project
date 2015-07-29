@@ -14,7 +14,7 @@
 				<li>
 					<a href="index.php?page=profile">
 						<img src="https://i.vimeocdn.com/portrait/1069946_30x30.jpg" alt="Hekiera Mareroa">
-						<span>Hekiera Mareroa</span>
+						<span>Hekiera Mareroa <i class="fa fa-caret-down"></i></span>
 					</a>
 				</li>
 			</ul>

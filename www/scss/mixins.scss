@@ -199,6 +199,183 @@
 }
 
 //*****************
+// PROFILE
+//*****************
+
+@mixin profile {
+	.profile_container {
+		background-color: $offColour;
+		box-shadow: 0px 0px 2px #666;
+		margin-top: 20px;
+		@include roundcorner;
+		@include clearfix;
+		.cover {
+			position: relative;
+			.cover_change {
+				position: absolute;
+				bottom: 120px;
+				left: 20px;
+				.round-top {
+					-webkit-border-top-left-radius: 3px;
+					-webkit-border-top-right-radius: 3px;
+					-moz-border-radius-topleft: 3px;
+					-moz-border-radius-topright: 3px;
+					border-top-left-radius: 3px;
+					border-top-right-radius: 3px;
+				}
+				.message_container {
+					position: fixed;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background-color: rgba(0,0,0,.7);
+					display: none;
+					z-index: 1000;
+					@include clearfix;
+					.message {
+						width: 1000px;
+						margin: 70px auto;
+						background-color: #fff;
+						text-align: left;
+						padding: 20px;
+						box-shadow: 0px 0px 2px #666;
+						@include clearfix;
+						@include roundcorner;
+						@include tablet-landscape {
+							width: 750px;
+						}
+						@include landscape {
+							width: 500px;
+						}
+						@include mobile {
+							width: 100%;
+							margin: 50px 0;
+							@include removecorner;
+						}
+						h3 {
+							font-size: 1.5em;
+							font-weight: bold;
+							color: $offColour;
+							margin-bottom: 10px;
+						}
+						.close {
+							position: absolute;
+							top: 20px;
+							right: 20px;
+							a {
+								color: $offColour;
+								text-decoration: none;
+								&:hover {
+									color: $thirdColour;
+								}
+							}
+						}
+						form {
+							.current_image {
+								margin: 0;
+								text-align: left;
+								span {
+									font-size: 0.875em;
+								}
+								img {
+									-webkit-border-top-left-radius: 0px;
+									-webkit-border-top-right-radius: 0px;
+									-moz-border-radius-topleft: 0px;
+									-moz-border-radius-topright: 0px;
+									border-top-left-radius: 0px;
+									border-top-right-radius: 0px;
+									margin: 10px 0;
+								}
+							}
+							p {
+								font-size: 0.875em;
+								text-align: center;
+								}
+							div {
+								margin: 20px 0;
+								text-align: center;
+								@include clearfix;
+							}
+							label {
+								margin-top: 10px;
+								cursor: pointer;
+							}
+							input {
+								clear: both;
+								margin: 0 auto;
+								cursor: pointer;
+							}
+							input[type='file'] {
+								display: none;
+							}
+						}
+					}
+					h2 {
+						font-size: 1.5em;
+						font-weight: bold;
+						padding-bottom: 10px;
+					}
+				}
+				.show { display: block;}
+			}
+			img {
+			display: block;
+			-webkit-border-top-left-radius: 3px;
+			-webkit-border-top-right-radius: 3px;
+			-moz-border-radius-topleft: 3px;
+			-moz-border-radius-topright: 3px;
+			border-top-left-radius: 3px;
+			border-top-right-radius: 3px;
+			max-width: 100%;
+			height: auto;
+			}
+			.profile_details_container {
+				padding: 10px;
+				position: relative;
+				@include clearfix;
+				img {
+					float: left;
+					-webkit-border-radius: 3px;
+					-webkit-border-top-right-radius: 15px;
+					-webkit-border-bottom-left-radius: 15px;
+					-moz-border-radius: 3px;
+					-moz-border-radius-topright: 15px;
+					-moz-border-radius-bottomleft: 15px;
+					border-radius: 3px;
+					border-top-right-radius: 15px;
+					border-bottom-left-radius: 15px;
+					box-shadow: 0px 0px 2px #666;
+					border: 1px solid #fff;
+					z-index: 0;
+				}
+				.profile_details {
+					float: left;
+					margin-left: 90px;
+					@include vertical-align;
+					a {
+						text-decoration: none;
+						color: #fff;
+						h3 {
+							font-size: 1.5em;
+							font-weight: bold;
+							font-style: italic;
+							color: #fff;
+							text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+						}
+
+					}
+					span {
+						color: #fff;
+						text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+					}
+				}
+			}
+		}
+	}
+}
+
+//*****************
 // FOOD CARDS
 //*****************
 

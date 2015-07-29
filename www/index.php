@@ -33,6 +33,16 @@ switch ( $pageSelect ) {
 		$page = new ProfilePage( $model );
 	break;
 
+	// Account
+	case 'recipe':
+		# Require the Profile classes
+		require 'classes/view/RecipePage.php';
+		require 'classes/model/RecipeModel.php';
+		# Connect to the page and model
+		$model = new RecipeModel();
+		$page = new RecipePage( $model );
+	break;
+
 	// 404 Error page
 	default:
 		require 'classes/model/Error404Model.php';

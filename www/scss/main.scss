@@ -64,6 +64,9 @@ nav {
 						font-size: 0.875em;
 						padding: 0 10px;
 						float: left;
+						i {
+							margin-left: 5px;
+						}
 					}
 				}
 			}
@@ -131,12 +134,82 @@ nav {
 	}
 }
 
-article, .sort_panel {
+.recipe_container {
+	background-color: #fff;
+	padding: 10px;
+	h2 {
+		font-size: 1.7em;
+		font-weight: bold;
+		padding: 10px;
+	}
+	.comment_section {
+		width: 100%;
+	}
+	.recipe_email, .recipe_directions {
+		padding: 10px;
+		width: 490px;
+		float: left;
+		h3 {
+			font-size: 1em;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		.directions {
+			p {
+				font-size: 0.875em;
+				line-height: 1.3;
+				margin-bottom: 10px;
+			}
+		}
+		table {
+			tr {
+				td {
+					border: 2px solid #fff;
+					padding: 10px;
+				}
+				td:nth-child(odd) {
+					width: 1px;
+					input {
+						display: block;
+					}
+				}
+				td:nth-child(even) {
+					font-size: 0.875em;
+					margin-left: 10px;
+				}
+			}
+			tr:nth-last-child(1) {
+				td:nth-last-child(1) {
+					padding:0;
+					input {
+						width: 100%;
+						border: none;
+						padding: 10px 0;
+						background-color: $offColour;
+						color: #fff;
+						&:active {
+							background-color: #666;
+						}
+					}
+				}
+			}
+			tr:nth-child(odd) {
+				background-color: #dedede;
+			}
+			tr:nth-child(even) {
+				background-color: #f7f7f7;
+			}
+		}
+	}
+}
+
+article, .sort_panel, .recipe_contaier, .recipe_header {
 	width: 1000px;
 	margin: 0 auto;
 	@include clearfix;
 	@include recipeDisplay;
 	@include pagination;
+	@include profile;
 	@include tablet-landscape {
 		width: 750px;
 	}
@@ -146,178 +219,85 @@ article, .sort_panel {
 	@include mobile {
 		width: 100%;
 	}
-	.profile_container {
-		background-color: $offColour;
-		box-shadow: 0px 0px 2px #666;
-		margin-top: 20px;
-		@include roundcorner;
-		@include clearfix;
-		.cover {
-			position: relative;
-			.cover_change {
-				position: absolute;
-				bottom: 120px;
-				left: 20px;
-				.round-top {
-					-webkit-border-top-left-radius: 3px;
-					-webkit-border-top-right-radius: 3px;
-					-moz-border-radius-topleft: 3px;
-					-moz-border-radius-topright: 3px;
-					border-top-left-radius: 3px;
-					border-top-right-radius: 3px;
+	.chef_info {
+		position: relative;
+		img {
+			display: block;
+		    -webkit-border-top-left-radius: 3px;
+		    -webkit-border-top-right-radius: 3px;
+		    -moz-border-radius-topleft: 3px;
+		    -moz-border-radius-topright: 3px;
+		    border-top-left-radius: 3px;
+		    border-top-right-radius: 3px;
+		    max-width: 100%;
+		    height: auto;
+		}
+		.details_container {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			.profile_details {
+				img {
+					position: relative;
+					border: 5px solid $offColour;
+					display: block;
+					float: left;
+					margin: 0 20px 20px 30px;
+					z-index: 999;
 				}
-				.message_container {
-					position: fixed;
-					top: 0;
-					left: 0;
-					width: 100%;
-					height: 100%;
-					background-color: rgba(0,0,0,.7);
-					display: none;
-					z-index: 1000;
-					@include clearfix;
-					.message {
-						width: 1000px;
-						margin: 70px auto;
-						background-color: #fff;
-						text-align: left;
-						padding: 20px;
-						box-shadow: 0px 0px 2px #666;
-						@include clearfix;
-						@include roundcorner;
-						@include tablet-landscape {
-							width: 750px;
-						}
-						@include landscape {
-							width: 500px;
-						}
-						@include mobile {
-							width: 100%;
-							margin: 50px 0;
-							@include removecorner;
-						}
-						h3 {
-							font-size: 1.5em;
-							font-weight: bold;
-							color: $offColour;
-							margin-bottom: 10px;
-						}
-						.close {
-							position: absolute;
-							top: 20px;
-							right: 20px;
-							a {
-								color: $offColour;
-								text-decoration: none;
-								&:hover {
-									color: $thirdColour;
-								}
-							}
-						}
-						form {
-							.current_image {
-								margin: 0;
-								text-align: left;
-								span {
-									font-size: 0.875em;
-								}
-								img {
-									-webkit-border-top-left-radius: 0px;
-									-webkit-border-top-right-radius: 0px;
-									-moz-border-radius-topleft: 0px;
-									-moz-border-radius-topright: 0px;
-									border-top-left-radius: 0px;
-									border-top-right-radius: 0px;
-									margin: 10px 0;
-								}
-							}
-							p {
-								font-size: 0.875em;
-								text-align: center;
-								}
-							div {
-								margin: 20px 0;
-								text-align: center;
-								@include clearfix;
-							}
-							label {
-								margin-top: 10px;
-								cursor: pointer;
-							}
-							input {
-								clear: both;
-								margin: 0 auto;
-								cursor: pointer;
-							}
-							input[type='file'] {
-								display: none;
-							}
-						}
-					}
-					h2 {
+				.name {
+					float: left;
+					margin-top: 30px;
+					h3 {
 						font-size: 1.5em;
 						font-weight: bold;
-						padding-bottom: 10px;
-					}
-				}
-				.show { display: block;}
-			}
-			img {
-			display: block;
-			-webkit-border-top-left-radius: 3px;
-			-webkit-border-top-right-radius: 3px;
-			-moz-border-radius-topleft: 3px;
-			-moz-border-radius-topright: 3px;
-			border-top-left-radius: 3px;
-			border-top-right-radius: 3px;
-			max-width: 100%;
-			height: auto;
-			}
-			.profile_details_container {
-				padding: 10px;
-				position: relative;
-				@include clearfix;
-				img {
-					float: left;
-					-webkit-border-radius: 3px;
-					-webkit-border-top-right-radius: 15px;
-					-webkit-border-bottom-left-radius: 15px;
-					-moz-border-radius: 3px;
-					-moz-border-radius-topright: 15px;
-					-moz-border-radius-bottomleft: 15px;
-					border-radius: 3px;
-					border-top-right-radius: 15px;
-					border-bottom-left-radius: 15px;
-					box-shadow: 0px 0px 2px #666;
-					border: 1px solid #fff;
-					z-index: 0;
-				}
-				.profile_details {
-					float: left;
-					margin-left: 90px;
-					@include vertical-align;
-					a {
-						text-decoration: none;
-						color: #fff;
-						h3 {
-							font-size: 1.5em;
-							font-weight: bold;
-							font-style: italic;
-							color: #fff;
-							text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
-						}
-
-					}
-					span {
+						font-style: italic;
 						color: #fff;
 						text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+					}
+					h4 {
+						color: #fff;
+						text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+					}
+
+				}
+			}
+			.recipe_details {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				background-color: $offColour;
+				padding: 10px 0;
+				.icon_container {
+					float: right;
+					ul {
+						@include clearfix;
+						li {
+							padding: 0;
+							margin: 0 10px;
+							width: auto;
+							box-shadow: 0 0 0 transparent;
+							@include clearfix;
+							.numbers {
+								float: left;
+								line-height: 19px;
+								color: $lightFont;
+								font-size: 0.775em;
+								padding-left: 5px;
+								font-weight: bold;
+							}
+						}
 					}
 				}
 			}
 		}
 	}
+}
 
-
+.recipe_header {
+	margin: 20px auto 0 auto;
 }
 
 footer {
@@ -356,6 +336,33 @@ footer {
 	&:hover {
 		background-color: $offColour;
 	}
+}
+
+.favorite {
+	background-image: url(../img/assets/icons.png);
+	background-position: 0px 0px;
+	width: 23px;
+	height: 19px;
+	display: block;
+	float: left;
+}
+
+.comments {
+	background-image: url(../img/assets/icons.png);
+	background-position: 32px 0px;
+	width: 20px;
+	height: 19px;
+	display: block;
+	float: left;
+}
+
+.time {
+	background-image: url(../img/assets/icons.png);
+	background-position: 12px 0px;
+	width: 12px;
+	height: 19px;
+	display: block;
+	float: left;
 }
 
 @include modal;
