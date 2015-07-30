@@ -32,7 +32,7 @@
 					<hr>
 					<span><i class="fa fa-heart"></i> 32</span>
 					<span><i class="fa fa-comment"></i> 1</span>
-					<span class="time"><i class="fa fa-clock-o"></i> 30M</span>
+					<span class="right"><i class="fa fa-clock-o"></i> 30M</span>
 				</div>
 			</li>
 			<li>
@@ -47,7 +47,7 @@
 					<hr>
 					<span><i class="fa fa-heart"></i> 32</span>
 					<span><i class="fa fa-comment"></i> 1</span>
-					<span class="time"><i class="fa fa-clock-o"></i> 30M</span>
+					<span class="right"><i class="fa fa-clock-o"></i> 30M</span>
 				</div>
 			</li>
 			<li>
@@ -62,7 +62,7 @@
 					<hr>
 					<span><i class="fa fa-heart"></i> 32</span>
 					<span><i class="fa fa-comment"></i> 1</span>
-					<span class="time"><i class="fa fa-clock-o"></i> 30M</span>
+					<span class="right"><i class="fa fa-clock-o"></i> 30M</span>
 				</div>
 			</li>
 			<li>
@@ -77,7 +77,7 @@
 					<hr>
 					<span><i class="fa fa-heart"></i> 32</span>
 					<span><i class="fa fa-comment"></i> 1</span>
-					<span class="time"><i class="fa fa-clock-o"></i> 30M</span>
+					<span class="right"><i class="fa fa-clock-o"></i> 30M</span>
 				</div>
 			</li>
 			<li>
@@ -92,7 +92,7 @@
 					<hr>
 					<span><i class="fa fa-heart"></i> 32</span>
 					<span><i class="fa fa-comment"></i> 1</span>
-					<span class="time"><i class="fa fa-clock-o"></i> 30M</span>
+					<span class="right"><i class="fa fa-clock-o"></i> 30M</span>
 				</div>
 			</li>
 			<li>
@@ -107,7 +107,7 @@
 					<hr>
 					<span><i class="fa fa-heart"></i> 32</span>
 					<span><i class="fa fa-comment"></i> 1</span>
-					<span class="time"><i class="fa fa-clock-o"></i> 30M</span>
+					<span class="right"><i class="fa fa-clock-o"></i> 30M</span>
 				</div>
 			</li>
 			<li>
@@ -122,7 +122,7 @@
 					<hr>
 					<span><i class="fa fa-heart"></i> 32</span>
 					<span><i class="fa fa-comment"></i> 1</span>
-					<span class="time"><i class="fa fa-clock-o"></i> 30M</span>
+					<span class="right"><i class="fa fa-clock-o"></i> 30M</span>
 				</div>
 			</li>
 			<li>
@@ -137,7 +137,7 @@
 					<hr>
 					<span><i class="fa fa-heart"></i> 32</span>
 					<span><i class="fa fa-comment"></i> 1</span>
-					<span class="time"><i class="fa fa-clock-o"></i> 30M</span>
+					<span class="right"><i class="fa fa-clock-o"></i> 30M</span>
 				</div>
 			</li>
 			<li>
@@ -152,7 +152,7 @@
 					<hr>
 					<span><i class="fa fa-heart"></i> 32</span>
 					<span><i class="fa fa-comment"></i> 1</span>
-					<span class="time"><i class="fa fa-clock-o"></i> 30M</span>
+					<span class="right"><i class="fa fa-clock-o"></i> 30M</span>
 				</div>
 			</li>
 			<li>
@@ -167,7 +167,7 @@
 					<hr>
 					<span><i class="fa fa-heart"></i> 32</span>
 					<span><i class="fa fa-comment"></i> 1</span>
-					<span class="time"><i class="fa fa-clock-o"></i> 30M</span>
+					<span class="right"><i class="fa fa-clock-o"></i> 30M</span>
 				</div>
 			</li>
 			<li>
@@ -182,7 +182,7 @@
 					<hr>
 					<span><i class="fa fa-heart"></i> 32</span>
 					<span><i class="fa fa-comment"></i> 1</span>
-					<span class="time"><i class="fa fa-clock-o"></i> 30M</span>
+					<span class="right"><i class="fa fa-clock-o"></i> 30M</span>
 				</div>
 			</li>
 			<li>
@@ -197,7 +197,7 @@
 					<hr>
 					<span><i class="fa fa-heart"></i> 32</span>
 					<span><i class="fa fa-comment"></i> 1</span>
-					<span class="time"><i class="fa fa-clock-o"></i> 30M</span>
+					<span class="right"><i class="fa fa-clock-o"></i> 30M</span>
 				</div>
 			</li>
 		</ul>

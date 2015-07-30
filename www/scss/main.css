@@ -211,15 +211,62 @@ nav {
 .recipe_container {
   background-color: #fff;
   padding: 10px; }
+  .recipe_container hr {
+    clear: both;
+    margin: 10px 0;
+    padding: 0 10px;
+    border: none;
+    border-top: 1px solid #ddd; }
   .recipe_container h2 {
     font-size: 1.7em;
     font-weight: bold;
     padding: 10px; }
-  .recipe_container .comment_section {
-    width: 100%; }
+  .recipe_container .comment_section, .recipe_container .posted_comments {
+    width: 100%;
+    float: left;
+    clear: both;
+    margin: 20px 0; }
+    .recipe_container .comment_section .comments_user, .recipe_container .comment_section .comments_textarea, .recipe_container .posted_comments .comments_user, .recipe_container .posted_comments .comments_textarea {
+      width: 100%;
+      text-align: center;
+      margin: 20px auto; }
+      .recipe_container .comment_section .comments_user img, .recipe_container .comment_section .comments_textarea img, .recipe_container .posted_comments .comments_user img, .recipe_container .posted_comments .comments_textarea img {
+        border-radius: 50px;
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        box-shadow: 0px 0px 2px #666;
+        border: 1px solid #fff; }
+      .recipe_container .comment_section .comments_user form, .recipe_container .comment_section .comments_textarea form, .recipe_container .posted_comments .comments_user form, .recipe_container .posted_comments .comments_textarea form {
+        margin: 0 auto; }
+        .recipe_container .comment_section .comments_user form p, .recipe_container .comment_section .comments_textarea form p, .recipe_container .posted_comments .comments_user form p, .recipe_container .posted_comments .comments_textarea form p {
+          margin-top: 10px; }
+          .recipe_container .comment_section .comments_user form p textarea, .recipe_container .comment_section .comments_textarea form p textarea, .recipe_container .posted_comments .comments_user form p textarea, .recipe_container .posted_comments .comments_textarea form p textarea {
+            padding: 10px;
+            font-size: 0.875em;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px; }
+    .recipe_container .comment_section .comments_post, .recipe_container .posted_comments .comments_post {
+      margin: 0 auto;
+      width: 665px; }
+      .recipe_container .comment_section .comments_post img, .recipe_container .posted_comments .comments_post img {
+        float: left;
+        margin-right: 20px;
+        border-radius: 40px; }
+      .recipe_container .comment_section .comments_post h3, .recipe_container .posted_comments .comments_post h3 {
+        font-size: 1em;
+        font-weight: bold;
+        margin-bottom: 5px;
+        float: left; }
+      .recipe_container .comment_section .comments_post p, .recipe_container .posted_comments .comments_post p {
+        float: left;
+        width: 600px;
+        font-size: 0.875em;
+        line-height: 1.2; }
   .recipe_container .recipe_email, .recipe_container .recipe_directions {
     padding: 10px;
     width: 490px;
+    margin-bottom: 10px;
     float: left; }
     .recipe_container .recipe_email h3, .recipe_container .recipe_directions h3 {
       font-size: 1em;
@@ -253,6 +300,14 @@ nav {
       background-color: #dedede; }
     .recipe_container .recipe_email table tr:nth-child(even), .recipe_container .recipe_directions table tr:nth-child(even) {
       background-color: #f7f7f7; }
+
+.recipe_container {
+  -webkit-border-bottom-left-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px; }
 
 article, .sort_panel, .recipe_contaier, .recipe_header {
   width: 1000px;
@@ -318,7 +373,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
         border: none;
         border-bottom: 1px solid #686868;
         margin-bottom: 5px; }
-      article ul li .information .time, .sort_panel ul li .information .time, .recipe_contaier ul li .information .time, .recipe_header ul li .information .time {
+      article ul li .information .right, .sort_panel ul li .information .right, .recipe_contaier ul li .information .right, .recipe_header ul li .information .right {
         float: right; }
       article ul li .information span, .sort_panel ul li .information span, .recipe_contaier ul li .information span, .recipe_header ul li .information span {
         padding: 5px;
@@ -364,7 +419,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
       position: relative; }
       article .profile_container .cover .cover_change, .sort_panel .profile_container .cover .cover_change, .recipe_contaier .profile_container .cover .cover_change, .recipe_header .profile_container .cover .cover_change {
         position: absolute;
-        bottom: 120px;
+        top: 205px;
         left: 20px; }
         article .profile_container .cover .cover_change .round-top, .sort_panel .profile_container .cover .cover_change .round-top, .recipe_contaier .profile_container .cover .cover_change .round-top, .recipe_header .profile_container .cover .cover_change .round-top {
           -webkit-border-top-left-radius: 3px;
@@ -498,7 +553,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
           z-index: 0; }
         article .profile_container .cover .profile_details_container .profile_details, .sort_panel .profile_container .cover .profile_details_container .profile_details, .recipe_contaier .profile_container .cover .profile_details_container .profile_details, .recipe_header .profile_container .cover .profile_details_container .profile_details {
           float: left;
-          margin-left: 90px;
+          margin-left: 120px;
           position: absolute;
           top: 50%;
           -webkit-transform: translateY(-50%);
@@ -548,7 +603,16 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
         display: block;
         float: left;
         margin: 0 20px 20px 30px;
-        z-index: 999; }
+        z-index: 999;
+        -webkit-border-radius: 3px;
+        -webkit-border-top-right-radius: 15px;
+        -webkit-border-bottom-left-radius: 15px;
+        -moz-border-radius: 3px;
+        -moz-border-radius-topright: 15px;
+        -moz-border-radius-bottomleft: 15px;
+        border-radius: 3px;
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: 15px; }
       article .chef_info .details_container .profile_details .name, .sort_panel .chef_info .details_container .profile_details .name, .recipe_contaier .chef_info .details_container .profile_details .name, .recipe_header .chef_info .details_container .profile_details .name {
         float: left;
         margin-top: 30px; }
@@ -567,7 +631,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
         left: 0;
         width: 100%;
         background-color: #333;
-        padding: 10px 0; }
+        padding: 10px 10px; }
         article .chef_info .details_container .recipe_details .icon_container, .sort_panel .chef_info .details_container .recipe_details .icon_container, .recipe_contaier .chef_info .details_container .recipe_details .icon_container, .recipe_header .chef_info .details_container .recipe_details .icon_container {
           float: right; }
           article .chef_info .details_container .recipe_details .icon_container ul:after, .sort_panel .chef_info .details_container .recipe_details .icon_container ul:after, .recipe_contaier .chef_info .details_container .recipe_details .icon_container ul:after, .recipe_header .chef_info .details_container .recipe_details .icon_container ul:after {
@@ -597,7 +661,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
 footer {
   background-color: #333;
   height: 50px;
-  margin-top: 10px; }
+  margin-top: 20px; }
   footer ul {
     width: 1000px;
     padding: 0 10px;

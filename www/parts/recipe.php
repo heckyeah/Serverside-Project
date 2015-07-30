@@ -22,7 +22,7 @@
 				</div>
 			</div>
 			<div class="profile_details">
-				<img src="http://placehold.it/100x100" alt="">
+				<img src="img/user/avatar/default.jpg" alt="">
 				<div class="name">
 					<h3>Hekiera Mareroa</h3>
 					<h4>Master Chef</h4>
@@ -94,7 +94,29 @@
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem alias illum eos nobis blanditiis amet magni dolore. Cumque ipsa animi eligendi, cupiditate nisi voluptatibus esse iusto ut fuga expedita magni.</p>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dolorum minima accusantium, excepturi, ex rerum expedita tenetur quis, magnam sit voluptatibus perspiciatis velit commodi? Voluptas ipsam accusantium praesentium quia, sapiente.</p>
 		</div>
-		
+	</div>
+<hr>
+	<div class="comment_section">
+		<div class="comments_user">
+			<img src="img/user/avatar/default.jpg" alt="">
+		</div>
+		<div class="comments_textarea">
+			<form action="index.php?page=recipe" methos="post">
+				<p>
+					<textarea name="" placeholder="What did you think of the recipe?" id="" cols="50" rows="5"></textarea>
+				</p>
+				<p>
+					<input type="submit" class="btn" value="Post Comment">
+				</p>	
+			</form>
+		</div>
+	</div>
+	<div class="posted_comments">
+		<div class="comments_post">
+			<img src="img/user/avatar/default_icon.jpg" alt="">
+			<h3>Hekiera Mareroa</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit odit, error maiores nostrum deleniti at fugiat, quibusdam repellat enim consequuntur, hic voluptatibus quod inventore pariatur. Fugiat tenetur illo, neque voluptatem.</p>
+		</div>
 	</div>
 </article>
 

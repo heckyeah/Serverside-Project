@@ -27,7 +27,7 @@
 			</div>
 			<img src="img/user/covers/placeholder_cover.jpg" alt="">
 			<div class="profile_details_container">
-				<img src="http://anime.com.pl/img/user/08/8483.jpg" alt="My Profile">
+				<img src="img/user/avatar/default.jpg" alt="My Profile">
 				<div class="profile_details">
 					<a href="#"><h3>Hekiera Mareroa</h3></a>
 					<span>Master Chef</span>

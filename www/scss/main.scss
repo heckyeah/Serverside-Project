@@ -137,17 +137,72 @@ nav {
 .recipe_container {
 	background-color: #fff;
 	padding: 10px;
+	hr {
+		clear: both;
+		margin: 10px 0;
+		padding: 0 10px;
+		border: none;
+		border-top: 1px solid #ddd;
+	}
 	h2 {
 		font-size: 1.7em;
 		font-weight: bold;
 		padding: 10px;
 	}
-	.comment_section {
+	.comment_section, .posted_comments {
 		width: 100%;
+		float: left;
+		clear: both;
+		margin: 20px 0;
+		.comments_user, .comments_textarea {
+			width: 100%;
+			text-align: center;
+			margin: 20px auto;
+			img {
+				border-radius: 50px;
+				-webkit-border-radius: 50px;
+				-moz-border-radius: 50px;
+				box-shadow: 0px 0px 2px #666;
+				border: 1px solid #fff;
+			}
+			form {
+				margin: 0 auto;
+				p {
+					margin-top: 10px;
+					textarea {
+						padding: 10px;
+						font-size: 0.875em;
+						@include roundcorner;
+					}
+				}
+			}
+		}
+		.comments_post {
+			margin: 0 auto;
+			width: 665px;
+			img {
+				float: left;
+				margin-right: 20px;
+				border-radius: 40px;
+			}
+			h3 {
+				font-size: 1em;
+				font-weight: bold;
+				margin-bottom: 5px;
+				float: left;
+			}
+			p {
+				float: left;
+				width: 600px;
+				font-size: 0.875em;
+				line-height: 1.2;
+			}
+		}
 	}
 	.recipe_email, .recipe_directions {
 		padding: 10px;
 		width: 490px;
+		margin-bottom: 10px;
 		float: left;
 		h3 {
 			font-size: 1em;
@@ -203,6 +258,15 @@ nav {
 	}
 }
 
+.recipe_container {
+	-webkit-border-bottom-left-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	-moz-border-radius-bottomright: 3px;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
 article, .sort_panel, .recipe_contaier, .recipe_header {
 	width: 1000px;
 	margin: 0 auto;
@@ -245,6 +309,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
 					float: left;
 					margin: 0 20px 20px 30px;
 					z-index: 999;
+					@include avatar;
 				}
 				.name {
 					float: left;
@@ -269,7 +334,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
 				left: 0;
 				width: 100%;
 				background-color: $offColour;
-				padding: 10px 0;
+				padding: 10px 10px;
 				.icon_container {
 					float: right;
 					ul {
@@ -303,7 +368,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
 footer {
 	background-color: $offColour;
 	height: 50px;
-	margin-top: 10px;
+	margin-top: 20px;
 	ul {
 		width: 1000px;
 		padding: 0 10px;
