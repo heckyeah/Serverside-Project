@@ -80,8 +80,6 @@
 				<tr>
 					<td colspan="2"><input type="button" value="Email Me"></td>
 				</tr>
-				
-
 			</table>
 		</form>
 	</div>

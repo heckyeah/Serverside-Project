@@ -4,7 +4,7 @@ class HomePage extends Page {
 
 	// Methods
 	public function contentHTML() {
-
+		
 		# Banner
 		include 'parts/banner.php';
 		# Home content

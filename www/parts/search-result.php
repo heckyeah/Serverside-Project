@@ -20,186 +20,40 @@
 
 	<article>
 		<ul>
-			<li>
-				<div class="thumbnail">
-					<a href="#">
-						<img src="http://extrawallpaper.com/wp-content/uploads/2014/11/Best-top-desktop-food-wallpapers-hd-food-wallpaper-food-pictures-image-photo-1-230x150.jpg" alt="Mac And Cheese">
-					</a>
-				</div>
-				<div class="information">
-					<h3><a href="#">Italiano Pizza</a></h3>
-					<p>by <a href="#">Hekiera Mareroa</a></p>
-					<hr>
-					<span><i class="fa fa-heart"></i> 32</span>
-					<span><i class="fa fa-comment"></i> 1</span>
-					<span class="right"><i class="fa fa-clock-o"></i> 30M</span>
-				</div>
-			</li>
-			<li>
-				<div class="thumbnail">
-					<a href="#">
-						<img src="http://www.coolfoodideas.com/wp-content/uploads/2013/08/greek-salad-recipe-cool-food-ideas-ft-230x150.jpg" alt="Mac And Cheese">
-					</a>
-				</div>
-				<div class="information">
-					<h3><a href="#">Feda cheese salad</a></h3>
-					<p>by <a href="#">Hekiera Mareroa</a></p>
-					<hr>
-					<span><i class="fa fa-heart"></i> 32</span>
-					<span><i class="fa fa-comment"></i> 1</span>
-					<span class="right"><i class="fa fa-clock-o"></i> 30M</span>
-				</div>
-			</li>
-			<li>
-				<div class="thumbnail">
-					<a href="#">
-						<img src="http://extrawallpaper.com/wp-content/uploads/2014/11/best-berry-drink-food-red-230x150.jpg" alt="Mac And Cheese">
-					</a>
-				</div>
-				<div class="information">
-					<h3><a href="#">Strawberry drink</a></h3>
-					<p>by <a href="#">Hekiera Mareroa</a></p>
-					<hr>
-					<span><i class="fa fa-heart"></i> 32</span>
-					<span><i class="fa fa-comment"></i> 1</span>
-					<span class="right"><i class="fa fa-clock-o"></i> 30M</span>
-				</div>
-			</li>
-			<li>
-				<div class="thumbnail">
-					<a href="#">
-						<img src="http://c0.thejournal.ie/media/2015/06/fast-food-ireland-230x150.jpg" alt="Mac And Cheese">
-					</a>
-				</div>
-				<div class="information">
-					<h3><a href="#">Hamburger</a></h3>
-					<p>by <a href="#">Hekiera Mareroa</a></p>
-					<hr>
-					<span><i class="fa fa-heart"></i> 32</span>
-					<span><i class="fa fa-comment"></i> 1</span>
-					<span class="right"><i class="fa fa-clock-o"></i> 30M</span>
-				</div>
-			</li>
-			<li>
-				<div class="thumbnail">
-					<a href="#">
-						<img src="http://www.thehappyappetite.com/wp-content/uploads/2014/06/Photo-3-230x150.jpg" alt="Mac And Cheese">
-					</a>
-				</div>
-				<div class="information">
-					<h3><a href="#">Mac and Cheese</a></h3>
-					<p>by <a href="#">Hekiera Mareroa</a></p>
-					<hr>
-					<span><i class="fa fa-heart"></i> 32</span>
-					<span><i class="fa fa-comment"></i> 1</span>
-					<span class="right"><i class="fa fa-clock-o"></i> 30M</span>
-				</div>
-			</li>
-			<li>
-				<div class="thumbnail">
-					<a href="#">
-						<img src="http://unofficialrestaurantreview.net/wp-content/uploads/2013/05/Hamburger-Fries-230x150.jpg" alt="Mac And Cheese">
-					</a>
-				</div>
-				<div class="information">
-					<h3><a href="#">Mac and Cheese</a></h3>
-					<p>by <a href="#">Hekiera Mareroa</a></p>
-					<hr>
-					<span><i class="fa fa-heart"></i> 32</span>
-					<span><i class="fa fa-comment"></i> 1</span>
-					<span class="right"><i class="fa fa-clock-o"></i> 30M</span>
-				</div>
-			</li>
-			<li>
-				<div class="thumbnail">
-					<a href="#">
-						<img src="http://gustotv.com/wp-content/uploads/2013/11/Chinese-Food-Made-Easy-Dublin-bay-prawn-and-samphire-stir-fry-3-230x150.jpg" alt="Mac And Cheese">
-					</a>
-				</div>
-				<div class="information">
-					<h3><a href="#">Mac and Cheese</a></h3>
-					<p>by <a href="#">Hekiera Mareroa</a></p>
-					<hr>
-					<span><i class="fa fa-heart"></i> 32</span>
-					<span><i class="fa fa-comment"></i> 1</span>
-					<span class="right"><i class="fa fa-clock-o"></i> 30M</span>
-				</div>
-			</li>
-			<li>
-				<div class="thumbnail">
-					<a href="#">
-						<img src="http://best-crowdfunding-websites.com/wp-content/uploads/2015/04/Food-from-My-Kitchen-1-230x150.jpg" alt="Mac And Cheese">
-					</a>
-				</div>
-				<div class="information">
-					<h3><a href="#">Mac and Cheese</a></h3>
-					<p>by <a href="#">Hekiera Mareroa</a></p>
-					<hr>
-					<span><i class="fa fa-heart"></i> 32</span>
-					<span><i class="fa fa-comment"></i> 1</span>
-					<span class="right"><i class="fa fa-clock-o"></i> 30M</span>
-				</div>
-			</li>
-			<li>
-				<div class="thumbnail">
-					<a href="#">
-						<img src="http://extrawallpaper.com/wp-content/uploads/2014/11/Best-top-desktop-food-wallpapers-hd-food-wallpaper-food-pictures-image-photo-1-230x150.jpg" alt="Mac And Cheese">
-					</a>
-				</div>
-				<div class="information">
-					<h3><a href="#">Italiano Pizza</a></h3>
-					<p>by <a href="#">Hekiera Mareroa</a></p>
-					<hr>
-					<span><i class="fa fa-heart"></i> 32</span>
-					<span><i class="fa fa-comment"></i> 1</span>
-					<span class="right"><i class="fa fa-clock-o"></i> 30M</span>
-				</div>
-			</li>
-			<li>
-				<div class="thumbnail">
-					<a href="#">
-						<img src="http://www.coolfoodideas.com/wp-content/uploads/2013/08/greek-salad-recipe-cool-food-ideas-ft-230x150.jpg" alt="Mac And Cheese">
-					</a>
-				</div>
-				<div class="information">
-					<h3><a href="#">Feda cheese salad</a></h3>
-					<p>by <a href="#">Hekiera Mareroa</a></p>
-					<hr>
-					<span><i class="fa fa-heart"></i> 32</span>
-					<span><i class="fa fa-comment"></i> 1</span>
-					<span class="right"><i class="fa fa-clock-o"></i> 30M</span>
-				</div>
-			</li>
-			<li>
-				<div class="thumbnail">
-					<a href="#">
-						<img src="http://extrawallpaper.com/wp-content/uploads/2014/11/best-berry-drink-food-red-230x150.jpg" alt="Mac And Cheese">
-					</a>
-				</div>
-				<div class="information">
-					<h3><a href="#">Strawberry drink</a></h3>
-					<p>by <a href="#">Hekiera Mareroa</a></p>
-					<hr>
-					<span><i class="fa fa-heart"></i> 32</span>
-					<span><i class="fa fa-comment"></i> 1</span>
-					<span class="right"><i class="fa fa-clock-o"></i> 30M</span>
-				</div>
-			</li>
-			<li>
-				<div class="thumbnail">
-					<a href="#">
-						<img src="http://c0.thejournal.ie/media/2015/06/fast-food-ireland-230x150.jpg" alt="Mac And Cheese">
-					</a>
-				</div>
-				<div class="information">
-					<h3><a href="#">Hamburger</a></h3>
-					<p>by <a href="#">Hekiera Mareroa</a></p>
-					<hr>
-					<span><i class="fa fa-heart"></i> 32</span>
-					<span><i class="fa fa-comment"></i> 1</span>
-					<span class="right"><i class="fa fa-clock-o"></i> 30M</span>
-				</div>
-			</li>
+			<?php
+				// Get all the latest deals
+				$result = $this->model->getRecipeCard();
+
+				// Loop through each result and display inside a list item
+				while( $row = $result->fetch_assoc() ) {
+					echo 	'<li>
+								<div class="thumbnail">
+									<a href="index.php?page=recipe&recipeid='.$row['recipe_id'].'">
+										<img src="img/recipes/thumbnail/'.$row['recipe_image'].'" alt="Mac And Cheese">
+									</a>
+								</div>';
+					echo 		'<div class="information">
+									<h3><a href="index.php?page=recipe&recipeid='.$row['recipe_id'].'">'.$row['title'].'</a></h3>
+									<p>by <a href="index.php?page=profile&user='.$row['username'].'">'.$row['first_name'].' '.$row['last_name'].'</a></p>
+									<hr>
+									<div class="left">
+										<span class="favorite"></span>
+										<span class="numbers">15</span>
+									</div>
+									<div class="left">
+										<span class="comments"></span>
+										<span class="numbers">5</span>
+									</div>
+									<div class="right">
+										<span class="time"></span>
+										<span class="numbers">'.$row['cook_time'].'</span>
+									</div>
+								</div>
+							</li>';
+				}
+
+			?>
+
 		</ul>
 		<div class="pages">
 			<ol>

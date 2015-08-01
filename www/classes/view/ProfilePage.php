@@ -8,7 +8,6 @@ class ProfilePage extends Page {
 		# Profile
 		include 'parts/profile.php';
 		# Work
-		include 'parts/search-result.php';
 
 	}
 

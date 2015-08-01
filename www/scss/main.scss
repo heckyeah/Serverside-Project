@@ -29,20 +29,24 @@ nav {
 	.container {
 		width: 1000px;
 		margin: 0 auto;
+		position: relative;
 		ul {
-			li {
+			.nav_menu {
 				float: left;
 				display: block;
 				height: 50px;
 				&:hover {
 					background-color: $offColourHover;
 				}
+				&:hover > ul {
+					display: block;
+				}
 				a {
 					color: #fff;
 					text-decoration: none;
 					img {
 						float: left;
-						margin-top: 10px;
+						margin-top: 8px;
 						margin-left: 10px;
 						display: block;
 						-webkit-border-radius: 2px;
@@ -66,6 +70,29 @@ nav {
 						float: left;
 						i {
 							margin-left: 5px;
+						}
+					}
+				}
+				ul {
+					position: absolute;
+					top: 50px;
+					left: 0;
+					width: 200px;
+					z-index: 1000;
+					display: none;
+					li {
+						float: none;
+						width: 100%;
+						a {
+							line-height: 40px;
+							padding: 0 20px;
+							width: 100%;
+							background-color: #333;
+							display: block;
+							font-size: 0.875em;
+							&:hover {
+								background-color: $offColourHover;
+							}
 						}
 					}
 				}
@@ -137,6 +164,12 @@ nav {
 .recipe_container {
 	background-color: #fff;
 	padding: 10px;
+	-webkit-border-bottom-left-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	-moz-border-radius-bottomright: 3px;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
 	hr {
 		clear: both;
 		margin: 10px 0;
@@ -258,14 +291,6 @@ nav {
 	}
 }
 
-.recipe_container {
-	-webkit-border-bottom-left-radius: 3px;
-	-webkit-border-bottom-right-radius: 3px;
-	-moz-border-radius-bottomleft: 3px;
-	-moz-border-radius-bottomright: 3px;
-	border-bottom-left-radius: 3px;
-	border-bottom-right-radius: 3px;
-}
 
 article, .sort_panel, .recipe_contaier, .recipe_header {
 	width: 1000px;
@@ -390,6 +415,84 @@ footer {
 	}
 }
 
+
+.add_recipe_container {
+	background-color: #fff;
+	border-radius: 3px;
+	width: 1000px;
+	margin: 20px auto;
+	padding: 10px;
+	box-shadow: 0px 0px 2px #666;
+	@include clearfix;
+	.add_recipe {
+		width: 100%;
+		h3 {
+			font-size: 1.7em;
+			font-weight: bold;
+			padding: 10px;
+			clear: both;
+		}
+		.add_recipe_forth {
+			width: 33.3%;
+		}
+		.add_recipe_half {
+			width: 50%;
+		}
+		.add_recipe_full {
+			width: 100%;
+			clear: both;
+		}
+		.add_recipe_forth, .add_recipe_half, .add_recipe_full {
+			float: left;
+			padding: 10px;
+			@include clearfix;
+			label {
+				display: inline-block;
+				font-weight: bold;
+				font-size: 0.775em;
+				float: left;
+				margin-top: 10px;
+			}
+			a {
+				width: 100%;
+				display: block;
+				text-align: center;
+				float: left;
+			}
+
+			input[type='button'] {
+				margin: 30px auto;
+				display: block;
+				clear: both;
+			}
+			input[type='text'], input[type='file'] {
+				width: 100%;
+				padding: 10px;
+				margin: 10px 0;
+			}
+			input[type='file'] {
+				background-color: $thirdColour;
+				color: #fff;
+			}
+			select {
+				width: 100%;
+				padding: 10px;
+				margin: 10px 0;
+				float: left;
+			}
+			textarea {
+				width: 100%;
+				height: 200px;
+				margin: 10px 0;
+				padding: 10px;
+			}
+		}
+	}
+}
+
+
+// All around assets
+
 .btn {
 	color: #fff;
 	padding: 10px 20px;
@@ -403,9 +506,49 @@ footer {
 	}
 }
 
+.btn-left {
+	color: #fff;
+	padding: 10px 20px;
+	background-color: #43AC6A;
+	text-decoration: none;
+	font-size: 0.875em;
+	border: none;
+	border-bottom-left-radius: 3px;
+	border-top-left-radius: 3px;
+	&:hover {
+		background-color: $offColour;
+	}
+}
+.btn-right {
+	color: #fff;
+	padding: 10px 20px;
+	background-color: #f04124;
+	text-decoration: none;
+	font-size: 0.875em;
+	border: none;
+	border-bottom-right-radius: 3px;
+	border-top-right-radius: 3px;
+	&:hover {
+		background-color: $offColour;
+	}
+}
+
+.btn-remove {
+	color: #f04124;
+	text-decoration: none;
+	font-size: 1.5em;
+	border: none;
+	line-height: 36px;
+    margin: 10px 15px;
+    &:hover {
+		color: $offColour;
+	}
+}
+
 .favorite {
 	background-image: url(../img/assets/icons.png);
 	background-position: 0px 0px;
+	background-repeat: no-repeat;
 	width: 23px;
 	height: 19px;
 	display: block;
@@ -414,7 +557,8 @@ footer {
 
 .comments {
 	background-image: url(../img/assets/icons.png);
-	background-position: 32px 0px;
+	background-position: -23px 0px;
+	background-repeat: no-repeat;
 	width: 20px;
 	height: 19px;
 	display: block;
@@ -423,11 +567,23 @@ footer {
 
 .time {
 	background-image: url(../img/assets/icons.png);
-	background-position: 12px 0px;
+	background-position: -43px 0px;
+	background-repeat: no-repeat;
 	width: 12px;
 	height: 19px;
 	display: block;
 	float: left;
+}
+
+.error_message {
+	display: none;
+	clear: both;
+	margin: 10px 0;
+	background-color: #f04124;
+	font-size: 0.775em;
+	color: #fff;
+	padding: 10px;
+	@include roundcorner;
 }
 
 @include modal;
