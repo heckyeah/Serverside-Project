@@ -169,8 +169,7 @@ nav {
       float: right;
       height: 50px; }
       nav .container .logo a img {
-        display: block;
-        padding: 8px; }
+        display: block; }
 
 .banner {
   position: relative;
@@ -354,72 +353,15 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
     content: "";
     display: table;
     clear: both; }
-  article ul:after, .sort_panel ul:after, .recipe_contaier ul:after, .recipe_header ul:after {
-    content: "";
-    display: table;
-    clear: both; }
+  @media only screen and (max-width: 1020px) {
+    article, .sort_panel, .recipe_contaier, .recipe_header {
+      width: 750px; } }
+  @media only screen and (max-width: 770px) {
+    article, .sort_panel, .recipe_contaier, .recipe_header {
+      width: 500px; } }
   @media only screen and (max-width: 520px) {
-    article ul, .sort_panel ul, .recipe_contaier ul, .recipe_header ul {
-      display: block;
-      margin: 0 auto;
-      width: 230px; } }
-  article ul li, .sort_panel ul li, .recipe_contaier ul li, .recipe_header ul li {
-    width: 230px;
-    background-color: #333;
-    box-shadow: 0px 0px 2px #666;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    float: left;
-    margin: 10px; }
-    article ul li:after, .sort_panel ul li:after, .recipe_contaier ul li:after, .recipe_header ul li:after {
-      content: "";
-      display: table;
-      clear: both; }
-    article ul li .thumbnail, .sort_panel ul li .thumbnail, .recipe_contaier ul li .thumbnail, .recipe_header ul li .thumbnail {
-      border-bottom: 2px solid #686868; }
-      article ul li .thumbnail img, .sort_panel ul li .thumbnail img, .recipe_contaier ul li .thumbnail img, .recipe_header ul li .thumbnail img {
-        display: block;
-        -webkit-border-top-left-radius: 3px;
-        -webkit-border-top-right-radius: 3px;
-        -moz-border-radius-topleft: 3px;
-        -moz-border-radius-topright: 3px;
-        border-top-left-radius: 3px;
-        border-top-right-radius: 3px; }
-    article ul li .information, .sort_panel ul li .information, .recipe_contaier ul li .information, .recipe_header ul li .information {
-      padding: 10px; }
-      article ul li .information h3, .sort_panel ul li .information h3, .recipe_contaier ul li .information h3, .recipe_header ul li .information h3 {
-        font-weight: bold;
-        color: #ccc;
-        margin-bottom: 20px; }
-        article ul li .information h3 a, .sort_panel ul li .information h3 a, .recipe_contaier ul li .information h3 a, .recipe_header ul li .information h3 a {
-          text-decoration: none;
-          color: #ccc; }
-          article ul li .information h3 a:hover, .sort_panel ul li .information h3 a:hover, .recipe_contaier ul li .information h3 a:hover, .recipe_header ul li .information h3 a:hover {
-            text-decoration: underline; }
-      article ul li .information p, .sort_panel ul li .information p, .recipe_contaier ul li .information p, .recipe_header ul li .information p {
-        color: #ccc;
-        font-size: 0.775em;
-        margin-bottom: 10px; }
-        article ul li .information p a, .sort_panel ul li .information p a, .recipe_contaier ul li .information p a, .recipe_header ul li .information p a {
-          color: #f06d06;
-          text-decoration: none;
-          font-style: italic; }
-          article ul li .information p a:hover, .sort_panel ul li .information p a:hover, .recipe_contaier ul li .information p a:hover, .recipe_header ul li .information p a:hover {
-            text-decoration: underline; }
-      article ul li .information hr, .sort_panel ul li .information hr, .recipe_contaier ul li .information hr, .recipe_header ul li .information hr {
-        border: none;
-        border-bottom: 1px solid #686868;
-        margin-bottom: 5px; }
-      article ul li .information span, .sort_panel ul li .information span, .recipe_contaier ul li .information span, .recipe_header ul li .information span {
-        padding: 5px;
-        color: #ccc;
-        font-size: 0.775em;
-        vertical-align: text-top;
-        float: left;
-        margin-bottom: 5px; }
-        article ul li .information span i, .sort_panel ul li .information span i, .recipe_contaier ul li .information span i, .recipe_header ul li .information span i {
-          font-size: 1.1em; }
+    article, .sort_panel, .recipe_contaier, .recipe_header {
+      width: 100%; } }
   article .pages, .sort_panel .pages, .recipe_contaier .pages, .recipe_header .pages {
     padding: 0 10px;
     margin: 20px; }
@@ -607,15 +549,72 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
           article .profile_container .cover .profile_details_container .profile_details span, .sort_panel .profile_container .cover .profile_details_container .profile_details span, .recipe_contaier .profile_container .cover .profile_details_container .profile_details span, .recipe_header .profile_container .cover .profile_details_container .profile_details span {
             color: #fff;
             text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); }
-  @media only screen and (max-width: 1020px) {
-    article, .sort_panel, .recipe_contaier, .recipe_header {
-      width: 750px; } }
-  @media only screen and (max-width: 770px) {
-    article, .sort_panel, .recipe_contaier, .recipe_header {
-      width: 500px; } }
+  article ul:after, .sort_panel ul:after, .recipe_contaier ul:after, .recipe_header ul:after {
+    content: "";
+    display: table;
+    clear: both; }
   @media only screen and (max-width: 520px) {
-    article, .sort_panel, .recipe_contaier, .recipe_header {
-      width: 100%; } }
+    article ul, .sort_panel ul, .recipe_contaier ul, .recipe_header ul {
+      display: block;
+      margin: 0 auto;
+      width: 230px; } }
+  article ul li, .sort_panel ul li, .recipe_contaier ul li, .recipe_header ul li {
+    width: 230px;
+    background-color: #333;
+    box-shadow: 0px 0px 2px #666;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    float: left;
+    margin: 10px; }
+    article ul li:after, .sort_panel ul li:after, .recipe_contaier ul li:after, .recipe_header ul li:after {
+      content: "";
+      display: table;
+      clear: both; }
+    article ul li .thumbnail, .sort_panel ul li .thumbnail, .recipe_contaier ul li .thumbnail, .recipe_header ul li .thumbnail {
+      border-bottom: 2px solid #686868; }
+      article ul li .thumbnail img, .sort_panel ul li .thumbnail img, .recipe_contaier ul li .thumbnail img, .recipe_header ul li .thumbnail img {
+        display: block;
+        -webkit-border-top-left-radius: 3px;
+        -webkit-border-top-right-radius: 3px;
+        -moz-border-radius-topleft: 3px;
+        -moz-border-radius-topright: 3px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px; }
+    article ul li .information, .sort_panel ul li .information, .recipe_contaier ul li .information, .recipe_header ul li .information {
+      padding: 10px; }
+      article ul li .information h3, .sort_panel ul li .information h3, .recipe_contaier ul li .information h3, .recipe_header ul li .information h3 {
+        font-weight: bold;
+        color: #ccc;
+        margin-bottom: 20px; }
+        article ul li .information h3 a, .sort_panel ul li .information h3 a, .recipe_contaier ul li .information h3 a, .recipe_header ul li .information h3 a {
+          text-decoration: none;
+          color: #ccc; }
+          article ul li .information h3 a:hover, .sort_panel ul li .information h3 a:hover, .recipe_contaier ul li .information h3 a:hover, .recipe_header ul li .information h3 a:hover {
+            text-decoration: underline; }
+      article ul li .information p, .sort_panel ul li .information p, .recipe_contaier ul li .information p, .recipe_header ul li .information p {
+        color: #ccc;
+        font-size: 0.775em;
+        margin-bottom: 10px; }
+        article ul li .information p a, .sort_panel ul li .information p a, .recipe_contaier ul li .information p a, .recipe_header ul li .information p a {
+          color: #f06d06;
+          text-decoration: none;
+          font-style: italic; }
+          article ul li .information p a:hover, .sort_panel ul li .information p a:hover, .recipe_contaier ul li .information p a:hover, .recipe_header ul li .information p a:hover {
+            text-decoration: underline; }
+      article ul li .information hr, .sort_panel ul li .information hr, .recipe_contaier ul li .information hr, .recipe_header ul li .information hr {
+        border: none;
+        border-bottom: 1px solid #686868;
+        margin-bottom: 5px; }
+      article ul li .information span, .sort_panel ul li .information span, .recipe_contaier ul li .information span, .recipe_header ul li .information span {
+        padding: 5px;
+        color: #ccc;
+        font-size: 0.775em;
+        vertical-align: text-top;
+        float: left;
+        margin-bottom: 5px; }
+        article ul li .information span i, .sort_panel ul li .information span i, .recipe_contaier ul li .information span i, .recipe_header ul li .information span i {
+          font-size: 1.1em; }
   article .recipe_video_section, .sort_panel .recipe_video_section, .recipe_contaier .recipe_video_section, .recipe_header .recipe_video_section {
     padding: 10px; }
     article .recipe_video_section .video_container, .sort_panel .recipe_video_section .video_container, .recipe_contaier .recipe_video_section .video_container, .recipe_header .recipe_video_section .video_container {
