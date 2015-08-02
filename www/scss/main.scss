@@ -30,68 +30,74 @@ nav {
 		width: 1000px;
 		margin: 0 auto;
 		position: relative;
-		ul {
-			.nav_menu {
-				float: left;
-				display: block;
-				height: 50px;
-				&:hover {
-					background-color: $offColourHover;
-				}
-				&:hover > ul {
+		@include clearfix;
+		.account_drop {
+			float: left;
+			ul {
+				width: 100%;
+				position: relative;
+				@include clearfix;
+				background-color: $offColour;
+				.nav_menu {
+					float: left;
 					display: block;
-				}
-				a {
-					color: #fff;
-					text-decoration: none;
-					img {
-						float: left;
-						margin-top: 8px;
-						margin-left: 10px;
-						display: block;
-						-webkit-border-radius: 2px;
-						-webkit-border-top-right-radius: 7px;
-						-webkit-border-bottom-left-radius: 7px;
-						-moz-border-radius: 2px;
-						-moz-border-radius-topright: 7px;
-						-moz-border-radius-bottomleft: 7px;
-						border-radius: 2px;
-						border-top-right-radius: 7px;
-						border-bottom-left-radius: 7px;
-						border: 1px solid #fff;
-						box-shadow: 0px 0px 2px #666;
+					height: 50px;
+					&:hover {
+						background-color: $offColourHover;
 					}
-					span {
-						line-height: 50px;
-						height: 50px;
+					&:hover > ul {
 						display: block;
-						font-size: 0.875em;
-						padding: 0 10px;
-						float: left;
-						i {
-							margin-left: 5px;
+					}
+					a {
+						color: #fff;
+						text-decoration: none;
+						img {
+							float: left;
+							margin-top: 8px;
+							margin-left: 10px;
+							display: block;
+							-webkit-border-radius: 2px;
+							-webkit-border-top-right-radius: 7px;
+							-webkit-border-bottom-left-radius: 7px;
+							-moz-border-radius: 2px;
+							-moz-border-radius-topright: 7px;
+							-moz-border-radius-bottomleft: 7px;
+							border-radius: 2px;
+							border-top-right-radius: 7px;
+							border-bottom-left-radius: 7px;
+							border: 1px solid #fff;
+							box-shadow: 0px 0px 2px #666;
 						}
-					}
-				}
-				ul {
-					position: absolute;
-					top: 50px;
-					left: 0;
-					width: 200px;
-					z-index: 1000;
-					display: none;
-					li {
-						float: none;
-						width: 100%;
-						a {
-							line-height: 40px;
-							padding: 0 20px;
-							width: 100%;
-							background-color: #333;
+						span {
+							line-height: 50px;
+							height: 50px;
 							display: block;
 							font-size: 0.875em;
-							&:hover {
-								background-color: $offColourHover;
+							padding: 0 10px;
+							float: left;
+							i {
+								margin-left: 5px;
+								padding: 0 6px;
+							}
+						}
+					}
+					ul {
+						position: absolute;
+						top: 50px;
+						left: 0;
+						z-index: 1000;
+						display: none;
+						background-color: #333;
+						li {
+							a {
+								line-height: 40px;
+								padding: 0 20px;
+								background-color: #333;
+								display: block;
+								font-size: 0.875em;
+								&:hover {
+									background-color: $thirdColour;
+								}
 							}
 						}
 					}
@@ -101,7 +107,6 @@ nav {
 		.search {
 			height: 50px;
 			float: left;
-			margin-left: 180px;
 			form {
 				margin: 0 auto;
 				@include clearfix;
@@ -158,6 +163,17 @@ nav {
 	form {
 		float: right;
 		padding: 0 10px 0 0;
+		select {
+			width: 150px;
+			margin: 0 10px;
+		}
+		span{
+			float: left;
+			margin: 0 10px;
+		}
+		input {
+			margin: 2px 0;
+		}
 	}
 }
 
@@ -308,6 +324,22 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
 	@include mobile {
 		width: 100%;
 	}
+	.recipe_video_section {
+		padding: 10px;
+		.video_container {
+			position: relative;
+			padding-bottom: 56.25%; /* 16:9 */
+			padding-top: 25px;
+			height: 0;
+			iframe {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
 	.chef_info {
 		position: relative;
 		img {
@@ -424,6 +456,12 @@ footer {
 	padding: 10px;
 	box-shadow: 0px 0px 2px #666;
 	@include clearfix;
+	@include tablet-landscape {
+		width: 500px;
+	}
+	@include mobile {
+		width: 100%;
+	}
 	.add_recipe {
 		width: 100%;
 		h3 {
@@ -432,11 +470,11 @@ footer {
 			padding: 10px;
 			clear: both;
 		}
-		.add_recipe_forth {
-			width: 33.3%;
-		}
 		.add_recipe_half {
 			width: 50%;
+			@include tablet-landscape {
+				width: 100%;
+			}
 		}
 		.add_recipe_full {
 			width: 100%;
@@ -479,12 +517,19 @@ footer {
 				padding: 10px;
 				margin: 10px 0;
 				float: left;
+				opacity: 0;
 			}
 			textarea {
 				width: 100%;
+				max-width: 100%;
 				height: 200px;
 				margin: 10px 0;
 				padding: 10px;
+			}
+			span.ui-selectmenu-button {
+				margin: 10px 0;
+				float: left;
+				font-size: 0.875em;
 			}
 		}
 	}
@@ -543,6 +588,9 @@ footer {
     &:hover {
 		color: $offColour;
 	}
+	@include mobile {
+		margin: 10px 5px;
+	}
 }
 
 .favorite {
@@ -585,5 +633,13 @@ footer {
 	padding: 10px;
 	@include roundcorner;
 }
+
+.overflow {
+    max-height: 300px;
+}
+
+.right { float:right;}
+.left { float:left;}
+
 
 @include modal;

@@ -1,20 +1,20 @@
 <div class="sort_panel">
 		<form action="">
-			<select>
+			<select class="select-menu">
 				<option value="1">Most Popular</option>
 				<option value="2">Most Viewed</option>
 			</select>
-			<select>
+			<select class="select-menu">
 				<option value="1">Feeds 1 - 2</option>
 				<option value="1">Feeds 3 - 4</option>
 				<option value="1">Feeds 5+</option>
 			</select>
-			<select>
+			<select class="select-menu">
 				<option value="1">0Min - 15Min</option>
 				<option value="1">15Min - 1Hour</option>
 				<option value="1">1Hour+</option>
 			</select>
-			<input type="submit" value="GO">
+			<input type="submit" class="btn" value="GO">
 		</form>
 	</div>
 

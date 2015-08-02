@@ -93,7 +93,14 @@
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dolorum minima accusantium, excepturi, ex rerum expedita tenetur quis, magnam sit voluptatibus perspiciatis velit commodi? Voluptas ipsam accusantium praesentium quia, sapiente.</p>
 		</div>
 	</div>
-<hr>
+	<hr>
+	<div class="recipe_video_section">
+		<h3>Video</h3>
+		<div class="video_container">
+			<iframe src="https://www.youtube.com/embed/VjtXnPgx_pY" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
+	<hr>
 	<div class="comment_section">
 		<div class="comments_user">
 			<img src="img/user/avatar/default.jpg" alt="">
