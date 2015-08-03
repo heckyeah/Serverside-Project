@@ -53,6 +53,36 @@ switch ( $pageSelect ) {
 		$page = new AddRecipePage( $model );
 	break;
 
+	// Login
+	case 'login':
+		# Require the Profile classes
+		require 'classes/view/LoginPage.php';
+		require 'classes/model/LoginModel.php';
+		# Connect to the page and model
+		$model = new LoginModel();
+		$page = new LoginPage( $model );
+	break;
+
+	// Logout
+	case 'logout':
+		# Require the Profile classes
+		require 'classes/view/LogoutPage.php';
+		require 'classes/model/LogoutModel.php';
+		# Connect to the page and model
+		$model = new LogoutModel();
+		$page = new LogoutPage( $model );
+	break;
+
+	// Register
+	case 'register':
+		# Require the Profile classes
+		require 'classes/view/RegisterPage.php';
+		require 'classes/model/RegisterModel.php';
+		# Connect to the page and model
+		$model = new RegisterModel();
+		$page = new RegisterPage( $model );
+	break;
+
 	// 404 Error page
 	default:
 		require 'classes/model/Error404Model.php';

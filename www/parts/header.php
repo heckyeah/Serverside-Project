@@ -18,12 +18,34 @@
 					<li class="nav_menu">
 						<a href="#">
 							<img src="img/user/avatar/default_icon.jpg" alt="Hekiera Mareroa">
-							<span>Hekiera Mareroa <i class="fa fa-caret-down"></i></span>
+							<span><?php echo $text; ?><i class="fa fa-caret-down"></i></span>
 						</a>
 						<ul>
-							<li><a href="index.php?page=profile">My Profile</a></li>
-							<li><a href="index.php?page=addrecipe">Add Recipe</a></li>
-							<li><a href="index.php?page=adminpanel">Admin Panel</a></li>
+							<?php
+							    // If the user is not logged in
+							    if( !isset($_SESSION['username']) ) : ?>
+							    
+									<li><a href="index.php?page=register">Register</a></li>
+									<li><a href="index.php?page=login">Login</a></li>
+
+								<?php elseif ( isset($_SESSION['username']) && isset($_SESSION['privilege']) ) : ?>
+
+									<li><a href="index.php?page=profile">My Profile</a></li>
+									<li><a href="index.php?page=addrecipe">Add Recipe</a></li>
+
+									<?php if ( $_SESSION['privilege'] == 'admin') : ?>
+
+										<li><a href="index.php?page=account">Admin Panel</a></li>
+
+									<?php elseif ( $_SESSION['privilege'] == 'user') : ?>
+
+										<li><a href="index.php?page=account">User Panel</a></li>
+
+									<?php endif;  ?>
+
+									<li><a href="index.php?page=logout">Logout</a></li>
+						    	<?php endif;
+							?>
 						</ul>
 					</li>
 				</ul>

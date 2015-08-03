@@ -26,7 +26,7 @@ $( function() {
   //select the item i want to incrament
   var i = $('#ingredients select').size() + 1;
   var list = '<option selected="selected" disabled>Select a Ingredient</option><optgroup label="Meat"><option value="beef_patty">Beef Patty</option><option value="beef_mince">Beef Mince</option><option value="beef_steak">Beef Steak</option><option value="chicken_patty">Chicken Patty</option><option value="chicken_mince">Chicken Mince</option><option value="chicken_steak">Chicken Steak</option><option value="pork_bones">Pork Bones</option><option value="bacon">Bacon</option><option value="ham">Ham</option><option value="Eggs">Eggs</option></optgroup><optgroup label="Vegetables"><option value="tomatoes">Tomatoes</option><option value="onions">Onions</option><option value="broccoli">Broccoli</option><option value="carrots">Carrots</option><option value="corn">Corn</option><option value="lettuce">Lettuce</option></optgroup><optgroup label="Dairy"><option value="Milk">Milk</option><option value="Cheese">Cheese</option><option value="Cream">Cream</option><option value="Yogurt">Yogurt</option></optgroup><optgroup label="Starch"><option value="Bread">Bread</option><option value="Potatoes">Potatoes</option><option value="Pasta">Pasta</option><option value="Rice">Rice</option></optgroup>'
-  
+
   // lisen for clicks on the add button
   $('#add').live('click', function() {
     // if the amount of added items exceeds capacity

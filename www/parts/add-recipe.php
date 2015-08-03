@@ -31,42 +31,23 @@
 					<span>
 						<select class="ingredients select-menu">
 							<option disabled selected="selected">Select a Ingredient</option>
-							<optgroup label="Meat">
-								<option value="beef_patty">Beef Patty</option>
-								<option value="beef_mince">Beef Mince</option>
-								<option value="beef_steak">Beef Steak</option>
-								<option value="chicken_patty">Chicken Patty</option>
-								<option value="chicken_mince">Chicken Mince</option>
-								<option value="chicken_steak">Chicken Steak</option>
-								<option value="pork_bones">Pork Bones</option>
-								<option value="bacon">Bacon</option>
-								<option value="ham">Ham</option>
-								<option value="Eggs">Eggs</option>
-							</optgroup>
-							<optgroup label="Vegetables">
-								<option value="tomatoes">Tomatoes</option>
-								<option value="onions">Onions</option>
-								<option value="broccoli">Broccoli</option>
-								<option value="carrots">Carrots</option>
-								<option value="corn">Corn</option>
-								<option value="lettuce">Lettuce</option>
-							</optgroup>
-							<optgroup label="Dairy">
-								<option value="Milk">Milk</option>
-								<option value="Cheese">Cheese</option>
-								<option value="Cream">Cream</option>
-								<option value="Yogurt">Yogurt</option>
-							</optgroup>
-							<optgroup label="Starch">
-								<option value="Bread">Bread</option>
-								<option value="Potatoes">Potatoes</option>
-								<option value="Pasta">Pasta</option>
-								<option value="Rice">Rice</option>
-							</optgroup>
+								<?php 
+								// Get all the latest deals
+								$result = $this->model->getIngredients();
+
+								// Loop through each result and display inside a list item
+								while( $row = $result->fetch_assoc() ) {
+								 
+									 	echo '<optgroup label="'.$row['type'].'">';
+									 	echo '<option value="'.$row['ingredient_id'].'">';
+										echo $row['ingredient_name'];
+										echo '</option></optgroup>';
+								}
+								?>
 						</select>
 					</span>
 				</div>
-				<span class="error_message">Sorry you are past the limit of ingredients that we allow you to have.</span>
+				<span class="error_message js">Sorry you are past the limit of ingredients that we allow you to have.</span>
 				<a href="#" id="add" class="btn">Add +</a>
 			</div>
 			<div class="add_recipe_full">
