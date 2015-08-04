@@ -37,7 +37,7 @@ class LoginModel extends Model {
 			$_SESSION['user_id'] = $data['user_id'];
 
 			// Redirect the user
-			header('Location: index.php?page=addrecipe');
+			header('Location: index.php?page=profile');
 
 		}
 

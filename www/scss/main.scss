@@ -791,10 +791,37 @@ footer {
 	}
 }
 
+.account_container {
+	width: 1000px;
+	.seperate {
+		width: 100%;
+		clear: both;
+		float: left;
+	}
+	.one {
+		width: 100%;
+		padding: 0 10px;
+		float: left;
+	}
+	.two {
+		width: 50%;
+		padding: 0 10px;
+		float: left;
+	}
+	.three {
+		width: 33.3%;
+		padding: 0 10px;
+		float: left;
+	}
+
+}
+
 .register_container, .login_container {
+	width: 500px;
+}
+.register_container, .login_container, .account_container {
 	background-color: #fff;
 	border-radius: 3px;
-	width: 500px;
 	margin: 50px auto;
 	padding: 10px;
 	box-shadow: 0px 0px 2px #666;
@@ -802,7 +829,42 @@ footer {
 	@include mobile {
 		width: 100%;
 	}
-	.register_form, .login_form {
+	.account_panel {
+		width: 230px;
+		padding: 10px;
+		float: left;
+		ul {
+			padding: 0 10px;
+			margin-bottom: 10px;
+			li {
+				margin-bottom: 2px;
+				a {
+					padding: 10px 15px;
+					background-color: $mainColour;
+					display: block;
+					font-size: 0.775em;
+					color: $offColour;
+					text-decoration: none;
+					&:hover {
+						background-color: #fff;
+					}
+				}
+				h2 {
+					display: block;
+					background-color: $thirdColour;
+					padding: 10px;
+					color: #fff;
+					font-weight: bold;
+					font-size: 0.875em;
+				}
+			}
+		}
+	}
+	.account_form {
+		width: 750px;
+		float: left;
+	}
+	.register_form, .login_form, .account_form {
 		padding: 10px;
 		h1 {
 			font-size: 1.7em;
@@ -814,9 +876,20 @@ footer {
 			display: block;
 			float: left;
 			margin-top: 10px;
+			font-weight: bold;
+			font-size: 0.775em;
 		}
 		input {
 			width: 100%;
+			display: block;
+			float: left;
+			padding: 10px;
+			margin: 10px 0;
+		}
+		textarea {
+			max-width: 100%;
+			width: 100%;
+			height: 200px;
 			display: block;
 			float: left;
 			padding: 10px;

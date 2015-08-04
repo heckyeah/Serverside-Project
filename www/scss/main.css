@@ -805,33 +805,92 @@ footer {
         float: left;
         font-size: 0.875em; }
 
+.account_container {
+  width: 1000px; }
+  .account_container .seperate {
+    width: 100%;
+    clear: both;
+    float: left; }
+  .account_container .one {
+    width: 100%;
+    padding: 0 10px;
+    float: left; }
+  .account_container .two {
+    width: 50%;
+    padding: 0 10px;
+    float: left; }
+  .account_container .three {
+    width: 33.3%;
+    padding: 0 10px;
+    float: left; }
+
 .register_container, .login_container {
+  width: 500px; }
+
+.register_container, .login_container, .account_container {
   background-color: #fff;
   border-radius: 3px;
-  width: 500px;
   margin: 50px auto;
   padding: 10px;
   box-shadow: 0px 0px 2px #666; }
-  .register_container:after, .login_container:after {
+  .register_container:after, .login_container:after, .account_container:after {
     content: "";
     display: table;
     clear: both; }
   @media only screen and (max-width: 520px) {
-    .register_container, .login_container {
+    .register_container, .login_container, .account_container {
       width: 100%; } }
-  .register_container .register_form, .register_container .login_form, .login_container .register_form, .login_container .login_form {
+  .register_container .account_panel, .login_container .account_panel, .account_container .account_panel {
+    width: 230px;
+    padding: 10px;
+    float: left; }
+    .register_container .account_panel ul, .login_container .account_panel ul, .account_container .account_panel ul {
+      padding: 0 10px;
+      margin-bottom: 10px; }
+      .register_container .account_panel ul li, .login_container .account_panel ul li, .account_container .account_panel ul li {
+        margin-bottom: 2px; }
+        .register_container .account_panel ul li a, .login_container .account_panel ul li a, .account_container .account_panel ul li a {
+          padding: 10px 15px;
+          background-color: #e6e6e6;
+          display: block;
+          font-size: 0.775em;
+          color: #333333;
+          text-decoration: none; }
+          .register_container .account_panel ul li a:hover, .login_container .account_panel ul li a:hover, .account_container .account_panel ul li a:hover {
+            background-color: #fff; }
+        .register_container .account_panel ul li h2, .login_container .account_panel ul li h2, .account_container .account_panel ul li h2 {
+          display: block;
+          background-color: #f06d06;
+          padding: 10px;
+          color: #fff;
+          font-weight: bold;
+          font-size: 0.875em; }
+  .register_container .account_form, .login_container .account_form, .account_container .account_form {
+    width: 750px;
+    float: left; }
+  .register_container .register_form, .register_container .login_form, .register_container .account_form, .login_container .register_form, .login_container .login_form, .login_container .account_form, .account_container .register_form, .account_container .login_form, .account_container .account_form {
     padding: 10px; }
-    .register_container .register_form h1, .register_container .login_form h1, .login_container .register_form h1, .login_container .login_form h1 {
+    .register_container .register_form h1, .register_container .login_form h1, .register_container .account_form h1, .login_container .register_form h1, .login_container .login_form h1, .login_container .account_form h1, .account_container .register_form h1, .account_container .login_form h1, .account_container .account_form h1 {
       font-size: 1.7em;
       font-weight: bold;
       margin-bottom: 10px; }
-    .register_container .register_form label, .register_container .login_form label, .login_container .register_form label, .login_container .login_form label {
+    .register_container .register_form label, .register_container .login_form label, .register_container .account_form label, .login_container .register_form label, .login_container .login_form label, .login_container .account_form label, .account_container .register_form label, .account_container .login_form label, .account_container .account_form label {
       width: 100%;
       display: block;
       float: left;
-      margin-top: 10px; }
-    .register_container .register_form input, .register_container .login_form input, .login_container .register_form input, .login_container .login_form input {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 0.775em; }
+    .register_container .register_form input, .register_container .login_form input, .register_container .account_form input, .login_container .register_form input, .login_container .login_form input, .login_container .account_form input, .account_container .register_form input, .account_container .login_form input, .account_container .account_form input {
       width: 100%;
+      display: block;
+      float: left;
+      padding: 10px;
+      margin: 10px 0; }
+    .register_container .register_form textarea, .register_container .login_form textarea, .register_container .account_form textarea, .login_container .register_form textarea, .login_container .login_form textarea, .login_container .account_form textarea, .account_container .register_form textarea, .account_container .login_form textarea, .account_container .account_form textarea {
+      max-width: 100%;
+      width: 100%;
+      height: 200px;
       display: block;
       float: left;
       padding: 10px;

@@ -28,7 +28,7 @@
 									<li><a href="index.php?page=register">Register</a></li>
 									<li><a href="index.php?page=login">Login</a></li>
 
-								<?php elseif ( isset($_SESSION['username']) && isset($_SESSION['privilege']) ) : ?>
+									<?php elseif ( isset($_SESSION['username']) && isset($_SESSION['privilege']) ) : ?>
 
 									<li><a href="index.php?page=profile">My Profile</a></li>
 									<li><a href="index.php?page=addrecipe">Add Recipe</a></li>

@@ -83,6 +83,16 @@ switch ( $pageSelect ) {
 		$page = new RegisterPage( $model );
 	break;
 
+	// Account
+	case 'account':
+		# Require the Profile classes
+		require 'classes/view/AccountPage.php';
+		require 'classes/model/AccountModel.php';
+		# Connect to the page and model
+		$model = new AccountModel();
+		$page = new AccountPage( $model );
+	break;
+
 	// 404 Error page
 	default:
 		require 'classes/model/Error404Model.php';
