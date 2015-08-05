@@ -29,10 +29,20 @@
 			<div class="profile_details_container">
 				<img src="img/user/avatar/default.jpg" alt="My Profile">
 				<div class="profile_details">
-					<a href="#"><h3>Hekiera Mareroa</h3></a>
+					<a href="#"><h3><?php echo $this->model->username; ?></h3></a>
 					<span>Master Chef</span>
 				</div>
 			</div>
 		</div>
 	</div>
+</article>
+
+<article>
+	<ul>
+		<?php
+			// Get all the latest recipes by the user
+			$result = $this->model->getProfileRecipeCard();
+			include 'parts/recipe-card.php';
+		?>
+	</ul>
 </article>

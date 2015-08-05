@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title><?php echo $title; ?></title>
+	<title><?php echo $title; if ($_GET['page'] == 'profile') { echo $username; } ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="<?php echo $description; ?>">
 	<link rel="stylesheet" href="scss/main.css">
@@ -57,7 +57,7 @@
 				</form>	
 			</div>
 			<div class="logo">
-				<a href="index.php"><img src="img/logo.jpg" alt=""></a>
+				<a href="index.php"><img src="img/logo.png" alt=""></a>
 			</div>
 		</div>
 	</nav>

@@ -48,4 +48,28 @@ class Model {
 
 	}
 
+	protected function filter($value) {
+		return $this->dbc->real_escape_string( $value );
+	}
+
+	public function getAdditionalInfo() {
+		$userID = $_SESSION['user_id'];
+
+		$sql ="	SELECT first_name, last_name, bio, profile_image, username
+				FROM additional_info
+				JOIN users
+				ON users.user_id = additional_info.user_id
+				WHERE additional_info.user_id = $userID";
+
+		// Run the aql and capture it
+		$result = $this->dbc->query($sql);
+
+		// Turn it into an associative array and capture
+		$profileData = $result->fetch_assoc();
+
+		$this->username 	= $profileData['username'];
+		$this->profileImage = $profileData['profile_image'];
+
+	}
+
 }

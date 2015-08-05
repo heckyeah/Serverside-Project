@@ -622,6 +622,7 @@ button.ui-button::-moz-focus-inner {
 
 .ui-selectmenu-optgroup {
 	background-color: #e6e6e6;
+	text-transform: capitalize;
 }
 
 .ui-selectmenu-menu .ui-menu .ui-selectmenu-optgroup {

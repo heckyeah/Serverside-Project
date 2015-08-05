@@ -47,8 +47,6 @@
 						</select>
 					</span>
 				</div>
-				<span class="error_message js">Sorry you are past the limit of ingredients that we allow you to have.</span>
-				<a href="#" id="add" class="btn">Add +</a>
 			</div>
 			<div class="add_recipe_full">
 				<input type="button" value="Submit Recipe" class="btn">

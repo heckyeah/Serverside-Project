@@ -1,25 +1,26 @@
 <div class="account_container">
 	<div class="account_panel">
-		<ul>
-			<li><h2>My Details</h2></li>
-			<li><a href="index.php?page=account">Home</a></li>
-			<li><a href="index.php?page=account&editdetails">Edit Details</a></li>
-		</ul>
-		<ul>
-			<li><h2>Recipes</h2></li>
-			<li><a href="#">Add Recipe</a></li>
-			<li><a href="#">Edit Recipes</a></li>
-		</ul>
-		<ul>
-			<li><h2>Users</h2></li>
-			<li><a href="#">Deactivate User</a></li>
-			<li><a href="#">Promote User</a></li>
-		</ul>
+		<?php 
+			if ( $_SESSION['privilege'] == 'user' ) {
+
+				include 'parts/usercontrols.php';
+
+			}
+
+			if ( $_SESSION['privilege'] == 'admin' ) {
+
+				include 'parts/usercontrols.php';
+				include 'parts/admincontrols.php';
+
+			}
+		?>
 	</div>
 	<div class="account_form">
 		<?php 
 			if ( !$post == '') {
 				include $post;
+			} else {
+				echo 'error';
 			}
 		?>
 	</div>

@@ -58,7 +58,7 @@ body {
   font-family: arial; }
 
 nav {
-  background-color: #333333;
+  background-color: #333;
   box-shadow: 0px 0px 2px #666; }
   nav:after {
     content: "";
@@ -77,7 +77,7 @@ nav {
       nav .container .account_drop ul {
         width: 100%;
         position: relative;
-        background-color: #333333; }
+        background-color: #333; }
         nav .container .account_drop ul:after {
           content: "";
           display: table;
@@ -169,7 +169,8 @@ nav {
       float: right;
       height: 50px; }
       nav .container .logo a img {
-        display: block; }
+        display: block;
+        margin: 5px 0; }
 
 .banner {
   position: relative;
@@ -337,7 +338,7 @@ nav {
         width: 100%;
         border: none;
         padding: 10px 0;
-        background-color: #333333;
+        background-color: #333;
         color: #fff; }
         .recipe_container .recipe_email table tr:nth-last-child(1) td:nth-last-child(1) input:active, .recipe_container .recipe_directions table tr:nth-last-child(1) td:nth-last-child(1) input:active {
           background-color: #666; }
@@ -373,8 +374,8 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
         margin: 0 5px; }
         article .pages ol li a, .sort_panel .pages ol li a, .recipe_contaier .pages ol li a, .recipe_header .pages ol li a {
           padding: 5px 7px;
-          background-color: #333333;
-          color: #cccccc;
+          background-color: #333;
+          color: #ccc;
           text-decoration: none;
           font-size: 0.875em;
           -webkit-border-radius: 5px;
@@ -383,7 +384,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
           article .pages ol li a:hover, .sort_panel .pages ol li a:hover, .recipe_contaier .pages ol li a:hover, .recipe_header .pages ol li a:hover {
             background-color: #f06d06; }
   article .profile_container, .sort_panel .profile_container, .recipe_contaier .profile_container, .recipe_header .profile_container {
-    background-color: #333333;
+    background-color: #333;
     box-shadow: 0px 0px 2px #666;
     margin-top: 20px;
     -webkit-border-radius: 5px;
@@ -449,14 +450,14 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
             article .profile_container .cover .cover_change .message_container .message h3, .sort_panel .profile_container .cover .cover_change .message_container .message h3, .recipe_contaier .profile_container .cover .cover_change .message_container .message h3, .recipe_header .profile_container .cover .cover_change .message_container .message h3 {
               font-size: 1.5em;
               font-weight: bold;
-              color: #333333;
+              color: #333;
               margin-bottom: 10px; }
             article .profile_container .cover .cover_change .message_container .message .close, .sort_panel .profile_container .cover .cover_change .message_container .message .close, .recipe_contaier .profile_container .cover .cover_change .message_container .message .close, .recipe_header .profile_container .cover .cover_change .message_container .message .close {
               position: absolute;
               top: 20px;
               right: 20px; }
               article .profile_container .cover .cover_change .message_container .message .close a, .sort_panel .profile_container .cover .cover_change .message_container .message .close a, .recipe_contaier .profile_container .cover .cover_change .message_container .message .close a, .recipe_header .profile_container .cover .cover_change .message_container .message .close a {
-                color: #333333;
+                color: #333;
                 text-decoration: none; }
                 article .profile_container .cover .cover_change .message_container .message .close a:hover, .sort_panel .profile_container .cover .cover_change .message_container .message .close a:hover, .recipe_contaier .profile_container .cover .cover_change .message_container .message .close a:hover, .recipe_header .profile_container .cover .cover_change .message_container .message .close a:hover {
                   color: #f06d06; }
@@ -560,7 +561,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
       width: 230px; } }
   article ul li, .sort_panel ul li, .recipe_contaier ul li, .recipe_header ul li {
     width: 230px;
-    background-color: #333333;
+    background-color: #333;
     box-shadow: 0px 0px 2px #666;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -585,15 +586,15 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
       padding: 10px; }
       article ul li .information h3, .sort_panel ul li .information h3, .recipe_contaier ul li .information h3, .recipe_header ul li .information h3 {
         font-weight: bold;
-        color: #cccccc;
+        color: #ccc;
         margin-bottom: 20px; }
         article ul li .information h3 a, .sort_panel ul li .information h3 a, .recipe_contaier ul li .information h3 a, .recipe_header ul li .information h3 a {
           text-decoration: none;
-          color: #cccccc; }
+          color: #ccc; }
           article ul li .information h3 a:hover, .sort_panel ul li .information h3 a:hover, .recipe_contaier ul li .information h3 a:hover, .recipe_header ul li .information h3 a:hover {
             text-decoration: underline; }
       article ul li .information p, .sort_panel ul li .information p, .recipe_contaier ul li .information p, .recipe_header ul li .information p {
-        color: #cccccc;
+        color: #ccc;
         font-size: 0.775em;
         margin-bottom: 10px; }
         article ul li .information p a, .sort_panel ul li .information p a, .recipe_contaier ul li .information p a, .recipe_header ul li .information p a {
@@ -608,7 +609,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
         margin-bottom: 5px; }
       article ul li .information span, .sort_panel ul li .information span, .recipe_contaier ul li .information span, .recipe_header ul li .information span {
         padding: 5px;
-        color: #cccccc;
+        color: #ccc;
         font-size: 0.775em;
         vertical-align: text-top;
         float: left;
@@ -648,7 +649,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
       width: 100%; }
       article .chef_info .details_container .profile_details img, .sort_panel .chef_info .details_container .profile_details img, .recipe_contaier .chef_info .details_container .profile_details img, .recipe_header .chef_info .details_container .profile_details img {
         position: relative;
-        border: 5px solid #333333;
+        border: 5px solid #333;
         display: block;
         float: left;
         margin: 0 20px 20px 30px;
@@ -679,7 +680,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
         bottom: 0;
         left: 0;
         width: 100%;
-        background-color: #333333;
+        background-color: #333;
         padding: 10px 10px; }
         article .chef_info .details_container .recipe_details .icon_container, .sort_panel .chef_info .details_container .recipe_details .icon_container, .recipe_contaier .chef_info .details_container .recipe_details .icon_container, .recipe_header .chef_info .details_container .recipe_details .icon_container {
           float: right; }
@@ -699,7 +700,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
             article .chef_info .details_container .recipe_details .icon_container ul li .numbers, .sort_panel .chef_info .details_container .recipe_details .icon_container ul li .numbers, .recipe_contaier .chef_info .details_container .recipe_details .icon_container ul li .numbers, .recipe_header .chef_info .details_container .recipe_details .icon_container ul li .numbers {
               float: left;
               line-height: 19px;
-              color: #cccccc;
+              color: #ccc;
               font-size: 0.775em;
               padding-left: 5px;
               font-weight: bold; }
@@ -708,7 +709,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
   margin: 20px auto 0 auto; }
 
 footer {
-  background-color: #333333;
+  background-color: #333;
   height: 50px;
   margin-top: 20px; }
   footer ul {
@@ -720,7 +721,7 @@ footer {
       display: inline;
       margin-right: 20px; }
       footer ul li a {
-        color: #cccccc;
+        color: #ccc;
         text-decoration: none;
         font-weight: bold;
         font-size: 0.875em; }
@@ -809,8 +810,8 @@ footer {
   width: 1000px; }
   .account_container .seperate {
     width: 100%;
-    clear: both;
-    float: left; }
+    float: left;
+    clear: both; }
   .account_container .one {
     width: 100%;
     padding: 0 10px;
@@ -819,6 +820,10 @@ footer {
     width: 50%;
     padding: 0 10px;
     float: left; }
+    .account_container .two:after {
+      content: "";
+      display: table;
+      clear: both; }
   .account_container .three {
     width: 33.3%;
     padding: 0 10px;
@@ -830,7 +835,7 @@ footer {
 .register_container, .login_container, .account_container {
   background-color: #fff;
   border-radius: 3px;
-  margin: 50px auto;
+  margin: 20px auto;
   padding: 10px;
   box-shadow: 0px 0px 2px #666; }
   .register_container:after, .login_container:after, .account_container:after {
@@ -854,7 +859,7 @@ footer {
           background-color: #e6e6e6;
           display: block;
           font-size: 0.775em;
-          color: #333333;
+          color: #333;
           text-decoration: none; }
           .register_container .account_panel ul li a:hover, .login_container .account_panel ul li a:hover, .account_container .account_panel ul li a:hover {
             background-color: #fff; }
@@ -868,12 +873,25 @@ footer {
   .register_container .account_form, .login_container .account_form, .account_container .account_form {
     width: 750px;
     float: left; }
+  .register_container form:after, .login_container form:after, .account_container form:after {
+    content: "";
+    display: table;
+    clear: both; }
   .register_container .register_form, .register_container .login_form, .register_container .account_form, .login_container .register_form, .login_container .login_form, .login_container .account_form, .account_container .register_form, .account_container .login_form, .account_container .account_form {
     padding: 10px; }
     .register_container .register_form h1, .register_container .login_form h1, .register_container .account_form h1, .login_container .register_form h1, .login_container .login_form h1, .login_container .account_form h1, .account_container .register_form h1, .account_container .login_form h1, .account_container .account_form h1 {
       font-size: 1.7em;
       font-weight: bold;
       margin-bottom: 10px; }
+    .register_container .register_form .ui-selectmenu-button, .register_container .login_form .ui-selectmenu-button, .register_container .account_form .ui-selectmenu-button, .login_container .register_form .ui-selectmenu-button, .login_container .login_form .ui-selectmenu-button, .login_container .account_form .ui-selectmenu-button, .account_container .register_form .ui-selectmenu-button, .account_container .login_form .ui-selectmenu-button, .account_container .account_form .ui-selectmenu-button {
+      margin-top: 10px; }
+    .register_container .register_form .radio, .register_container .login_form .radio, .register_container .account_form .radio, .login_container .register_form .radio, .login_container .login_form .radio, .login_container .account_form .radio, .account_container .register_form .radio, .account_container .login_form .radio, .account_container .account_form .radio {
+      float: left;
+      display: block;
+      margin: 20px 10px;
+      font-size: 0.875em;
+      font-weight: normal;
+      width: 0; }
     .register_container .register_form label, .register_container .login_form label, .register_container .account_form label, .login_container .register_form label, .login_container .login_form label, .login_container .account_form label, .account_container .register_form label, .account_container .login_form label, .account_container .account_form label {
       width: 100%;
       display: block;
@@ -881,12 +899,42 @@ footer {
       margin-top: 10px;
       font-weight: bold;
       font-size: 0.775em; }
-    .register_container .register_form input, .register_container .login_form input, .register_container .account_form input, .login_container .register_form input, .login_container .login_form input, .login_container .account_form input, .account_container .register_form input, .account_container .login_form input, .account_container .account_form input {
+    .register_container .register_form select, .register_container .login_form select, .register_container .account_form select, .login_container .register_form select, .login_container .login_form select, .login_container .account_form select, .account_container .register_form select, .account_container .login_form select, .account_container .account_form select {
+      width: 100%;
+      display: none;
+      float: left;
+      padding: 10px;
+      margin: 10px 0; }
+    .register_container .register_form input[type="text"], .register_container .login_form input[type="text"], .register_container .account_form input[type="text"], .login_container .register_form input[type="text"], .login_container .login_form input[type="text"], .login_container .account_form input[type="text"], .account_container .register_form input[type="text"], .account_container .login_form input[type="text"], .account_container .account_form input[type="text"] {
       width: 100%;
       display: block;
       float: left;
       padding: 10px;
       margin: 10px 0; }
+    .register_container .register_form input[type="email"], .register_container .login_form input[type="email"], .register_container .account_form input[type="email"], .login_container .register_form input[type="email"], .login_container .login_form input[type="email"], .login_container .account_form input[type="email"], .account_container .register_form input[type="email"], .account_container .login_form input[type="email"], .account_container .account_form input[type="email"] {
+      width: 100%;
+      display: block;
+      float: left;
+      padding: 10px;
+      margin: 10px 0; }
+    .register_container .register_form input[type="password"], .register_container .login_form input[type="password"], .register_container .account_form input[type="password"], .login_container .register_form input[type="password"], .login_container .login_form input[type="password"], .login_container .account_form input[type="password"], .account_container .register_form input[type="password"], .account_container .login_form input[type="password"], .account_container .account_form input[type="password"] {
+      width: 100%;
+      display: block;
+      float: left;
+      padding: 10px;
+      margin: 10px 0; }
+    .register_container .register_form input[type="radio"], .register_container .login_form input[type="radio"], .register_container .account_form input[type="radio"], .login_container .register_form input[type="radio"], .login_container .login_form input[type="radio"], .login_container .account_form input[type="radio"], .account_container .register_form input[type="radio"], .account_container .login_form input[type="radio"], .account_container .account_form input[type="radio"] {
+      width: auto;
+      display: block;
+      float: left;
+      padding: 10px;
+      margin: 20px 0; }
+    .register_container .register_form input[type="file"], .register_container .login_form input[type="file"], .register_container .account_form input[type="file"], .login_container .register_form input[type="file"], .login_container .login_form input[type="file"], .login_container .account_form input[type="file"], .account_container .register_form input[type="file"], .account_container .login_form input[type="file"], .account_container .account_form input[type="file"] {
+      background-color: #f06d06;
+      margin: 10px 0;
+      padding: 10px;
+      width: 100%;
+      color: #fff; }
     .register_container .register_form textarea, .register_container .login_form textarea, .register_container .account_form textarea, .login_container .register_form textarea, .login_container .login_form textarea, .login_container .account_form textarea, .account_container .register_form textarea, .account_container .login_form textarea, .account_container .account_form textarea {
       max-width: 100%;
       width: 100%;
@@ -907,7 +955,7 @@ footer {
   -moz-border-radius: 5px;
   border-radius: 5px; }
   .btn:hover {
-    background-color: #333333; }
+    background-color: #333; }
 
 .btn-left {
   color: #fff;
@@ -919,7 +967,7 @@ footer {
   border-bottom-left-radius: 3px;
   border-top-left-radius: 3px; }
   .btn-left:hover {
-    background-color: #333333; }
+    background-color: #333; }
 
 .btn-right {
   color: #fff;
@@ -931,7 +979,7 @@ footer {
   border-bottom-right-radius: 3px;
   border-top-right-radius: 3px; }
   .btn-right:hover {
-    background-color: #333333; }
+    background-color: #333; }
 
 .btn-remove {
   color: #f04124;
@@ -941,7 +989,7 @@ footer {
   line-height: 36px;
   margin: 10px 15px; }
   .btn-remove:hover {
-    color: #333333; }
+    color: #333; }
   @media only screen and (max-width: 520px) {
     .btn-remove {
       margin: 10px 5px; } }
@@ -984,6 +1032,17 @@ footer {
   -moz-border-radius: 5px;
   border-radius: 5px; }
 
+.success_message {
+  clear: both;
+  margin: 10px 0;
+  background-color: #43AC6A;
+  font-size: 0.775em;
+  color: #fff;
+  padding: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px; }
+
 .js {
   display: none; }
 
@@ -998,6 +1057,20 @@ footer {
 
 .left {
   float: left; }
+
+.space {
+  margin: 10px 0; }
+
+.correct {
+  padding: 0 10px; }
+
+hr {
+  clear: both;
+  margin: 20px 0;
+  padding: 0 10px;
+  border: none;
+  border-top: 1px solid #ddd;
+  display: block; }
 
 .message {
   z-index: 1000;
@@ -1017,3 +1090,5 @@ footer {
   -ms-transform: scale(1);
   transform: scale(1);
   opacity: 1; }
+
+/*# sourceMappingURL=main.css.map */

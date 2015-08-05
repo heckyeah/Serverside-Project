@@ -143,6 +143,7 @@ nav {
 			a {
 				img {
 					display: block;
+					margin: 5px 0;
 				}
 			}
 		}
@@ -795,8 +796,8 @@ footer {
 	width: 1000px;
 	.seperate {
 		width: 100%;
-		clear: both;
 		float: left;
+		clear: both;
 	}
 	.one {
 		width: 100%;
@@ -807,6 +808,7 @@ footer {
 		width: 50%;
 		padding: 0 10px;
 		float: left;
+		@include clearfix;
 	}
 	.three {
 		width: 33.3%;
@@ -822,7 +824,7 @@ footer {
 .register_container, .login_container, .account_container {
 	background-color: #fff;
 	border-radius: 3px;
-	margin: 50px auto;
+	margin: 20px auto;
 	padding: 10px;
 	box-shadow: 0px 0px 2px #666;
 	@include clearfix;
@@ -864,12 +866,26 @@ footer {
 		width: 750px;
 		float: left;
 	}
+	form {
+		@include clearfix;
+	}
 	.register_form, .login_form, .account_form {
 		padding: 10px;
 		h1 {
 			font-size: 1.7em;
 			font-weight: bold;
 			margin-bottom: 10px;
+		}
+		.ui-selectmenu-button {
+			margin-top: 10px;
+		}
+		.radio {
+			float: left;
+			display: block;
+			margin: 20px 10px;
+			font-size: 0.875em;
+			font-weight: normal;
+			width: 0;
 		}
 		label {
 			width: 100%;
@@ -879,12 +895,47 @@ footer {
 			font-weight: bold;
 			font-size: 0.775em;
 		}
-		input {
+		select {
+			width: 100%;
+			display: none;
+			float: left;
+			padding: 10px;
+			margin: 10px 0;
+		}
+		input[type="text"] {
 			width: 100%;
 			display: block;
 			float: left;
 			padding: 10px;
 			margin: 10px 0;
+		}
+		input[type="email"] {
+			width: 100%;
+			display: block;
+			float: left;
+			padding: 10px;
+			margin: 10px 0;
+		}
+		input[type="password"] {
+			width: 100%;
+			display: block;
+			float: left;
+			padding: 10px;
+			margin: 10px 0;
+		}
+		input[type="radio"] {
+			width: auto;
+			display: block;
+			float: left;
+			padding: 10px;
+			margin: 20px 0;
+		}
+		input[type="file"] {
+			background-color: $thirdColour;
+			margin: 10px 0;
+			padding: 10px;
+			width: 100%;
+			color: #fff;
 		}
 		textarea {
 			max-width: 100%;
@@ -900,7 +951,6 @@ footer {
 
 
 // All around assets
-
 .btn {
 	color: #fff;
 	padding: 10px 20px;
@@ -996,6 +1046,16 @@ footer {
 	@include roundcorner;
 }
 
+.success_message {
+	clear: both;
+	margin: 10px 0;
+	background-color: #43AC6A;
+	font-size: 0.775em;
+	color: #fff;
+	padding: 10px;
+	@include roundcorner;
+}
+
 .js {
 	display: none;
 }
@@ -1011,5 +1071,21 @@ footer {
 .right { float:right;}
 .left { float:left;}
 
+.space {
+	margin: 10px 0;
+}
+
+.correct {
+	padding: 0 10px;
+}
+
+hr {
+	clear: both;
+	margin: 20px 0;
+	padding: 0 10px;
+	border: none;
+	border-top: 1px solid #ddd;
+	display: block;
+}
 
 @include modal;

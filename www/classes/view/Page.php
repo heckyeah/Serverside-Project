@@ -13,12 +13,16 @@ class Page {
 
 		// Get page data
 		$model->getPageInfo();
+
+		//Get profile data
+		$this->model->getAdditionalInfo();
 	}
 
 	// Function to build the HTML
 	public function buildHTML() {
 		$title 			= $this->model->title;
 		$description 	= $this->model->description;
+		$username 		= $this->model->username;
 
 		// If the user is logged in then show their username in link
 		// Otherwise just show "account"
@@ -37,7 +41,7 @@ class Page {
 
 	}
 
-	public function errorMessage( $message, $type ) {
+	public function alertMessage( $message, $type ) {
 		if( $message == '' ) { return; }
 
 		echo '<small class="php '.$type.'">';
