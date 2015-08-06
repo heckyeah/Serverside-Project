@@ -58,7 +58,7 @@ body {
   font-family: arial; }
 
 nav {
-  background-color: #333;
+  background-color: #333333;
   box-shadow: 0px 0px 2px #666; }
   nav:after {
     content: "";
@@ -77,7 +77,7 @@ nav {
       nav .container .account_drop ul {
         width: 100%;
         position: relative;
-        background-color: #333; }
+        background-color: #333333; }
         nav .container .account_drop ul:after {
           content: "";
           display: table;
@@ -338,7 +338,7 @@ nav {
         width: 100%;
         border: none;
         padding: 10px 0;
-        background-color: #333;
+        background-color: #333333;
         color: #fff; }
         .recipe_container .recipe_email table tr:nth-last-child(1) td:nth-last-child(1) input:active, .recipe_container .recipe_directions table tr:nth-last-child(1) td:nth-last-child(1) input:active {
           background-color: #666; }
@@ -374,8 +374,8 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
         margin: 0 5px; }
         article .pages ol li a, .sort_panel .pages ol li a, .recipe_contaier .pages ol li a, .recipe_header .pages ol li a {
           padding: 5px 7px;
-          background-color: #333;
-          color: #ccc;
+          background-color: #333333;
+          color: #cccccc;
           text-decoration: none;
           font-size: 0.875em;
           -webkit-border-radius: 5px;
@@ -384,7 +384,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
           article .pages ol li a:hover, .sort_panel .pages ol li a:hover, .recipe_contaier .pages ol li a:hover, .recipe_header .pages ol li a:hover {
             background-color: #f06d06; }
   article .profile_container, .sort_panel .profile_container, .recipe_contaier .profile_container, .recipe_header .profile_container {
-    background-color: #333;
+    background-color: #333333;
     box-shadow: 0px 0px 2px #666;
     margin-top: 20px;
     -webkit-border-radius: 5px;
@@ -450,14 +450,14 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
             article .profile_container .cover .cover_change .message_container .message h3, .sort_panel .profile_container .cover .cover_change .message_container .message h3, .recipe_contaier .profile_container .cover .cover_change .message_container .message h3, .recipe_header .profile_container .cover .cover_change .message_container .message h3 {
               font-size: 1.5em;
               font-weight: bold;
-              color: #333;
+              color: #333333;
               margin-bottom: 10px; }
             article .profile_container .cover .cover_change .message_container .message .close, .sort_panel .profile_container .cover .cover_change .message_container .message .close, .recipe_contaier .profile_container .cover .cover_change .message_container .message .close, .recipe_header .profile_container .cover .cover_change .message_container .message .close {
               position: absolute;
               top: 20px;
               right: 20px; }
               article .profile_container .cover .cover_change .message_container .message .close a, .sort_panel .profile_container .cover .cover_change .message_container .message .close a, .recipe_contaier .profile_container .cover .cover_change .message_container .message .close a, .recipe_header .profile_container .cover .cover_change .message_container .message .close a {
-                color: #333;
+                color: #333333;
                 text-decoration: none; }
                 article .profile_container .cover .cover_change .message_container .message .close a:hover, .sort_panel .profile_container .cover .cover_change .message_container .message .close a:hover, .recipe_contaier .profile_container .cover .cover_change .message_container .message .close a:hover, .recipe_header .profile_container .cover .cover_change .message_container .message .close a:hover {
                   color: #f06d06; }
@@ -561,7 +561,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
       width: 230px; } }
   article ul li, .sort_panel ul li, .recipe_contaier ul li, .recipe_header ul li {
     width: 230px;
-    background-color: #333;
+    background-color: #333333;
     box-shadow: 0px 0px 2px #666;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -586,15 +586,15 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
       padding: 10px; }
       article ul li .information h3, .sort_panel ul li .information h3, .recipe_contaier ul li .information h3, .recipe_header ul li .information h3 {
         font-weight: bold;
-        color: #ccc;
+        color: #cccccc;
         margin-bottom: 20px; }
         article ul li .information h3 a, .sort_panel ul li .information h3 a, .recipe_contaier ul li .information h3 a, .recipe_header ul li .information h3 a {
           text-decoration: none;
-          color: #ccc; }
+          color: #cccccc; }
           article ul li .information h3 a:hover, .sort_panel ul li .information h3 a:hover, .recipe_contaier ul li .information h3 a:hover, .recipe_header ul li .information h3 a:hover {
             text-decoration: underline; }
       article ul li .information p, .sort_panel ul li .information p, .recipe_contaier ul li .information p, .recipe_header ul li .information p {
-        color: #ccc;
+        color: #cccccc;
         font-size: 0.775em;
         margin-bottom: 10px; }
         article ul li .information p a, .sort_panel ul li .information p a, .recipe_contaier ul li .information p a, .recipe_header ul li .information p a {
@@ -609,7 +609,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
         margin-bottom: 5px; }
       article ul li .information span, .sort_panel ul li .information span, .recipe_contaier ul li .information span, .recipe_header ul li .information span {
         padding: 5px;
-        color: #ccc;
+        color: #cccccc;
         font-size: 0.775em;
         vertical-align: text-top;
         float: left;
@@ -649,7 +649,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
       width: 100%; }
       article .chef_info .details_container .profile_details img, .sort_panel .chef_info .details_container .profile_details img, .recipe_contaier .chef_info .details_container .profile_details img, .recipe_header .chef_info .details_container .profile_details img {
         position: relative;
-        border: 5px solid #333;
+        border: 5px solid #333333;
         display: block;
         float: left;
         margin: 0 20px 20px 30px;
@@ -680,7 +680,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
         bottom: 0;
         left: 0;
         width: 100%;
-        background-color: #333;
+        background-color: #333333;
         padding: 10px 10px; }
         article .chef_info .details_container .recipe_details .icon_container, .sort_panel .chef_info .details_container .recipe_details .icon_container, .recipe_contaier .chef_info .details_container .recipe_details .icon_container, .recipe_header .chef_info .details_container .recipe_details .icon_container {
           float: right; }
@@ -700,7 +700,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
             article .chef_info .details_container .recipe_details .icon_container ul li .numbers, .sort_panel .chef_info .details_container .recipe_details .icon_container ul li .numbers, .recipe_contaier .chef_info .details_container .recipe_details .icon_container ul li .numbers, .recipe_header .chef_info .details_container .recipe_details .icon_container ul li .numbers {
               float: left;
               line-height: 19px;
-              color: #ccc;
+              color: #cccccc;
               font-size: 0.775em;
               padding-left: 5px;
               font-weight: bold; }
@@ -709,7 +709,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
   margin: 20px auto 0 auto; }
 
 footer {
-  background-color: #333;
+  background-color: #333333;
   height: 50px;
   margin-top: 20px; }
   footer ul {
@@ -721,7 +721,7 @@ footer {
       display: inline;
       margin-right: 20px; }
       footer ul li a {
-        color: #ccc;
+        color: #cccccc;
         text-decoration: none;
         font-weight: bold;
         font-size: 0.875em; }
@@ -859,7 +859,7 @@ footer {
           background-color: #e6e6e6;
           display: block;
           font-size: 0.775em;
-          color: #333;
+          color: #333333;
           text-decoration: none; }
           .register_container .account_panel ul li a:hover, .login_container .account_panel ul li a:hover, .account_container .account_panel ul li a:hover {
             background-color: #fff; }
@@ -883,6 +883,10 @@ footer {
       font-size: 1.7em;
       font-weight: bold;
       margin-bottom: 10px; }
+    .register_container .register_form h2, .register_container .login_form h2, .register_container .account_form h2, .login_container .register_form h2, .login_container .login_form h2, .login_container .account_form h2, .account_container .register_form h2, .account_container .login_form h2, .account_container .account_form h2 {
+      font-size: 1.4em;
+      font-weight: bold;
+      margin-top: 10px; }
     .register_container .register_form .ui-selectmenu-button, .register_container .login_form .ui-selectmenu-button, .register_container .account_form .ui-selectmenu-button, .login_container .register_form .ui-selectmenu-button, .login_container .login_form .ui-selectmenu-button, .login_container .account_form .ui-selectmenu-button, .account_container .register_form .ui-selectmenu-button, .account_container .login_form .ui-selectmenu-button, .account_container .account_form .ui-selectmenu-button {
       margin-top: 10px; }
     .register_container .register_form .radio, .register_container .login_form .radio, .register_container .account_form .radio, .login_container .register_form .radio, .login_container .login_form .radio, .login_container .account_form .radio, .account_container .register_form .radio, .account_container .login_form .radio, .account_container .account_form .radio {
@@ -955,7 +959,7 @@ footer {
   -moz-border-radius: 5px;
   border-radius: 5px; }
   .btn:hover {
-    background-color: #333; }
+    background-color: #333333; }
 
 .btn-left {
   color: #fff;
@@ -967,7 +971,7 @@ footer {
   border-bottom-left-radius: 3px;
   border-top-left-radius: 3px; }
   .btn-left:hover {
-    background-color: #333; }
+    background-color: #333333; }
 
 .btn-right {
   color: #fff;
@@ -979,7 +983,7 @@ footer {
   border-bottom-right-radius: 3px;
   border-top-right-radius: 3px; }
   .btn-right:hover {
-    background-color: #333; }
+    background-color: #333333; }
 
 .btn-remove {
   color: #f04124;
@@ -989,7 +993,7 @@ footer {
   line-height: 36px;
   margin: 10px 15px; }
   .btn-remove:hover {
-    color: #333; }
+    color: #333333; }
   @media only screen and (max-width: 520px) {
     .btn-remove {
       margin: 10px 5px; } }
@@ -1090,5 +1094,3 @@ hr {
   -ms-transform: scale(1);
   transform: scale(1);
   opacity: 1; }
-
-/*# sourceMappingURL=main.css.map */

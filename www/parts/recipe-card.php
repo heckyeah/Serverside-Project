@@ -22,7 +22,7 @@ while( $row = $result->fetch_assoc() ) {
 			</div>
 			<div class="right">
 			<span class="time"></span>
-			<span class="numbers">'.$row['cook_time'].'</span>
+			<span class="numbers">'.$row['cook_time'].' M</span>
 			</div>
 			</div>
 			</li>';

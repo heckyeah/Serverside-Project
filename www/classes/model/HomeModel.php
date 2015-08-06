@@ -9,7 +9,7 @@ class HomeModel extends Model {
 					FROM recipes JOIN users JOIN additional_info
 					WHERE users.user_id = recipes.user_id && additional_info.user_id = users.user_id
 					ORDER BY time 
-					DESC LIMIT 2
+					DESC LIMIT 12
 					");
 
 		return $this->dbc->query($sql);

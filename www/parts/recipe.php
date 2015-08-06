@@ -108,10 +108,10 @@
 		<div class="comments_textarea">
 			<form action="index.php?page=recipe" methos="post">
 				<p>
-					<textarea name="" placeholder="What did you think of the recipe?" id="" cols="50" rows="5"></textarea>
+					<textarea name="comment" placeholder="What did you think of the recipe?" id="" cols="50" rows="5"></textarea>
 				</p>
 				<p>
-					<input type="submit" class="btn" value="Post Comment">
+					<input type="submit" name="add-comment" class="btn" value="Post Comment">
 				</p>	
 			</form>
 		</div>
