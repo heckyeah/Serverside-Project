@@ -60,7 +60,7 @@
 
 					<span>
 						<?php for($i=0; $i<10; $i++) : ?>
-							<select name="ingredient_<?php echo $i; ?>" class="ingredients select-menu">
+							<select name="ingredient[]" class="ingredients select-menu">
 								<option disabled selected="selected">Select a Ingredient</option>
 									<?php 
 										foreach( $allTypes as $type ) {
@@ -70,7 +70,7 @@
 											foreach( $allIngredients as $item ) {
 												// If the type of this ingredient == the type we are looping for
 												if( $item['type'] == $type ) {
-													echo '<option value="'.$item['ingredient_id'].'">';
+													echo '<option value="'.$item['ingredients_id'].'">';
 													echo $item['ingredient_name'];
 													echo '</option>';
 												}

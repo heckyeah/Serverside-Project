@@ -20,10 +20,28 @@ class AddRecipeModel extends Model {
 		$author = $_SESSION['user_id'];
 
 		$sql = "INSERT INTO recipes 
-				VALUES (NULL, '$recipeTitle', '$recipeDirections', 0, 'MacAndCheese.jpg', '$recipeTime', '$recipeServes', $author, 0, 0, CURRENT_TIMESTAMP)";
+				VALUES (NULL, '$recipeTitle', '$recipeDirections', 'MacAndCheese.jpg', '$recipeTime', '$recipeServes', $author, 0, 0, CURRENT_TIMESTAMP)";
 				
 		// Run the SQL
 		$this->dbc->query($sql);
+
+		// Get the ID of the brand new recipe
+		// We will use this to associate tags
+		$recipeID = $this->dbc->insert_id;
+
+		// Loop through each tag
+		foreach( $_POST['ingredient'] as $tagID ) {
+			// Filter the ID just in case the user has tampered with it
+			$tagID = $this->filter($tagID);
+
+			// Prepare SQL
+			$sql = "INSERT INTO
+						recipe_ingredients
+					VALUES (NULL, $tagID, $recipeID)";
+					
+			// Run the query
+			$this->dbc->query($sql);
+		}
 
 	}
 

@@ -37,46 +37,17 @@
 		<h3>Ingredients</h3>
 		<form action="index.php?page=recipe">
 			<table style="width:100%">
-				<tr>
-					<td><input type="checkbox" name="recipe_item" id="recipe_list"></td>
-					<td>Smith</td> 
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="recipe_item" id="recipe_list"></td>
-					<td>Jackson</td> 
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="recipe_item" id="recipe_list"></td>
-					<td>Smith</td> 
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="recipe_item" id="recipe_list"></td>
-					<td>Jackson</td> 
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="recipe_item" id="recipe_list"></td>
-					<td>Smith</td> 
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="recipe_item" id="recipe_list"></td>
-					<td>Jackson</td> 
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="recipe_item" id="recipe_list"></td>
-					<td>Smith</td> 
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="recipe_item" id="recipe_list"></td>
-					<td>Jackson</td> 
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="recipe_item" id="recipe_list"></td>
-					<td>Smith</td> 
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="recipe_item" id="recipe_list"></td>
-					<td>Jackson</td> 
-				</tr>
+				<?php 
+
+					$result = $this->model->getIngredientsToDisplay();
+
+					while( $row = $result->fetch_assoc() ) {
+						echo 	'<tr>';
+						echo	'<td><input type="checkbox" name="recipe_item" id="recipe_list"></td>';
+						echo	'<td>'.$row['ingredient_name'].'</td>'; 
+						echo  	'</tr>';
+					}
+				?>
 				<tr>
 					<td colspan="2"><input type="button" value="Email Me"></td>
 				</tr>
