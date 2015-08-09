@@ -21,6 +21,29 @@ $( function() {
   });
 });
 
+// Show cover modal
+$( function() {
+  // Click to show modal
+  $("button.click").click( function( event ) {
+    event.stopPropagation();
+    // write classes and css to tags
+    $("body", "html").css({'overflow':'hidden'});
+    $(".ingredients").addClass("active");
+    $(".ingredients_container").addClass("show");
+  });
+  // Make sure that clicking the modal wont close the modal
+  $(".ingredients").click( function( event ) {
+    event.stopPropagation();
+  });
+  // make the background close the modal on click
+  $("body, a.shut").click( function() {
+    // change body css and remove classes
+    $("body", "html").css({'overflow':'auto'});
+    $(".ingredients").removeClass("active");
+    $(".ingredients_container").removeClass("show");
+  });
+});
+
 // Add ingredients to list function
 $( function() {
   //select the item i want to incrament

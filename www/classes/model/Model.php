@@ -53,7 +53,11 @@ class Model {
 	}
 
 	public function getAdditionalInfo() {
-		$userID = $_SESSION['user_id'];
+		if ( isset($_SESSION['user_id']) ) {
+			$userID = $_SESSION['user_id'];
+		} else {
+			$userID = 0;
+		}
 
 		$sql ="	SELECT first_name, last_name, bio, profile_image, username
 				FROM additional_info

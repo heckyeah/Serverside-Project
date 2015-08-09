@@ -53,6 +53,16 @@ switch ( $pageSelect ) {
 		$page = new AddRecipePage( $model );
 	break;
 
+	// Edit Recipe
+	case 'editrecipe':
+		# Require the Profile classes
+		require 'classes/view/EditRecipePage.php';
+		require 'classes/model/EditRecipeModel.php';
+		# Connect to the page and model
+		$model = new EditRecipeModel();
+		$page = new EditRecipePage( $model );
+	break;
+
 	// Login
 	case 'login':
 		# Require the Profile classes

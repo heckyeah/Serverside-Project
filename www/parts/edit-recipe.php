@@ -1,18 +1,16 @@
 <div class="add_recipe_container">
 	<div class="add_recipe">
 		<form action="index.php?page=addrecipe" method="POST">
-			<h3>Add recipe details</h3>
+			<h3>Edit recipe details</h3>
 			<div class="add_recipe_half">
 				<label for="recipe-title">Recipe Title: </label>
-				<input type="text" name="recipe-title" id="recipe-title">
-				<?php $this->alertMessage($this->recipeTitleError, 'error_message'); ?>
+				<input type="text" name="recipe-title" id="recipe-title" value="<?php echo $this->recipeEditInfo['title']; ?>">
 
 				<label for="recipe-directions">Recipe Directions: </label>
-				<textarea name="recipe-directions" id="recipe-directions" ></textarea>
-				<?php $this->alertMessage($this->recipeDirectionsError, 'error_message'); ?>
+				<textarea name="recipe-directions" id="recipe-directions" ><?php echo $this->recipeEditInfo['directions']; ?></textarea>
 
 				<label for="cook-time">How long does it take to cook? </label>
-				<input type="text" name="cook-time" id="cook-time">
+				<input type="text" name="cook-time" id="cook-time" value="<?php echo $this->recipeEditInfo['cook_time']; ?>">
 				<label for="">How many people does this serve?</label>
 				<select name="serves" class="select-menu">
 					<option value="1-2">1-2</option>
@@ -21,7 +19,7 @@
 				</select>
 
 				<label for="">Do you have a youtube video?</label>
-				<input type="text" placeholder="https://www.youtube.com/watch?v=Eja8FKLzBU4" name="recipe-video" id="recipe-video">
+				<input type="text" placeholder="https://www.youtube.com/watch?v=Eja8FKLzBU4" name="recipe-video" id="recipe-video" value="https://www.youtube.com/<?php echo $this->recipeEditInfo['recipe_video']; ?>">
 
 				<label for="">Cover Photo: </label>
 				<input type="file" name="" id="">

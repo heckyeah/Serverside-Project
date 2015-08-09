@@ -19,13 +19,13 @@
 								<input type="file" name="cover-image" id="cover-image">
 							</div>
 							<div>
-								<input type="button" class="btn" value="Sumbit">
+								<input type="submit" name="change-cover" id="change-cover" class="btn" value="Sumbit">
 							</div>
 						</form>
 					</div>
 				</div>
 			</div>
-			<img src="img/user/covers/placeholder_cover.jpg" alt="">
+			<img src="img/user/covers/edited/<?php echo $this->model->coverImage; ?>" alt="">
 			<div class="profile_details_container">
 				<img src="img/user/avatar/default.jpg" alt="My Profile">
 				<div class="profile_details">

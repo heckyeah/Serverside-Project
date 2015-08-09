@@ -17,9 +17,17 @@ $lightFont: #ccc;
 	box-sizing: border-box;
 }
 
+html{ height:100%; }
+
 body {
 	background-color: $mainColour;
 	font-family: arial;
+	min-height:100%; padding:0; margin:0; position:relative;
+	&:after {
+		content:'';
+		display:block;
+		height:100px;
+	}
 }
 
 nav {
@@ -282,6 +290,11 @@ nav {
 					margin-left: 10px;
 				}
 			}
+			tr:nth-last-child(2) {
+				td:nth-last-child(2) {
+					padding:0;
+				}
+			}
 			tr:nth-last-child(1) {
 				td:nth-last-child(1) {
 					padding:0;
@@ -364,101 +377,6 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
 					border-top-left-radius: 3px;
 					border-top-right-radius: 3px;
 				}
-				.message_container {
-					position: fixed;
-					top: 0;
-					left: 0;
-					width: 100%;
-					height: 100%;
-					background-color: rgba(0,0,0,.7);
-					display: none;
-					z-index: 1000;
-					@include clearfix;
-					.message {
-						width: 1000px;
-						margin: 70px auto;
-						background-color: #fff;
-						text-align: left;
-						padding: 20px;
-						box-shadow: 0px 0px 2px #666;
-						@include clearfix;
-						@include roundcorner;
-						@include tablet-landscape {
-							width: 750px;
-						}
-						@include landscape {
-							width: 500px;
-						}
-						@include mobile {
-							width: 100%;
-							margin: 50px 0;
-							@include removecorner;
-						}
-						h3 {
-							font-size: 1.5em;
-							font-weight: bold;
-							color: $offColour;
-							margin-bottom: 10px;
-						}
-						.close {
-							position: absolute;
-							top: 20px;
-							right: 20px;
-							a {
-								color: $offColour;
-								text-decoration: none;
-								&:hover {
-									color: $thirdColour;
-								}
-							}
-						}
-						form {
-							.current_image {
-								margin: 0;
-								text-align: left;
-								span {
-									font-size: 0.875em;
-								}
-								img {
-									-webkit-border-top-left-radius: 0px;
-									-webkit-border-top-right-radius: 0px;
-									-moz-border-radius-topleft: 0px;
-									-moz-border-radius-topright: 0px;
-									border-top-left-radius: 0px;
-									border-top-right-radius: 0px;
-									margin: 10px 0;
-								}
-							}
-							p {
-								font-size: 0.875em;
-								text-align: center;
-								}
-							div {
-								margin: 20px 0;
-								text-align: center;
-								@include clearfix;
-							}
-							label {
-								margin-top: 10px;
-								cursor: pointer;
-							}
-							input {
-								clear: both;
-								margin: 0 auto;
-								cursor: pointer;
-							}
-							input[type='file'] {
-								display: none;
-							}
-						}
-					}
-					h2 {
-						font-size: 1.5em;
-						font-weight: bold;
-						padding-bottom: 10px;
-					}
-				}
-				.show { display: block;}
 			}
 			img {
 			display: block;
@@ -599,6 +517,12 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
 	}
 	.chef_info {
 		position: relative;
+		@include modal;
+		a.btn {
+			position: absolute;
+			bottom: 60px; right: 20px;
+			z-index: 1000;
+		}
 		img {
 			display: block;
 		    -webkit-border-top-left-radius: 3px;
@@ -682,7 +606,9 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
 footer {
 	background-color: $offColour;
 	height: 50px;
-	margin-top: 20px;
+	position:absolute; 
+ 	bottom:0;
+ 	width: 100%; 
 	ul {
 		width: 1000px;
 		padding: 0 10px;
@@ -794,28 +720,116 @@ footer {
 
 .account_container {
 	width: 1000px;
-	.seperate {
+}
+.seperate {
+	width: 100%;
+	float: left;
+	clear: both;
+	h1 {
+		font-size: 1.7em;
+		font-weight: bold;
+		margin-bottom: 10px;
+	}
+	h2 {
+		font-size: 1.4em;
+		font-weight: bold;
+		margin-top: 10px;
+	}
+	.ui-selectmenu-button {
+		margin-top: 10px;
+	}
+	.radio {
+		float: left;
+		display: block;
+		margin: 20px 10px;
+		font-size: 0.875em;
+		font-weight: normal;
+		width: 0;
+	}
+	label {
 		width: 100%;
+		display: block;
 		float: left;
-		clear: both;
+		margin-top: 10px;
+		font-weight: bold;
+		font-size: 0.775em;
 	}
-	.one {
+	select {
 		width: 100%;
-		padding: 0 10px;
+		display: none;
 		float: left;
+		padding: 10px;
+		margin: 10px 0;
 	}
-	.two {
-		width: 50%;
-		padding: 0 10px;
+	input[type="text"] {
+		width: 100%;
+		display: block;
 		float: left;
-		@include clearfix;
+		padding: 10px;
+		margin: 10px 0;
 	}
-	.three {
-		width: 33.3%;
-		padding: 0 10px;
+	input[type="email"] {
+		width: 100%;
+		display: block;
 		float: left;
+		padding: 10px;
+		margin: 10px 0;
 	}
-
+	input[type="password"] {
+		width: 100%;
+		display: block;
+		float: left;
+		padding: 10px;
+		margin: 10px 0;
+	}
+	input[type="radio"] {
+		width: auto;
+		display: block;
+		float: left;
+		padding: 10px;
+		margin: 20px 0;
+	}
+	input[type="file"] {
+		background-color: $thirdColour;
+		margin: 10px 0;
+		padding: 10px;
+		width: 100%;
+		color: #fff;
+	}
+	textarea {
+		max-width: 100%;
+		width: 100%;
+		height: 200px;
+		display: block;
+		float: left;
+		padding: 10px;
+		margin: 10px 0;
+	}
+	.ui-selectmenu-button {
+		width: 100% !important;
+		float: left;
+		margin: 10px 0;
+	}
+	.ui-selectmenu-menu {
+		position: static;
+		z-index: 2000;
+	}
+}
+.one {
+	width: 100%;
+	padding: 0 10px;
+	float: left;
+}
+.two {
+	width: 50%;
+	padding: 0 10px;
+	float: left;
+	@include clearfix;
+}
+.three {
+	width: 33.3%;
+	padding: 0 10px;
+	float: left;
 }
 
 .register_container, .login_container {
@@ -871,86 +885,6 @@ footer {
 	}
 	.register_form, .login_form, .account_form {
 		padding: 10px;
-		h1 {
-			font-size: 1.7em;
-			font-weight: bold;
-			margin-bottom: 10px;
-		}
-		h2 {
-			font-size: 1.4em;
-			font-weight: bold;
-			margin-top: 10px;
-		}
-		.ui-selectmenu-button {
-			margin-top: 10px;
-		}
-		.radio {
-			float: left;
-			display: block;
-			margin: 20px 10px;
-			font-size: 0.875em;
-			font-weight: normal;
-			width: 0;
-		}
-		label {
-			width: 100%;
-			display: block;
-			float: left;
-			margin-top: 10px;
-			font-weight: bold;
-			font-size: 0.775em;
-		}
-		select {
-			width: 100%;
-			display: none;
-			float: left;
-			padding: 10px;
-			margin: 10px 0;
-		}
-		input[type="text"] {
-			width: 100%;
-			display: block;
-			float: left;
-			padding: 10px;
-			margin: 10px 0;
-		}
-		input[type="email"] {
-			width: 100%;
-			display: block;
-			float: left;
-			padding: 10px;
-			margin: 10px 0;
-		}
-		input[type="password"] {
-			width: 100%;
-			display: block;
-			float: left;
-			padding: 10px;
-			margin: 10px 0;
-		}
-		input[type="radio"] {
-			width: auto;
-			display: block;
-			float: left;
-			padding: 10px;
-			margin: 20px 0;
-		}
-		input[type="file"] {
-			background-color: $thirdColour;
-			margin: 10px 0;
-			padding: 10px;
-			width: 100%;
-			color: #fff;
-		}
-		textarea {
-			max-width: 100%;
-			width: 100%;
-			height: 200px;
-			display: block;
-			float: left;
-			padding: 10px;
-			margin: 10px 0;
-		}
 	}
 }
 
@@ -968,6 +902,21 @@ footer {
 		background-color: $offColour;
 	}
 }
+
+.ingredients_btn {
+	color: #fff;
+	padding: 10px 0;
+	width: 100%;
+	background-color: $thirdColour;
+	text-decoration: none;
+	font-size: 0.875em;
+	border: none;
+	border: 2px solid #fff;
+	&:hover {
+		background-color: $offColour;
+	}
+}
+
 
 .btn-left {
 	color: #fff;

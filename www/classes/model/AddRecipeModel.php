@@ -13,15 +13,18 @@ class AddRecipeModel extends Model {
 
 	public function addRecipe() {
 
-		$recipeTitle = $_POST['recipe-title'];
-		$recipeDirections = $_POST['recipe-directions'];
-		$recipeTime = $_POST['cook-time'];
-		$recipeServes = $_POST['serves'];
+		$recipeTitle 		= $_POST['recipe-title'];
+		$recipeDirections 	= $_POST['recipe-directions'];
+		$recipeTime 		= $_POST['cook-time'];
+		$recipeServes 		= $_POST['serves'];
+		$recipeVideo 		= $_POST['recipe-video'];
+		$recipeVideo 		= substr("$recipeVideo", -11);
+
 		$author = $_SESSION['user_id'];
 
 		$sql = "INSERT INTO recipes 
-				VALUES (NULL, '$recipeTitle', '$recipeDirections', 'MacAndCheese.jpg', '$recipeTime', '$recipeServes', $author, 0, 0, CURRENT_TIMESTAMP)";
-				
+				VALUES (NULL, '$recipeTitle', '$recipeDirections', 'MacAndCheese.jpg', '$recipeTime', '$recipeServes', '$recipeVideo', $author, 0, 0, CURRENT_TIMESTAMP)";
+		
 		// Run the SQL
 		$this->dbc->query($sql);
 
@@ -38,7 +41,7 @@ class AddRecipeModel extends Model {
 			$sql = "INSERT INTO
 						recipe_ingredients
 					VALUES (NULL, $tagID, $recipeID)";
-					
+
 			// Run the query
 			$this->dbc->query($sql);
 		}

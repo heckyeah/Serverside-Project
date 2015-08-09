@@ -53,12 +53,23 @@ table {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+html {
+  height: 100%; }
+
 body {
   background-color: #e6e6e6;
-  font-family: arial; }
+  font-family: arial;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative; }
+  body:after {
+    content: '';
+    display: block;
+    height: 100px; }
 
 nav {
-  background-color: #333333;
+  background-color: #333;
   box-shadow: 0px 0px 2px #666; }
   nav:after {
     content: "";
@@ -77,7 +88,7 @@ nav {
       nav .container .account_drop ul {
         width: 100%;
         position: relative;
-        background-color: #333333; }
+        background-color: #333; }
         nav .container .account_drop ul:after {
           content: "";
           display: table;
@@ -332,13 +343,15 @@ nav {
     .recipe_container .recipe_email table tr td:nth-child(even), .recipe_container .recipe_directions table tr td:nth-child(even) {
       font-size: 0.875em;
       margin-left: 10px; }
+    .recipe_container .recipe_email table tr:nth-last-child(2) td:nth-last-child(2), .recipe_container .recipe_directions table tr:nth-last-child(2) td:nth-last-child(2) {
+      padding: 0; }
     .recipe_container .recipe_email table tr:nth-last-child(1) td:nth-last-child(1), .recipe_container .recipe_directions table tr:nth-last-child(1) td:nth-last-child(1) {
       padding: 0; }
       .recipe_container .recipe_email table tr:nth-last-child(1) td:nth-last-child(1) input, .recipe_container .recipe_directions table tr:nth-last-child(1) td:nth-last-child(1) input {
         width: 100%;
         border: none;
         padding: 10px 0;
-        background-color: #333333;
+        background-color: #333;
         color: #fff; }
         .recipe_container .recipe_email table tr:nth-last-child(1) td:nth-last-child(1) input:active, .recipe_container .recipe_directions table tr:nth-last-child(1) td:nth-last-child(1) input:active {
           background-color: #666; }
@@ -374,8 +387,8 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
         margin: 0 5px; }
         article .pages ol li a, .sort_panel .pages ol li a, .recipe_contaier .pages ol li a, .recipe_header .pages ol li a {
           padding: 5px 7px;
-          background-color: #333333;
-          color: #cccccc;
+          background-color: #333;
+          color: #ccc;
           text-decoration: none;
           font-size: 0.875em;
           -webkit-border-radius: 5px;
@@ -384,7 +397,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
           article .pages ol li a:hover, .sort_panel .pages ol li a:hover, .recipe_contaier .pages ol li a:hover, .recipe_header .pages ol li a:hover {
             background-color: #f06d06; }
   article .profile_container, .sort_panel .profile_container, .recipe_contaier .profile_container, .recipe_header .profile_container {
-    background-color: #333333;
+    background-color: #333;
     box-shadow: 0px 0px 2px #666;
     margin-top: 20px;
     -webkit-border-radius: 5px;
@@ -407,98 +420,6 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
           -moz-border-radius-topright: 3px;
           border-top-left-radius: 3px;
           border-top-right-radius: 3px; }
-        article .profile_container .cover .cover_change .message_container, .sort_panel .profile_container .cover .cover_change .message_container, .recipe_contaier .profile_container .cover .cover_change .message_container, .recipe_header .profile_container .cover .cover_change .message_container {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.7);
-          display: none;
-          z-index: 1000; }
-          article .profile_container .cover .cover_change .message_container:after, .sort_panel .profile_container .cover .cover_change .message_container:after, .recipe_contaier .profile_container .cover .cover_change .message_container:after, .recipe_header .profile_container .cover .cover_change .message_container:after {
-            content: "";
-            display: table;
-            clear: both; }
-          article .profile_container .cover .cover_change .message_container .message, .sort_panel .profile_container .cover .cover_change .message_container .message, .recipe_contaier .profile_container .cover .cover_change .message_container .message, .recipe_header .profile_container .cover .cover_change .message_container .message {
-            width: 1000px;
-            margin: 70px auto;
-            background-color: #fff;
-            text-align: left;
-            padding: 20px;
-            box-shadow: 0px 0px 2px #666;
-            -webkit-border-radius: 5px;
-            -moz-border-radius: 5px;
-            border-radius: 5px; }
-            article .profile_container .cover .cover_change .message_container .message:after, .sort_panel .profile_container .cover .cover_change .message_container .message:after, .recipe_contaier .profile_container .cover .cover_change .message_container .message:after, .recipe_header .profile_container .cover .cover_change .message_container .message:after {
-              content: "";
-              display: table;
-              clear: both; }
-            @media only screen and (max-width: 1020px) {
-              article .profile_container .cover .cover_change .message_container .message, .sort_panel .profile_container .cover .cover_change .message_container .message, .recipe_contaier .profile_container .cover .cover_change .message_container .message, .recipe_header .profile_container .cover .cover_change .message_container .message {
-                width: 750px; } }
-            @media only screen and (max-width: 770px) {
-              article .profile_container .cover .cover_change .message_container .message, .sort_panel .profile_container .cover .cover_change .message_container .message, .recipe_contaier .profile_container .cover .cover_change .message_container .message, .recipe_header .profile_container .cover .cover_change .message_container .message {
-                width: 500px; } }
-            @media only screen and (max-width: 520px) {
-              article .profile_container .cover .cover_change .message_container .message, .sort_panel .profile_container .cover .cover_change .message_container .message, .recipe_contaier .profile_container .cover .cover_change .message_container .message, .recipe_header .profile_container .cover .cover_change .message_container .message {
-                width: 100%;
-                margin: 50px 0;
-                -webkit-border-radius: 0px;
-                -moz-border-radius: 0px;
-                border-radius: 0px; } }
-            article .profile_container .cover .cover_change .message_container .message h3, .sort_panel .profile_container .cover .cover_change .message_container .message h3, .recipe_contaier .profile_container .cover .cover_change .message_container .message h3, .recipe_header .profile_container .cover .cover_change .message_container .message h3 {
-              font-size: 1.5em;
-              font-weight: bold;
-              color: #333333;
-              margin-bottom: 10px; }
-            article .profile_container .cover .cover_change .message_container .message .close, .sort_panel .profile_container .cover .cover_change .message_container .message .close, .recipe_contaier .profile_container .cover .cover_change .message_container .message .close, .recipe_header .profile_container .cover .cover_change .message_container .message .close {
-              position: absolute;
-              top: 20px;
-              right: 20px; }
-              article .profile_container .cover .cover_change .message_container .message .close a, .sort_panel .profile_container .cover .cover_change .message_container .message .close a, .recipe_contaier .profile_container .cover .cover_change .message_container .message .close a, .recipe_header .profile_container .cover .cover_change .message_container .message .close a {
-                color: #333333;
-                text-decoration: none; }
-                article .profile_container .cover .cover_change .message_container .message .close a:hover, .sort_panel .profile_container .cover .cover_change .message_container .message .close a:hover, .recipe_contaier .profile_container .cover .cover_change .message_container .message .close a:hover, .recipe_header .profile_container .cover .cover_change .message_container .message .close a:hover {
-                  color: #f06d06; }
-            article .profile_container .cover .cover_change .message_container .message form .current_image, .sort_panel .profile_container .cover .cover_change .message_container .message form .current_image, .recipe_contaier .profile_container .cover .cover_change .message_container .message form .current_image, .recipe_header .profile_container .cover .cover_change .message_container .message form .current_image {
-              margin: 0;
-              text-align: left; }
-              article .profile_container .cover .cover_change .message_container .message form .current_image span, .sort_panel .profile_container .cover .cover_change .message_container .message form .current_image span, .recipe_contaier .profile_container .cover .cover_change .message_container .message form .current_image span, .recipe_header .profile_container .cover .cover_change .message_container .message form .current_image span {
-                font-size: 0.875em; }
-              article .profile_container .cover .cover_change .message_container .message form .current_image img, .sort_panel .profile_container .cover .cover_change .message_container .message form .current_image img, .recipe_contaier .profile_container .cover .cover_change .message_container .message form .current_image img, .recipe_header .profile_container .cover .cover_change .message_container .message form .current_image img {
-                -webkit-border-top-left-radius: 0px;
-                -webkit-border-top-right-radius: 0px;
-                -moz-border-radius-topleft: 0px;
-                -moz-border-radius-topright: 0px;
-                border-top-left-radius: 0px;
-                border-top-right-radius: 0px;
-                margin: 10px 0; }
-            article .profile_container .cover .cover_change .message_container .message form p, .sort_panel .profile_container .cover .cover_change .message_container .message form p, .recipe_contaier .profile_container .cover .cover_change .message_container .message form p, .recipe_header .profile_container .cover .cover_change .message_container .message form p {
-              font-size: 0.875em;
-              text-align: center; }
-            article .profile_container .cover .cover_change .message_container .message form div, .sort_panel .profile_container .cover .cover_change .message_container .message form div, .recipe_contaier .profile_container .cover .cover_change .message_container .message form div, .recipe_header .profile_container .cover .cover_change .message_container .message form div {
-              margin: 20px 0;
-              text-align: center; }
-              article .profile_container .cover .cover_change .message_container .message form div:after, .sort_panel .profile_container .cover .cover_change .message_container .message form div:after, .recipe_contaier .profile_container .cover .cover_change .message_container .message form div:after, .recipe_header .profile_container .cover .cover_change .message_container .message form div:after {
-                content: "";
-                display: table;
-                clear: both; }
-            article .profile_container .cover .cover_change .message_container .message form label, .sort_panel .profile_container .cover .cover_change .message_container .message form label, .recipe_contaier .profile_container .cover .cover_change .message_container .message form label, .recipe_header .profile_container .cover .cover_change .message_container .message form label {
-              margin-top: 10px;
-              cursor: pointer; }
-            article .profile_container .cover .cover_change .message_container .message form input, .sort_panel .profile_container .cover .cover_change .message_container .message form input, .recipe_contaier .profile_container .cover .cover_change .message_container .message form input, .recipe_header .profile_container .cover .cover_change .message_container .message form input {
-              clear: both;
-              margin: 0 auto;
-              cursor: pointer; }
-            article .profile_container .cover .cover_change .message_container .message form input[type='file'], .sort_panel .profile_container .cover .cover_change .message_container .message form input[type='file'], .recipe_contaier .profile_container .cover .cover_change .message_container .message form input[type='file'], .recipe_header .profile_container .cover .cover_change .message_container .message form input[type='file'] {
-              display: none; }
-          article .profile_container .cover .cover_change .message_container h2, .sort_panel .profile_container .cover .cover_change .message_container h2, .recipe_contaier .profile_container .cover .cover_change .message_container h2, .recipe_header .profile_container .cover .cover_change .message_container h2 {
-            font-size: 1.5em;
-            font-weight: bold;
-            padding-bottom: 10px; }
-        article .profile_container .cover .cover_change .show, .sort_panel .profile_container .cover .cover_change .show, .recipe_contaier .profile_container .cover .cover_change .show, .recipe_header .profile_container .cover .cover_change .show {
-          display: block; }
       article .profile_container .cover img, .sort_panel .profile_container .cover img, .recipe_contaier .profile_container .cover img, .recipe_header .profile_container .cover img {
         display: block;
         -webkit-border-top-left-radius: 3px;
@@ -561,7 +482,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
       width: 230px; } }
   article ul li, .sort_panel ul li, .recipe_contaier ul li, .recipe_header ul li {
     width: 230px;
-    background-color: #333333;
+    background-color: #333;
     box-shadow: 0px 0px 2px #666;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -586,15 +507,15 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
       padding: 10px; }
       article ul li .information h3, .sort_panel ul li .information h3, .recipe_contaier ul li .information h3, .recipe_header ul li .information h3 {
         font-weight: bold;
-        color: #cccccc;
+        color: #ccc;
         margin-bottom: 20px; }
         article ul li .information h3 a, .sort_panel ul li .information h3 a, .recipe_contaier ul li .information h3 a, .recipe_header ul li .information h3 a {
           text-decoration: none;
-          color: #cccccc; }
+          color: #ccc; }
           article ul li .information h3 a:hover, .sort_panel ul li .information h3 a:hover, .recipe_contaier ul li .information h3 a:hover, .recipe_header ul li .information h3 a:hover {
             text-decoration: underline; }
       article ul li .information p, .sort_panel ul li .information p, .recipe_contaier ul li .information p, .recipe_header ul li .information p {
-        color: #cccccc;
+        color: #ccc;
         font-size: 0.775em;
         margin-bottom: 10px; }
         article ul li .information p a, .sort_panel ul li .information p a, .recipe_contaier ul li .information p a, .recipe_header ul li .information p a {
@@ -609,7 +530,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
         margin-bottom: 5px; }
       article ul li .information span, .sort_panel ul li .information span, .recipe_contaier ul li .information span, .recipe_header ul li .information span {
         padding: 5px;
-        color: #cccccc;
+        color: #ccc;
         font-size: 0.775em;
         vertical-align: text-top;
         float: left;
@@ -632,6 +553,89 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
         height: 100%; }
   article .chef_info, .sort_panel .chef_info, .recipe_contaier .chef_info, .recipe_header .chef_info {
     position: relative; }
+    article .chef_info .message_container, article .chef_info .ingredients_container, .sort_panel .chef_info .message_container, .sort_panel .chef_info .ingredients_container, .recipe_contaier .chef_info .message_container, .recipe_contaier .chef_info .ingredients_container, .recipe_header .chef_info .message_container, .recipe_header .chef_info .ingredients_container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: none;
+      z-index: 1000; }
+      article .chef_info .message_container:after, article .chef_info .ingredients_container:after, .sort_panel .chef_info .message_container:after, .sort_panel .chef_info .ingredients_container:after, .recipe_contaier .chef_info .message_container:after, .recipe_contaier .chef_info .ingredients_container:after, .recipe_header .chef_info .message_container:after, .recipe_header .chef_info .ingredients_container:after {
+        content: "";
+        display: table;
+        clear: both; }
+      article .chef_info .message_container .message, article .chef_info .message_container .ingredients, article .chef_info .ingredients_container .message, article .chef_info .ingredients_container .ingredients, .sort_panel .chef_info .message_container .message, .sort_panel .chef_info .message_container .ingredients, .sort_panel .chef_info .ingredients_container .message, .sort_panel .chef_info .ingredients_container .ingredients, .recipe_contaier .chef_info .message_container .message, .recipe_contaier .chef_info .message_container .ingredients, .recipe_contaier .chef_info .ingredients_container .message, .recipe_contaier .chef_info .ingredients_container .ingredients, .recipe_header .chef_info .message_container .message, .recipe_header .chef_info .message_container .ingredients, .recipe_header .chef_info .ingredients_container .message, .recipe_header .chef_info .ingredients_container .ingredients {
+        width: 1000px;
+        margin: 70px auto;
+        background-color: #fff;
+        text-align: left;
+        padding: 20px;
+        box-shadow: 0px 0px 2px #666;
+        position: relative;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px; }
+        article .chef_info .message_container .message:after, article .chef_info .message_container .ingredients:after, article .chef_info .ingredients_container .message:after, article .chef_info .ingredients_container .ingredients:after, .sort_panel .chef_info .message_container .message:after, .sort_panel .chef_info .message_container .ingredients:after, .sort_panel .chef_info .ingredients_container .message:after, .sort_panel .chef_info .ingredients_container .ingredients:after, .recipe_contaier .chef_info .message_container .message:after, .recipe_contaier .chef_info .message_container .ingredients:after, .recipe_contaier .chef_info .ingredients_container .message:after, .recipe_contaier .chef_info .ingredients_container .ingredients:after, .recipe_header .chef_info .message_container .message:after, .recipe_header .chef_info .message_container .ingredients:after, .recipe_header .chef_info .ingredients_container .message:after, .recipe_header .chef_info .ingredients_container .ingredients:after {
+          content: "";
+          display: table;
+          clear: both; }
+        @media only screen and (max-width: 1020px) {
+          article .chef_info .message_container .message, article .chef_info .message_container .ingredients, article .chef_info .ingredients_container .message, article .chef_info .ingredients_container .ingredients, .sort_panel .chef_info .message_container .message, .sort_panel .chef_info .message_container .ingredients, .sort_panel .chef_info .ingredients_container .message, .sort_panel .chef_info .ingredients_container .ingredients, .recipe_contaier .chef_info .message_container .message, .recipe_contaier .chef_info .message_container .ingredients, .recipe_contaier .chef_info .ingredients_container .message, .recipe_contaier .chef_info .ingredients_container .ingredients, .recipe_header .chef_info .message_container .message, .recipe_header .chef_info .message_container .ingredients, .recipe_header .chef_info .ingredients_container .message, .recipe_header .chef_info .ingredients_container .ingredients {
+            width: 750px; } }
+        @media only screen and (max-width: 770px) {
+          article .chef_info .message_container .message, article .chef_info .message_container .ingredients, article .chef_info .ingredients_container .message, article .chef_info .ingredients_container .ingredients, .sort_panel .chef_info .message_container .message, .sort_panel .chef_info .message_container .ingredients, .sort_panel .chef_info .ingredients_container .message, .sort_panel .chef_info .ingredients_container .ingredients, .recipe_contaier .chef_info .message_container .message, .recipe_contaier .chef_info .message_container .ingredients, .recipe_contaier .chef_info .ingredients_container .message, .recipe_contaier .chef_info .ingredients_container .ingredients, .recipe_header .chef_info .message_container .message, .recipe_header .chef_info .message_container .ingredients, .recipe_header .chef_info .ingredients_container .message, .recipe_header .chef_info .ingredients_container .ingredients {
+            width: 500px; } }
+        @media only screen and (max-width: 520px) {
+          article .chef_info .message_container .message, article .chef_info .message_container .ingredients, article .chef_info .ingredients_container .message, article .chef_info .ingredients_container .ingredients, .sort_panel .chef_info .message_container .message, .sort_panel .chef_info .message_container .ingredients, .sort_panel .chef_info .ingredients_container .message, .sort_panel .chef_info .ingredients_container .ingredients, .recipe_contaier .chef_info .message_container .message, .recipe_contaier .chef_info .message_container .ingredients, .recipe_contaier .chef_info .ingredients_container .message, .recipe_contaier .chef_info .ingredients_container .ingredients, .recipe_header .chef_info .message_container .message, .recipe_header .chef_info .message_container .ingredients, .recipe_header .chef_info .ingredients_container .message, .recipe_header .chef_info .ingredients_container .ingredients {
+            width: 100%;
+            margin: 50px 0;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            border-radius: 0px; } }
+        article .chef_info .message_container .message h3, article .chef_info .message_container .ingredients h3, article .chef_info .ingredients_container .message h3, article .chef_info .ingredients_container .ingredients h3, .sort_panel .chef_info .message_container .message h3, .sort_panel .chef_info .message_container .ingredients h3, .sort_panel .chef_info .ingredients_container .message h3, .sort_panel .chef_info .ingredients_container .ingredients h3, .recipe_contaier .chef_info .message_container .message h3, .recipe_contaier .chef_info .message_container .ingredients h3, .recipe_contaier .chef_info .ingredients_container .message h3, .recipe_contaier .chef_info .ingredients_container .ingredients h3, .recipe_header .chef_info .message_container .message h3, .recipe_header .chef_info .message_container .ingredients h3, .recipe_header .chef_info .ingredients_container .message h3, .recipe_header .chef_info .ingredients_container .ingredients h3 {
+          font-size: 1.5em;
+          font-weight: bold;
+          color: #333;
+          margin-bottom: 10px; }
+        article .chef_info .message_container .message .close, article .chef_info .message_container .ingredients .close, article .chef_info .ingredients_container .message .close, article .chef_info .ingredients_container .ingredients .close, .sort_panel .chef_info .message_container .message .close, .sort_panel .chef_info .message_container .ingredients .close, .sort_panel .chef_info .ingredients_container .message .close, .sort_panel .chef_info .ingredients_container .ingredients .close, .recipe_contaier .chef_info .message_container .message .close, .recipe_contaier .chef_info .message_container .ingredients .close, .recipe_contaier .chef_info .ingredients_container .message .close, .recipe_contaier .chef_info .ingredients_container .ingredients .close, .recipe_header .chef_info .message_container .message .close, .recipe_header .chef_info .message_container .ingredients .close, .recipe_header .chef_info .ingredients_container .message .close, .recipe_header .chef_info .ingredients_container .ingredients .close {
+          position: absolute;
+          top: 20px;
+          right: 20px; }
+          article .chef_info .message_container .message .close a, article .chef_info .message_container .ingredients .close a, article .chef_info .ingredients_container .message .close a, article .chef_info .ingredients_container .ingredients .close a, .sort_panel .chef_info .message_container .message .close a, .sort_panel .chef_info .message_container .ingredients .close a, .sort_panel .chef_info .ingredients_container .message .close a, .sort_panel .chef_info .ingredients_container .ingredients .close a, .recipe_contaier .chef_info .message_container .message .close a, .recipe_contaier .chef_info .message_container .ingredients .close a, .recipe_contaier .chef_info .ingredients_container .message .close a, .recipe_contaier .chef_info .ingredients_container .ingredients .close a, .recipe_header .chef_info .message_container .message .close a, .recipe_header .chef_info .message_container .ingredients .close a, .recipe_header .chef_info .ingredients_container .message .close a, .recipe_header .chef_info .ingredients_container .ingredients .close a {
+            position: relative;
+            color: #333;
+            text-decoration: none; }
+            article .chef_info .message_container .message .close a:hover, article .chef_info .message_container .ingredients .close a:hover, article .chef_info .ingredients_container .message .close a:hover, article .chef_info .ingredients_container .ingredients .close a:hover, .sort_panel .chef_info .message_container .message .close a:hover, .sort_panel .chef_info .message_container .ingredients .close a:hover, .sort_panel .chef_info .ingredients_container .message .close a:hover, .sort_panel .chef_info .ingredients_container .ingredients .close a:hover, .recipe_contaier .chef_info .message_container .message .close a:hover, .recipe_contaier .chef_info .message_container .ingredients .close a:hover, .recipe_contaier .chef_info .ingredients_container .message .close a:hover, .recipe_contaier .chef_info .ingredients_container .ingredients .close a:hover, .recipe_header .chef_info .message_container .message .close a:hover, .recipe_header .chef_info .message_container .ingredients .close a:hover, .recipe_header .chef_info .ingredients_container .message .close a:hover, .recipe_header .chef_info .ingredients_container .ingredients .close a:hover {
+              color: #f06d06; }
+        article .chef_info .message_container .message form .current_image, article .chef_info .message_container .ingredients form .current_image, article .chef_info .ingredients_container .message form .current_image, article .chef_info .ingredients_container .ingredients form .current_image, .sort_panel .chef_info .message_container .message form .current_image, .sort_panel .chef_info .message_container .ingredients form .current_image, .sort_panel .chef_info .ingredients_container .message form .current_image, .sort_panel .chef_info .ingredients_container .ingredients form .current_image, .recipe_contaier .chef_info .message_container .message form .current_image, .recipe_contaier .chef_info .message_container .ingredients form .current_image, .recipe_contaier .chef_info .ingredients_container .message form .current_image, .recipe_contaier .chef_info .ingredients_container .ingredients form .current_image, .recipe_header .chef_info .message_container .message form .current_image, .recipe_header .chef_info .message_container .ingredients form .current_image, .recipe_header .chef_info .ingredients_container .message form .current_image, .recipe_header .chef_info .ingredients_container .ingredients form .current_image {
+          margin: 0;
+          text-align: left; }
+          article .chef_info .message_container .message form .current_image span, article .chef_info .message_container .ingredients form .current_image span, article .chef_info .ingredients_container .message form .current_image span, article .chef_info .ingredients_container .ingredients form .current_image span, .sort_panel .chef_info .message_container .message form .current_image span, .sort_panel .chef_info .message_container .ingredients form .current_image span, .sort_panel .chef_info .ingredients_container .message form .current_image span, .sort_panel .chef_info .ingredients_container .ingredients form .current_image span, .recipe_contaier .chef_info .message_container .message form .current_image span, .recipe_contaier .chef_info .message_container .ingredients form .current_image span, .recipe_contaier .chef_info .ingredients_container .message form .current_image span, .recipe_contaier .chef_info .ingredients_container .ingredients form .current_image span, .recipe_header .chef_info .message_container .message form .current_image span, .recipe_header .chef_info .message_container .ingredients form .current_image span, .recipe_header .chef_info .ingredients_container .message form .current_image span, .recipe_header .chef_info .ingredients_container .ingredients form .current_image span {
+            font-size: 0.875em; }
+          article .chef_info .message_container .message form .current_image img, article .chef_info .message_container .ingredients form .current_image img, article .chef_info .ingredients_container .message form .current_image img, article .chef_info .ingredients_container .ingredients form .current_image img, .sort_panel .chef_info .message_container .message form .current_image img, .sort_panel .chef_info .message_container .ingredients form .current_image img, .sort_panel .chef_info .ingredients_container .message form .current_image img, .sort_panel .chef_info .ingredients_container .ingredients form .current_image img, .recipe_contaier .chef_info .message_container .message form .current_image img, .recipe_contaier .chef_info .message_container .ingredients form .current_image img, .recipe_contaier .chef_info .ingredients_container .message form .current_image img, .recipe_contaier .chef_info .ingredients_container .ingredients form .current_image img, .recipe_header .chef_info .message_container .message form .current_image img, .recipe_header .chef_info .message_container .ingredients form .current_image img, .recipe_header .chef_info .ingredients_container .message form .current_image img, .recipe_header .chef_info .ingredients_container .ingredients form .current_image img {
+            -webkit-border-top-left-radius: 0px;
+            -webkit-border-top-right-radius: 0px;
+            -moz-border-radius-topleft: 0px;
+            -moz-border-radius-topright: 0px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            margin: 10px 0; }
+        article .chef_info .message_container .message form p, article .chef_info .message_container .ingredients form p, article .chef_info .ingredients_container .message form p, article .chef_info .ingredients_container .ingredients form p, .sort_panel .chef_info .message_container .message form p, .sort_panel .chef_info .message_container .ingredients form p, .sort_panel .chef_info .ingredients_container .message form p, .sort_panel .chef_info .ingredients_container .ingredients form p, .recipe_contaier .chef_info .message_container .message form p, .recipe_contaier .chef_info .message_container .ingredients form p, .recipe_contaier .chef_info .ingredients_container .message form p, .recipe_contaier .chef_info .ingredients_container .ingredients form p, .recipe_header .chef_info .message_container .message form p, .recipe_header .chef_info .message_container .ingredients form p, .recipe_header .chef_info .ingredients_container .message form p, .recipe_header .chef_info .ingredients_container .ingredients form p {
+          font-size: 0.875em;
+          text-align: center; }
+      article .chef_info .message_container h2, article .chef_info .ingredients_container h2, .sort_panel .chef_info .message_container h2, .sort_panel .chef_info .ingredients_container h2, .recipe_contaier .chef_info .message_container h2, .recipe_contaier .chef_info .ingredients_container h2, .recipe_header .chef_info .message_container h2, .recipe_header .chef_info .ingredients_container h2 {
+        font-size: 1.5em;
+        font-weight: bold;
+        padding-bottom: 10px; }
+    article .chef_info .show, .sort_panel .chef_info .show, .recipe_contaier .chef_info .show, .recipe_header .chef_info .show {
+      display: block; }
+    article .chef_info a.btn, .sort_panel .chef_info a.btn, .recipe_contaier .chef_info a.btn, .recipe_header .chef_info a.btn {
+      position: absolute;
+      bottom: 60px;
+      right: 20px;
+      z-index: 1000; }
     article .chef_info img, .sort_panel .chef_info img, .recipe_contaier .chef_info img, .recipe_header .chef_info img {
       display: block;
       -webkit-border-top-left-radius: 3px;
@@ -649,7 +653,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
       width: 100%; }
       article .chef_info .details_container .profile_details img, .sort_panel .chef_info .details_container .profile_details img, .recipe_contaier .chef_info .details_container .profile_details img, .recipe_header .chef_info .details_container .profile_details img {
         position: relative;
-        border: 5px solid #333333;
+        border: 5px solid #333;
         display: block;
         float: left;
         margin: 0 20px 20px 30px;
@@ -680,7 +684,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
         bottom: 0;
         left: 0;
         width: 100%;
-        background-color: #333333;
+        background-color: #333;
         padding: 10px 10px; }
         article .chef_info .details_container .recipe_details .icon_container, .sort_panel .chef_info .details_container .recipe_details .icon_container, .recipe_contaier .chef_info .details_container .recipe_details .icon_container, .recipe_header .chef_info .details_container .recipe_details .icon_container {
           float: right; }
@@ -700,7 +704,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
             article .chef_info .details_container .recipe_details .icon_container ul li .numbers, .sort_panel .chef_info .details_container .recipe_details .icon_container ul li .numbers, .recipe_contaier .chef_info .details_container .recipe_details .icon_container ul li .numbers, .recipe_header .chef_info .details_container .recipe_details .icon_container ul li .numbers {
               float: left;
               line-height: 19px;
-              color: #cccccc;
+              color: #ccc;
               font-size: 0.775em;
               padding-left: 5px;
               font-weight: bold; }
@@ -709,9 +713,11 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
   margin: 20px auto 0 auto; }
 
 footer {
-  background-color: #333333;
+  background-color: #333;
   height: 50px;
-  margin-top: 20px; }
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
   footer ul {
     width: 1000px;
     padding: 0 10px;
@@ -721,7 +727,7 @@ footer {
       display: inline;
       margin-right: 20px; }
       footer ul li a {
-        color: #cccccc;
+        color: #ccc;
         text-decoration: none;
         font-weight: bold;
         font-size: 0.875em; }
@@ -808,26 +814,105 @@ footer {
 
 .account_container {
   width: 1000px; }
-  .account_container .seperate {
-    width: 100%;
+
+.seperate {
+  width: 100%;
+  float: left;
+  clear: both; }
+  .seperate h1 {
+    font-size: 1.7em;
+    font-weight: bold;
+    margin-bottom: 10px; }
+  .seperate h2 {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-top: 10px; }
+  .seperate .ui-selectmenu-button {
+    margin-top: 10px; }
+  .seperate .radio {
     float: left;
-    clear: both; }
-  .account_container .one {
+    display: block;
+    margin: 20px 10px;
+    font-size: 0.875em;
+    font-weight: normal;
+    width: 0; }
+  .seperate label {
     width: 100%;
-    padding: 0 10px;
-    float: left; }
-  .account_container .two {
-    width: 50%;
-    padding: 0 10px;
-    float: left; }
-    .account_container .two:after {
-      content: "";
-      display: table;
-      clear: both; }
-  .account_container .three {
-    width: 33.3%;
-    padding: 0 10px;
-    float: left; }
+    display: block;
+    float: left;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 0.775em; }
+  .seperate select {
+    width: 100%;
+    display: none;
+    float: left;
+    padding: 10px;
+    margin: 10px 0; }
+  .seperate input[type="text"] {
+    width: 100%;
+    display: block;
+    float: left;
+    padding: 10px;
+    margin: 10px 0; }
+  .seperate input[type="email"] {
+    width: 100%;
+    display: block;
+    float: left;
+    padding: 10px;
+    margin: 10px 0; }
+  .seperate input[type="password"] {
+    width: 100%;
+    display: block;
+    float: left;
+    padding: 10px;
+    margin: 10px 0; }
+  .seperate input[type="radio"] {
+    width: auto;
+    display: block;
+    float: left;
+    padding: 10px;
+    margin: 20px 0; }
+  .seperate input[type="file"] {
+    background-color: #f06d06;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    color: #fff; }
+  .seperate textarea {
+    max-width: 100%;
+    width: 100%;
+    height: 200px;
+    display: block;
+    float: left;
+    padding: 10px;
+    margin: 10px 0; }
+  .seperate .ui-selectmenu-button {
+    width: 100% !important;
+    float: left;
+    margin: 10px 0; }
+  .seperate .ui-selectmenu-menu {
+    position: static;
+    z-index: 2000; }
+
+.one {
+  width: 100%;
+  padding: 0 10px;
+  float: left; }
+
+.two {
+  width: 50%;
+  padding: 0 10px;
+  float: left; }
+  .two:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.three {
+  width: 33.3%;
+  padding: 0 10px;
+  float: left; }
 
 .register_container, .login_container {
   width: 500px; }
@@ -859,7 +944,7 @@ footer {
           background-color: #e6e6e6;
           display: block;
           font-size: 0.775em;
-          color: #333333;
+          color: #333;
           text-decoration: none; }
           .register_container .account_panel ul li a:hover, .login_container .account_panel ul li a:hover, .account_container .account_panel ul li a:hover {
             background-color: #fff; }
@@ -879,74 +964,6 @@ footer {
     clear: both; }
   .register_container .register_form, .register_container .login_form, .register_container .account_form, .login_container .register_form, .login_container .login_form, .login_container .account_form, .account_container .register_form, .account_container .login_form, .account_container .account_form {
     padding: 10px; }
-    .register_container .register_form h1, .register_container .login_form h1, .register_container .account_form h1, .login_container .register_form h1, .login_container .login_form h1, .login_container .account_form h1, .account_container .register_form h1, .account_container .login_form h1, .account_container .account_form h1 {
-      font-size: 1.7em;
-      font-weight: bold;
-      margin-bottom: 10px; }
-    .register_container .register_form h2, .register_container .login_form h2, .register_container .account_form h2, .login_container .register_form h2, .login_container .login_form h2, .login_container .account_form h2, .account_container .register_form h2, .account_container .login_form h2, .account_container .account_form h2 {
-      font-size: 1.4em;
-      font-weight: bold;
-      margin-top: 10px; }
-    .register_container .register_form .ui-selectmenu-button, .register_container .login_form .ui-selectmenu-button, .register_container .account_form .ui-selectmenu-button, .login_container .register_form .ui-selectmenu-button, .login_container .login_form .ui-selectmenu-button, .login_container .account_form .ui-selectmenu-button, .account_container .register_form .ui-selectmenu-button, .account_container .login_form .ui-selectmenu-button, .account_container .account_form .ui-selectmenu-button {
-      margin-top: 10px; }
-    .register_container .register_form .radio, .register_container .login_form .radio, .register_container .account_form .radio, .login_container .register_form .radio, .login_container .login_form .radio, .login_container .account_form .radio, .account_container .register_form .radio, .account_container .login_form .radio, .account_container .account_form .radio {
-      float: left;
-      display: block;
-      margin: 20px 10px;
-      font-size: 0.875em;
-      font-weight: normal;
-      width: 0; }
-    .register_container .register_form label, .register_container .login_form label, .register_container .account_form label, .login_container .register_form label, .login_container .login_form label, .login_container .account_form label, .account_container .register_form label, .account_container .login_form label, .account_container .account_form label {
-      width: 100%;
-      display: block;
-      float: left;
-      margin-top: 10px;
-      font-weight: bold;
-      font-size: 0.775em; }
-    .register_container .register_form select, .register_container .login_form select, .register_container .account_form select, .login_container .register_form select, .login_container .login_form select, .login_container .account_form select, .account_container .register_form select, .account_container .login_form select, .account_container .account_form select {
-      width: 100%;
-      display: none;
-      float: left;
-      padding: 10px;
-      margin: 10px 0; }
-    .register_container .register_form input[type="text"], .register_container .login_form input[type="text"], .register_container .account_form input[type="text"], .login_container .register_form input[type="text"], .login_container .login_form input[type="text"], .login_container .account_form input[type="text"], .account_container .register_form input[type="text"], .account_container .login_form input[type="text"], .account_container .account_form input[type="text"] {
-      width: 100%;
-      display: block;
-      float: left;
-      padding: 10px;
-      margin: 10px 0; }
-    .register_container .register_form input[type="email"], .register_container .login_form input[type="email"], .register_container .account_form input[type="email"], .login_container .register_form input[type="email"], .login_container .login_form input[type="email"], .login_container .account_form input[type="email"], .account_container .register_form input[type="email"], .account_container .login_form input[type="email"], .account_container .account_form input[type="email"] {
-      width: 100%;
-      display: block;
-      float: left;
-      padding: 10px;
-      margin: 10px 0; }
-    .register_container .register_form input[type="password"], .register_container .login_form input[type="password"], .register_container .account_form input[type="password"], .login_container .register_form input[type="password"], .login_container .login_form input[type="password"], .login_container .account_form input[type="password"], .account_container .register_form input[type="password"], .account_container .login_form input[type="password"], .account_container .account_form input[type="password"] {
-      width: 100%;
-      display: block;
-      float: left;
-      padding: 10px;
-      margin: 10px 0; }
-    .register_container .register_form input[type="radio"], .register_container .login_form input[type="radio"], .register_container .account_form input[type="radio"], .login_container .register_form input[type="radio"], .login_container .login_form input[type="radio"], .login_container .account_form input[type="radio"], .account_container .register_form input[type="radio"], .account_container .login_form input[type="radio"], .account_container .account_form input[type="radio"] {
-      width: auto;
-      display: block;
-      float: left;
-      padding: 10px;
-      margin: 20px 0; }
-    .register_container .register_form input[type="file"], .register_container .login_form input[type="file"], .register_container .account_form input[type="file"], .login_container .register_form input[type="file"], .login_container .login_form input[type="file"], .login_container .account_form input[type="file"], .account_container .register_form input[type="file"], .account_container .login_form input[type="file"], .account_container .account_form input[type="file"] {
-      background-color: #f06d06;
-      margin: 10px 0;
-      padding: 10px;
-      width: 100%;
-      color: #fff; }
-    .register_container .register_form textarea, .register_container .login_form textarea, .register_container .account_form textarea, .login_container .register_form textarea, .login_container .login_form textarea, .login_container .account_form textarea, .account_container .register_form textarea, .account_container .login_form textarea, .account_container .account_form textarea {
-      max-width: 100%;
-      width: 100%;
-      height: 200px;
-      display: block;
-      float: left;
-      padding: 10px;
-      margin: 10px 0; }
 
 .btn {
   color: #fff;
@@ -959,7 +976,19 @@ footer {
   -moz-border-radius: 5px;
   border-radius: 5px; }
   .btn:hover {
-    background-color: #333333; }
+    background-color: #333; }
+
+.ingredients_btn {
+  color: #fff;
+  padding: 10px 0;
+  width: 100%;
+  background-color: #f06d06;
+  text-decoration: none;
+  font-size: 0.875em;
+  border: none;
+  border: 2px solid #fff; }
+  .ingredients_btn:hover {
+    background-color: #333; }
 
 .btn-left {
   color: #fff;
@@ -971,7 +1000,7 @@ footer {
   border-bottom-left-radius: 3px;
   border-top-left-radius: 3px; }
   .btn-left:hover {
-    background-color: #333333; }
+    background-color: #333; }
 
 .btn-right {
   color: #fff;
@@ -983,7 +1012,7 @@ footer {
   border-bottom-right-radius: 3px;
   border-top-right-radius: 3px; }
   .btn-right:hover {
-    background-color: #333333; }
+    background-color: #333; }
 
 .btn-remove {
   color: #f04124;
@@ -993,7 +1022,7 @@ footer {
   line-height: 36px;
   margin: 10px 15px; }
   .btn-remove:hover {
-    color: #333333; }
+    color: #333; }
   @media only screen and (max-width: 520px) {
     .btn-remove {
       margin: 10px 5px; } }
@@ -1076,21 +1105,84 @@ hr {
   border-top: 1px solid #ddd;
   display: block; }
 
-.message {
-  z-index: 1000;
-  background: #fff;
-  padding: 60px;
-  box-sizing: border-box;
-  border-radius: 3px;
-  -webkit-transition: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transition: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-  opacity: 0; }
+.message_container, .ingredients_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  z-index: 1000; }
+  .message_container:after, .ingredients_container:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .message_container .message, .message_container .ingredients, .ingredients_container .message, .ingredients_container .ingredients {
+    width: 1000px;
+    margin: 70px auto;
+    background-color: #fff;
+    text-align: left;
+    padding: 20px;
+    box-shadow: 0px 0px 2px #666;
+    position: relative;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px; }
+    .message_container .message:after, .message_container .ingredients:after, .ingredients_container .message:after, .ingredients_container .ingredients:after {
+      content: "";
+      display: table;
+      clear: both; }
+    @media only screen and (max-width: 1020px) {
+      .message_container .message, .message_container .ingredients, .ingredients_container .message, .ingredients_container .ingredients {
+        width: 750px; } }
+    @media only screen and (max-width: 770px) {
+      .message_container .message, .message_container .ingredients, .ingredients_container .message, .ingredients_container .ingredients {
+        width: 500px; } }
+    @media only screen and (max-width: 520px) {
+      .message_container .message, .message_container .ingredients, .ingredients_container .message, .ingredients_container .ingredients {
+        width: 100%;
+        margin: 50px 0;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        border-radius: 0px; } }
+    .message_container .message h3, .message_container .ingredients h3, .ingredients_container .message h3, .ingredients_container .ingredients h3 {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px; }
+    .message_container .message .close, .message_container .ingredients .close, .ingredients_container .message .close, .ingredients_container .ingredients .close {
+      position: absolute;
+      top: 20px;
+      right: 20px; }
+      .message_container .message .close a, .message_container .ingredients .close a, .ingredients_container .message .close a, .ingredients_container .ingredients .close a {
+        position: relative;
+        color: #333;
+        text-decoration: none; }
+        .message_container .message .close a:hover, .message_container .ingredients .close a:hover, .ingredients_container .message .close a:hover, .ingredients_container .ingredients .close a:hover {
+          color: #f06d06; }
+    .message_container .message form .current_image, .message_container .ingredients form .current_image, .ingredients_container .message form .current_image, .ingredients_container .ingredients form .current_image {
+      margin: 0;
+      text-align: left; }
+      .message_container .message form .current_image span, .message_container .ingredients form .current_image span, .ingredients_container .message form .current_image span, .ingredients_container .ingredients form .current_image span {
+        font-size: 0.875em; }
+      .message_container .message form .current_image img, .message_container .ingredients form .current_image img, .ingredients_container .message form .current_image img, .ingredients_container .ingredients form .current_image img {
+        -webkit-border-top-left-radius: 0px;
+        -webkit-border-top-right-radius: 0px;
+        -moz-border-radius-topleft: 0px;
+        -moz-border-radius-topright: 0px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        margin: 10px 0; }
+    .message_container .message form p, .message_container .ingredients form p, .ingredients_container .message form p, .ingredients_container .ingredients form p {
+      font-size: 0.875em;
+      text-align: center; }
+  .message_container h2, .ingredients_container h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-bottom: 10px; }
 
-.message.active {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-  opacity: 1; }
+.show {
+  display: block; }
+
+/*# sourceMappingURL=main.css.map */

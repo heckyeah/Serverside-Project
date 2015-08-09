@@ -29,7 +29,7 @@ class AddRecipePage extends Page {
 			return;
 		}
 		
-		# Home content
+		# Add Recipe
 		include 'parts/add-recipe.php';
 
 	}
@@ -41,7 +41,7 @@ class AddRecipePage extends Page {
 		$recipeTime 		= $_POST['cook-time'];
 		$recipeServes 		= $_POST['serves'];
 
-		if ( strlen($recipeTitle) > 2000 ) {
+		if ( strlen($recipeTitle) > 40 ) {
 			$this->recipeTitleError = 'Recipe name is too long, 45 characters max.';
 			$this->totalErrors++;
 		} elseif ( strlen($recipeTitle) == 0 ) {
@@ -49,7 +49,7 @@ class AddRecipePage extends Page {
 			$this->totalErrors++;
 		}
 
-		if ( strlen($recipeDirections) > 45 ) {
+		if ( strlen($recipeDirections) > 2000 ) {
 			$this->recipeDirectionsError = 'Recipe directions is too long please shorten, 2000 characters max.';
 			$this->totalErrors++;
 		} elseif ( strlen($recipeDirections) == 0 ) {

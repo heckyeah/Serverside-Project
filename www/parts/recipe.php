@@ -1,6 +1,43 @@
 <div class="recipe_header">
 	<div class="chef_info">
-		<img src="http://eatyourcannabis.com/wp-content/uploads/2014/03/4026542027_5125fdfc84_b-1000x300.jpg" alt="">
+		<img src="img/recipes/cover/<?php echo $this->recipeInfo['recipe_image']; ?>" alt="">
+		<a href="#" class="click btn">Edit Recipe</a>
+			<div class="message_container">
+				<div class="message">
+					<h3>Edit Recipe</h3>
+					<div class="close"><a href="#" class="shut"><i class="fa fa-times"></i></a></i></div>
+					<form action="index.php?page=recipe&recipeid=<?php echo $this->recipeInfo['recipe_id']; ?>" method="post" enctype="multipart/form-data">
+						<div class="seperate">
+							<div class="two">
+								<label for="recipe-title">Recipe Title: </label>
+								<input type="text" name="recipe-title" id="recipe-title" value="<?php echo $this->recipeEditInfo['title']; ?>">
+
+								<label for="recipe-directions">Recipe Directions: </label>
+								<textarea name="recipe-directions" id="recipe-directions" ><?php echo $this->recipeEditInfo['directions']; ?></textarea>
+							</div>
+							<div class="two">
+								<label for="cook-time">How long does it take to cook? </label>
+								<input type="text" name="cook-time" id="cook-time" value="<?php echo $this->recipeEditInfo['cook_time']; ?>">
+								<label for="">How many people does this serve?</label>
+								<select name="serves" class="select-menu">
+									<option value="1-2">1-2</option>
+									<option value="3-4">3-4</option>
+									<option value="5+">5+</option>
+								</select>
+
+								<label for="">Do you have a youtube video?</label>
+								<input type="text" placeholder="https://www.youtube.com/watch?v=Eja8FKLzBU4" name="recipe-video" id="recipe-video" value="https://www.youtube.com/<?php echo $this->recipeEditInfo['recipe_video']; ?>">
+
+								<label for="">Cover Photo: </label>
+								<input type="file" name="" id="">
+							</div>
+						</div>
+						<div class="one space">
+							<input type="submit" name="edit-recipe" id="edit-recipe" value="Save Changes" class="btn">
+						</div>
+					</form>
+				</div>
+			</div>
 		<div class="details_container">
 			<div class="recipe_details">
 				<div class="icon_container">
@@ -15,7 +52,7 @@
 						</li>
 						<li>
 							<span class="time"></span>
-							<span class="numbers">15 M</span>
+							<span class="numbers"><?php echo $this->recipeInfo['cook_time']; ?> M</span>
 						</li>
 					</ul>
 					
@@ -32,7 +69,7 @@
 	</div>
 </div>
 <article class="recipe_container">
-	<h2>Spaghetti Bolognese</h2>
+	<h2><?php echo $this->recipeInfo['title']; ?></h2>
 	<div class="recipe_email">
 		<h3>Ingredients</h3>
 		<form action="index.php?page=recipe">
@@ -42,10 +79,10 @@
 					$result = $this->model->getIngredientsToDisplay();
 
 					while( $row = $result->fetch_assoc() ) {
-						echo 	'<tr>';
+						echo	'<tr>';
 						echo	'<td><input type="checkbox" name="recipe_item" id="recipe_list"></td>';
 						echo	'<td>'.$row['ingredient_name'].'</td>'; 
-						echo  	'</tr>';
+						echo	'</tr>';
 					}
 				?>
 				<tr>
@@ -53,22 +90,83 @@
 				</tr>
 			</table>
 		</form>
+		<button class="click ingredients_btn">Edit Ingredients</button>
+		<div class="ingredients_container">
+			<div class="ingredients">
+				<h3>Edit Ingredients</h3>
+				<div class="close"><a href="#" class="shut"><i class="fa fa-times"></i></a></i></div>
+				<form action="index.php?page=recipe&recipeid=<?php echo $this->recipeInfo['recipe_id']; ?>" method="post" enctype="multipart/form-data">
+					<div class="seperate">
+						<label for="">Ingredients: </label>
+						<?php
+
+							// Get all the ingredients
+							$result = $this->model->getIngredients();
+
+							// Loop through the ingredients and put them into an array
+							$allIngredients = [];
+
+							while( $row = $result->fetch_assoc() ) {
+								$allIngredients[] = $row;
+							}
+							
+							$allTypes = [];
+
+							// Loop over the ingredients and get all the types
+							foreach($allIngredients as $item) {
+								$allTypes[] = $item['type'];
+							}	
+
+							// Get each type once
+							$allTypes = array_unique($allTypes);
+
+							// Reset the IDs
+							$allTypes = array_values($allTypes);
+
+						?>
+
+						<?php for($i=0; $i<10; $i++) : ?>
+						<div class="two">
+							<select name="ingredient[]" class="ingredients select-menu">
+								<option disabled selected="selected">Select a Ingredient</option>
+									<?php 
+										foreach( $allTypes as $type ) {
+											// Echo out the heading
+											echo '<optgroup label="'.$type.'">';
+											// Loop through all the ingredients and only echo the ones that relate to the type we are currently looping through
+											foreach( $allIngredients as $item ) {
+												// If the type of this ingredient == the type we are looping for
+												if( $item['type'] == $type ) {
+													echo '<option value="'.$item['ingredients_id'].'">';
+													echo $item['ingredient_name'];
+													echo '</option>';
+												}
+											}
+											echo '</optgroup>';
+										}
+									?>
+							</select>
+						</div>
+						<?php endfor; ?>
+					</div>
+					<div class="one space">
+						<input type="submit" value="Save Changes" class="btn">
+					</div>
+				</form>
+			</div>
+		</div>
 	</div>
 	<div class="recipe_directions">
 		<h3>Directions</h3>
 		<div class="directions">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto eaque molestias perferendis, nam consectetur aut reprehenderit voluptas temporibus quod, facilis doloremque similique. Consectetur error blanditiis esse alias neque, aliquam, nobis?</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui ex reiciendis minima esse, doloribus dolore pariatur ducimus totam culpa, odit maxime, quidem earum at doloremque incidunt. Accusamus rerum esse quam.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo voluptas maxime animi deserunt, soluta accusamus nulla officia praesentium repudiandae, sit autem reiciendis cum minus veniam debitis. Eum soluta inventore nobis.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem alias illum eos nobis blanditiis amet magni dolore. Cumque ipsa animi eligendi, cupiditate nisi voluptatibus esse iusto ut fuga expedita magni.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dolorum minima accusantium, excepturi, ex rerum expedita tenetur quis, magnam sit voluptatibus perspiciatis velit commodi? Voluptas ipsam accusantium praesentium quia, sapiente.</p>
+			<p><?php echo $this->recipeInfo['directions']; ?><p>			
 		</div>
 	</div>
 	<hr>
 	<div class="recipe_video_section">
 		<h3>Video</h3>
 		<div class="video_container">
-			<iframe src="https://www.youtube.com/embed/VjtXnPgx_pY" frameborder="0" allowfullscreen></iframe>
+			<iframe src="https://www.youtube.com/embed/<?php echo $this->recipeInfo['recipe_video']; ?>" frameborder="0" allowfullscreen></iframe>
 		</div>
 	</div>
 	<hr>
@@ -95,4 +193,3 @@
 		</div>
 	</div>
 </article>
-
