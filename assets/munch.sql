@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 03, 2015 at 07:00 am
+-- Generation Time: Aug 10, 2015 at 06:52 am
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS `additional_info` (
 `additional_info_id` mediumint(8) unsigned NOT NULL,
   `first_name` varchar(40) NOT NULL,
   `last_name` varchar(40) NOT NULL,
+  `bio` varchar(400) NOT NULL,
   `gender` enum('M','F','O') NOT NULL,
   `profile_image` varchar(100) NOT NULL,
   `cover_image` varchar(100) NOT NULL,
@@ -41,9 +42,9 @@ CREATE TABLE IF NOT EXISTS `additional_info` (
 -- Dumping data for table `additional_info`
 --
 
-INSERT INTO `additional_info` (`additional_info_id`, `first_name`, `last_name`, `gender`, `profile_image`, `cover_image`, `age`, `user_id`) VALUES
-(2, 'Hekiera', 'Mareroa', 'M', 'default.jpg', 'placeholder_cover.jpg', '22', 1),
-(3, 'Jack', 'Sparrow', 'M', 'default.jpg', 'placeholder_cover.jpg', '35', 2);
+INSERT INTO `additional_info` (`additional_info_id`, `first_name`, `last_name`, `bio`, `gender`, `profile_image`, `cover_image`, `age`, `user_id`) VALUES
+(2, 'Hekiera', 'Mareroa', '', 'M', 'default.jpg', '55c823b922e416.21415171SpiderMan.jpg', '22', 1),
+(3, 'Jack', 'Sparrow', '', 'M', 'default.jpg', 'placeholder_cover.jpg', '35', 2);
 
 -- --------------------------------------------------------
 
@@ -54,7 +55,8 @@ INSERT INTO `additional_info` (`additional_info_id`, `first_name`, `last_name`, 
 CREATE TABLE IF NOT EXISTS `comments` (
 `comments_id` int(10) unsigned NOT NULL,
   `post` varchar(300) NOT NULL,
-  `user_id` mediumint(8) unsigned NOT NULL
+  `user_id` mediumint(8) unsigned NOT NULL,
+  `recipe_id` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -131,23 +133,48 @@ CREATE TABLE IF NOT EXISTS `recipes` (
 `recipe_id` int(10) unsigned NOT NULL,
   `title` varchar(45) NOT NULL,
   `directions` varchar(2000) NOT NULL,
-  `ingredients_id` smallint(10) unsigned NOT NULL,
   `recipe_image` varchar(100) NOT NULL,
   `cook_time` varchar(3) NOT NULL,
   `serves` enum('1-2','3-4','5+') NOT NULL,
+  `recipe_video` varchar(11) NOT NULL,
   `user_id` mediumint(8) unsigned NOT NULL,
   `favorite_id` int(10) unsigned NOT NULL,
   `comments_id` int(10) unsigned NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
 -- Dumping data for table `recipes`
 --
 
-INSERT INTO `recipes` (`recipe_id`, `title`, `directions`, `ingredients_id`, `recipe_image`, `cook_time`, `serves`, `user_id`, `favorite_id`, `comments_id`, `time`) VALUES
-(4, 'Mac And Cheese', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam maximus molestie leo. Nulla facilisi. Nulla laoreet facilisis nisi. Mauris sit amet viverra sem. Curabitur feugiat, tortor id gravida auctor, nulla nunc pretium magna, consequat mollis sem leo non leo. Integer sed suscipit purus. Integer justo arcu, ultricies vitae tristique et, lacinia ac libero.\r\n\r\nAenean odio sapien, vestibulum vel dui sed, tincidunt viverra turpis. Aliquam suscipit leo sed volutpat pretium. Ut convallis tincidunt eros in sodales. Donec blandit, massa ac viverra commodo, quam diam eleifend lacus, in rutrum arcu urna vel risus. Integer vestibulum eros mi, a blandit arcu fermentum id. Sed sodales sem quis ante vehicula, sed suscipit nulla viverra. Duis at condimentum urna, et condimentum metus. Praesent leo erat, volutpat cursus nisi ut, mollis vestibulum orci. Nunc condimentum, turpis consectetur sagittis dignissim, magna turpis ultrices mi, eget auctor elit tellus vitae enim. Curabitur ac mi sapien. Etiam id maximus risus.\r\n\r\nSuspendisse imperdiet sollicitudin cursus. Etiam sagittis nulla vel est rutrum malesuada. Nulla quis lacus in sem commodo aliquam ut lacinia risus. Phasellus vitae diam maximus, porta felis vitae, suscipit ligula. In hac habitasse platea dictumst. In eleifend, metus eu cursus pellentesque, metus enim sollicitudin odio, vitae pretium arcu tellus eu mauris. Fusce non sollicitudin eros, sit amet iaculis orci. Praesent volutpat elit et nisl suscipit, ac iaculis arcu posuere. Phasellus in libero a dolor varius sagittis. Vestibulum pellentesque lectus eu ullamcorper condimentum. In convallis accumsan elit, eget iaculis nisi pulvinar eu.', 0, 'MacAndCheese.jpg', '15', '1-2', 1, 0, 0, '2015-07-31 11:22:04'),
-(6, 'Spaghetti Bolognese', 'This is called spagbowl.', 0, 'spagBowl.jpg', '25', '3-4', 2, 0, 0, '2015-07-31 11:57:40');
+INSERT INTO `recipes` (`recipe_id`, `title`, `directions`, `recipe_image`, `cook_time`, `serves`, `recipe_video`, `user_id`, `favorite_id`, `comments_id`, `time`) VALUES
+(23, 'Mac And Cheese', 'This is a mac and cheese recipe', '55c814bfaec926.52243285Untitled-1.jpg', '32', '3-4', 'NNudfQuu9qI', 1, 0, 0, '2015-08-10 03:42:33');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `recipe_ingredients`
+--
+
+CREATE TABLE IF NOT EXISTS `recipe_ingredients` (
+`recipe_ingredients_id` int(10) unsigned NOT NULL,
+  `ingredients_id` smallint(6) unsigned NOT NULL,
+  `recipe_id` int(11) unsigned NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
+
+--
+-- Dumping data for table `recipe_ingredients`
+--
+
+INSERT INTO `recipe_ingredients` (`recipe_ingredients_id`, `ingredients_id`, `recipe_id`) VALUES
+(17, 1, 23),
+(18, 4, 23),
+(19, 5, 23),
+(20, 6, 23),
+(21, 8, 23),
+(22, 9, 23),
+(23, 10, 23),
+(24, 1, 23);
 
 -- --------------------------------------------------------
 
@@ -188,7 +215,7 @@ ALTER TABLE `additional_info`
 -- Indexes for table `comments`
 --
 ALTER TABLE `comments`
- ADD PRIMARY KEY (`comments_id`);
+ ADD PRIMARY KEY (`comments_id`), ADD KEY `User_ID` (`user_id`), ADD KEY `Recipe_ID` (`recipe_id`);
 
 --
 -- Indexes for table `favorites`
@@ -212,7 +239,13 @@ ALTER TABLE `pages`
 -- Indexes for table `recipes`
 --
 ALTER TABLE `recipes`
- ADD PRIMARY KEY (`recipe_id`), ADD KEY `User_ID` (`user_id`) USING BTREE, ADD KEY `Comments_ID` (`comments_id`), ADD KEY `Ingredients_ID` (`ingredients_id`);
+ ADD PRIMARY KEY (`recipe_id`), ADD KEY `User_ID` (`user_id`) USING BTREE, ADD KEY `Comments_ID` (`comments_id`);
+
+--
+-- Indexes for table `recipe_ingredients`
+--
+ALTER TABLE `recipe_ingredients`
+ ADD PRIMARY KEY (`recipe_ingredients_id`), ADD KEY `ingredients_id` (`ingredients_id`), ADD KEY `recipe_id` (`recipe_id`);
 
 --
 -- Indexes for table `users`
@@ -253,7 +286,12 @@ MODIFY `page_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT for table `recipes`
 --
 ALTER TABLE `recipes`
-MODIFY `recipe_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `recipe_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
+--
+-- AUTO_INCREMENT for table `recipe_ingredients`
+--
+ALTER TABLE `recipe_ingredients`
+MODIFY `recipe_ingredients_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `users`
 --
@@ -270,6 +308,13 @@ ALTER TABLE `additional_info`
 ADD CONSTRAINT `additional_info_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `comments`
+--
+ALTER TABLE `comments`
+ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`recipe_id`) REFERENCES `recipes` (`recipe_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `favorites`
 --
 ALTER TABLE `favorites`
@@ -281,6 +326,13 @@ ADD CONSTRAINT `favorites_ibfk_2` FOREIGN KEY (`recipe_id`) REFERENCES `recipes`
 --
 ALTER TABLE `recipes`
 ADD CONSTRAINT `recipes_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `recipe_ingredients`
+--
+ALTER TABLE `recipe_ingredients`
+ADD CONSTRAINT `recipe_ingredients_ibfk_1` FOREIGN KEY (`ingredients_id`) REFERENCES `ingredients` (`ingredients_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `recipe_ingredients_ibfk_2` FOREIGN KEY (`recipe_id`) REFERENCES `recipes` (`recipe_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
