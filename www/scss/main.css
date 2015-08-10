@@ -69,7 +69,7 @@ body {
     height: 100px; }
 
 nav {
-  background-color: #333;
+  background-color: #333333;
   box-shadow: 0px 0px 2px #666; }
   nav:after {
     content: "";
@@ -83,12 +83,15 @@ nav {
       content: "";
       display: table;
       clear: both; }
+    @media only screen and (max-width: 1020px) {
+      nav .container {
+        width: 100%; } }
     nav .container .account_drop {
       float: left; }
       nav .container .account_drop ul {
         width: 100%;
         position: relative;
-        background-color: #333; }
+        background-color: #333333; }
         nav .container .account_drop ul:after {
           content: "";
           display: table;
@@ -147,7 +150,7 @@ nav {
                 background-color: #f06d06; }
     nav .container .search {
       height: 50px;
-      float: left; }
+      float: right; }
       nav .container .search form {
         margin: 0 auto; }
         nav .container .search form:after {
@@ -163,6 +166,9 @@ nav {
           outline: 0;
           padding-left: 10px;
           float: left; }
+          @media only screen and (max-width: 520px) {
+            nav .container .search form input[type="text"] {
+              display: none; } }
         nav .container .search form button {
           height: 50px;
           border: 0;
@@ -181,7 +187,7 @@ nav {
       height: 50px; }
       nav .container .logo a img {
         display: block;
-        margin: 5px 0; }
+        margin: 5px 10px; }
 
 .banner {
   position: relative;
@@ -325,6 +331,12 @@ nav {
     width: 490px;
     margin-bottom: 10px;
     float: left; }
+    @media only screen and (max-width: 1020px) {
+      .recipe_container .recipe_email, .recipe_container .recipe_directions {
+        width: 50%; } }
+    @media only screen and (max-width: 770px) {
+      .recipe_container .recipe_email, .recipe_container .recipe_directions {
+        width: 100%; } }
     .recipe_container .recipe_email h3, .recipe_container .recipe_directions h3 {
       font-size: 1em;
       font-weight: bold;
@@ -343,15 +355,13 @@ nav {
     .recipe_container .recipe_email table tr td:nth-child(even), .recipe_container .recipe_directions table tr td:nth-child(even) {
       font-size: 0.875em;
       margin-left: 10px; }
-    .recipe_container .recipe_email table tr:nth-last-child(2) td:nth-last-child(2), .recipe_container .recipe_directions table tr:nth-last-child(2) td:nth-last-child(2) {
-      padding: 0; }
     .recipe_container .recipe_email table tr:nth-last-child(1) td:nth-last-child(1), .recipe_container .recipe_directions table tr:nth-last-child(1) td:nth-last-child(1) {
       padding: 0; }
       .recipe_container .recipe_email table tr:nth-last-child(1) td:nth-last-child(1) input, .recipe_container .recipe_directions table tr:nth-last-child(1) td:nth-last-child(1) input {
         width: 100%;
         border: none;
         padding: 10px 0;
-        background-color: #333;
+        background-color: #333333;
         color: #fff; }
         .recipe_container .recipe_email table tr:nth-last-child(1) td:nth-last-child(1) input:active, .recipe_container .recipe_directions table tr:nth-last-child(1) td:nth-last-child(1) input:active {
           background-color: #666; }
@@ -387,8 +397,8 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
         margin: 0 5px; }
         article .pages ol li a, .sort_panel .pages ol li a, .recipe_contaier .pages ol li a, .recipe_header .pages ol li a {
           padding: 5px 7px;
-          background-color: #333;
-          color: #ccc;
+          background-color: #333333;
+          color: #cccccc;
           text-decoration: none;
           font-size: 0.875em;
           -webkit-border-radius: 5px;
@@ -397,7 +407,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
           article .pages ol li a:hover, .sort_panel .pages ol li a:hover, .recipe_contaier .pages ol li a:hover, .recipe_header .pages ol li a:hover {
             background-color: #f06d06; }
   article .profile_container, .sort_panel .profile_container, .recipe_contaier .profile_container, .recipe_header .profile_container {
-    background-color: #333;
+    background-color: #333333;
     box-shadow: 0px 0px 2px #666;
     margin-top: 20px;
     -webkit-border-radius: 5px;
@@ -428,8 +438,8 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
         -moz-border-radius-topright: 3px;
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
-        max-width: 100%;
-        height: auto; }
+        width: 100%;
+        height: 250px; }
       article .profile_container .cover .profile_details_container, .sort_panel .profile_container .cover .profile_details_container, .recipe_contaier .profile_container .cover .profile_details_container, .recipe_header .profile_container .cover .profile_details_container {
         padding: 10px;
         position: relative; }
@@ -450,7 +460,9 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
           border-bottom-left-radius: 15px;
           box-shadow: 0px 0px 2px #666;
           border: 1px solid #fff;
-          z-index: 0; }
+          z-index: 0;
+          width: 110px;
+          height: 110px; }
         article .profile_container .cover .profile_details_container .profile_details, .sort_panel .profile_container .cover .profile_details_container .profile_details, .recipe_contaier .profile_container .cover .profile_details_container .profile_details, .recipe_header .profile_container .cover .profile_details_container .profile_details {
           float: left;
           margin-left: 120px;
@@ -482,7 +494,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
       width: 230px; } }
   article ul li, .sort_panel ul li, .recipe_contaier ul li, .recipe_header ul li {
     width: 230px;
-    background-color: #333;
+    background-color: #333333;
     box-shadow: 0px 0px 2px #666;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -502,20 +514,22 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
         -moz-border-radius-topleft: 3px;
         -moz-border-radius-topright: 3px;
         border-top-left-radius: 3px;
-        border-top-right-radius: 3px; }
+        border-top-right-radius: 3px;
+        height: 150px;
+        width: 100%; }
     article ul li .information, .sort_panel ul li .information, .recipe_contaier ul li .information, .recipe_header ul li .information {
       padding: 10px; }
       article ul li .information h3, .sort_panel ul li .information h3, .recipe_contaier ul li .information h3, .recipe_header ul li .information h3 {
         font-weight: bold;
-        color: #ccc;
+        color: #cccccc;
         margin-bottom: 20px; }
         article ul li .information h3 a, .sort_panel ul li .information h3 a, .recipe_contaier ul li .information h3 a, .recipe_header ul li .information h3 a {
           text-decoration: none;
-          color: #ccc; }
+          color: #cccccc; }
           article ul li .information h3 a:hover, .sort_panel ul li .information h3 a:hover, .recipe_contaier ul li .information h3 a:hover, .recipe_header ul li .information h3 a:hover {
             text-decoration: underline; }
       article ul li .information p, .sort_panel ul li .information p, .recipe_contaier ul li .information p, .recipe_header ul li .information p {
-        color: #ccc;
+        color: #cccccc;
         font-size: 0.775em;
         margin-bottom: 10px; }
         article ul li .information p a, .sort_panel ul li .information p a, .recipe_contaier ul li .information p a, .recipe_header ul li .information p a {
@@ -530,7 +544,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
         margin-bottom: 5px; }
       article ul li .information span, .sort_panel ul li .information span, .recipe_contaier ul li .information span, .recipe_header ul li .information span {
         padding: 5px;
-        color: #ccc;
+        color: #cccccc;
         font-size: 0.775em;
         vertical-align: text-top;
         float: left;
@@ -589,15 +603,17 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
             width: 500px; } }
         @media only screen and (max-width: 520px) {
           article .chef_info .message_container .message, article .chef_info .message_container .ingredients, article .chef_info .ingredients_container .message, article .chef_info .ingredients_container .ingredients, .sort_panel .chef_info .message_container .message, .sort_panel .chef_info .message_container .ingredients, .sort_panel .chef_info .ingredients_container .message, .sort_panel .chef_info .ingredients_container .ingredients, .recipe_contaier .chef_info .message_container .message, .recipe_contaier .chef_info .message_container .ingredients, .recipe_contaier .chef_info .ingredients_container .message, .recipe_contaier .chef_info .ingredients_container .ingredients, .recipe_header .chef_info .message_container .message, .recipe_header .chef_info .message_container .ingredients, .recipe_header .chef_info .ingredients_container .message, .recipe_header .chef_info .ingredients_container .ingredients {
+            max-height: 100%;
+            overflow: auto;
             width: 100%;
-            margin: 50px 0;
+            margin: 0 auto;
             -webkit-border-radius: 0px;
             -moz-border-radius: 0px;
             border-radius: 0px; } }
         article .chef_info .message_container .message h3, article .chef_info .message_container .ingredients h3, article .chef_info .ingredients_container .message h3, article .chef_info .ingredients_container .ingredients h3, .sort_panel .chef_info .message_container .message h3, .sort_panel .chef_info .message_container .ingredients h3, .sort_panel .chef_info .ingredients_container .message h3, .sort_panel .chef_info .ingredients_container .ingredients h3, .recipe_contaier .chef_info .message_container .message h3, .recipe_contaier .chef_info .message_container .ingredients h3, .recipe_contaier .chef_info .ingredients_container .message h3, .recipe_contaier .chef_info .ingredients_container .ingredients h3, .recipe_header .chef_info .message_container .message h3, .recipe_header .chef_info .message_container .ingredients h3, .recipe_header .chef_info .ingredients_container .message h3, .recipe_header .chef_info .ingredients_container .ingredients h3 {
           font-size: 1.5em;
           font-weight: bold;
-          color: #333;
+          color: #333333;
           margin-bottom: 10px; }
         article .chef_info .message_container .message .close, article .chef_info .message_container .ingredients .close, article .chef_info .ingredients_container .message .close, article .chef_info .ingredients_container .ingredients .close, .sort_panel .chef_info .message_container .message .close, .sort_panel .chef_info .message_container .ingredients .close, .sort_panel .chef_info .ingredients_container .message .close, .sort_panel .chef_info .ingredients_container .ingredients .close, .recipe_contaier .chef_info .message_container .message .close, .recipe_contaier .chef_info .message_container .ingredients .close, .recipe_contaier .chef_info .ingredients_container .message .close, .recipe_contaier .chef_info .ingredients_container .ingredients .close, .recipe_header .chef_info .message_container .message .close, .recipe_header .chef_info .message_container .ingredients .close, .recipe_header .chef_info .ingredients_container .message .close, .recipe_header .chef_info .ingredients_container .ingredients .close {
           position: absolute;
@@ -605,7 +621,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
           right: 20px; }
           article .chef_info .message_container .message .close a, article .chef_info .message_container .ingredients .close a, article .chef_info .ingredients_container .message .close a, article .chef_info .ingredients_container .ingredients .close a, .sort_panel .chef_info .message_container .message .close a, .sort_panel .chef_info .message_container .ingredients .close a, .sort_panel .chef_info .ingredients_container .message .close a, .sort_panel .chef_info .ingredients_container .ingredients .close a, .recipe_contaier .chef_info .message_container .message .close a, .recipe_contaier .chef_info .message_container .ingredients .close a, .recipe_contaier .chef_info .ingredients_container .message .close a, .recipe_contaier .chef_info .ingredients_container .ingredients .close a, .recipe_header .chef_info .message_container .message .close a, .recipe_header .chef_info .message_container .ingredients .close a, .recipe_header .chef_info .ingredients_container .message .close a, .recipe_header .chef_info .ingredients_container .ingredients .close a {
             position: relative;
-            color: #333;
+            color: #333333;
             text-decoration: none; }
             article .chef_info .message_container .message .close a:hover, article .chef_info .message_container .ingredients .close a:hover, article .chef_info .ingredients_container .message .close a:hover, article .chef_info .ingredients_container .ingredients .close a:hover, .sort_panel .chef_info .message_container .message .close a:hover, .sort_panel .chef_info .message_container .ingredients .close a:hover, .sort_panel .chef_info .ingredients_container .message .close a:hover, .sort_panel .chef_info .ingredients_container .ingredients .close a:hover, .recipe_contaier .chef_info .message_container .message .close a:hover, .recipe_contaier .chef_info .message_container .ingredients .close a:hover, .recipe_contaier .chef_info .ingredients_container .message .close a:hover, .recipe_contaier .chef_info .ingredients_container .ingredients .close a:hover, .recipe_header .chef_info .message_container .message .close a:hover, .recipe_header .chef_info .message_container .ingredients .close a:hover, .recipe_header .chef_info .ingredients_container .message .close a:hover, .recipe_header .chef_info .ingredients_container .ingredients .close a:hover {
               color: #f06d06; }
@@ -633,7 +649,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
       display: block; }
     article .chef_info a.btn, .sort_panel .chef_info a.btn, .recipe_contaier .chef_info a.btn, .recipe_header .chef_info a.btn {
       position: absolute;
-      bottom: 60px;
+      top: 20px;
       right: 20px;
       z-index: 1000; }
     article .chef_info img, .sort_panel .chef_info img, .recipe_contaier .chef_info img, .recipe_header .chef_info img {
@@ -644,8 +660,16 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
       -moz-border-radius-topright: 3px;
       border-top-left-radius: 3px;
       border-top-right-radius: 3px;
-      max-width: 100%;
-      height: auto; }
+      width: 100%;
+      height: 250px; }
+      @media only screen and (max-width: 520px) {
+        article .chef_info img, .sort_panel .chef_info img, .recipe_contaier .chef_info img, .recipe_header .chef_info img {
+          -webkit-border-top-left-radius: 0px;
+          -webkit-border-top-right-radius: 0px;
+          -moz-border-radius-topleft: 0px;
+          -moz-border-radius-topright: 0px;
+          border-top-left-radius: 0px;
+          border-top-right-radius: 0px; } }
     article .chef_info .details_container, .sort_panel .chef_info .details_container, .recipe_contaier .chef_info .details_container, .recipe_header .chef_info .details_container {
       position: absolute;
       bottom: 0;
@@ -653,11 +677,13 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
       width: 100%; }
       article .chef_info .details_container .profile_details img, .sort_panel .chef_info .details_container .profile_details img, .recipe_contaier .chef_info .details_container .profile_details img, .recipe_header .chef_info .details_container .profile_details img {
         position: relative;
-        border: 5px solid #333;
+        border: 5px solid #333333;
         display: block;
         float: left;
         margin: 0 20px 20px 30px;
         z-index: 999;
+        max-width: 110px;
+        height: auto;
         -webkit-border-radius: 3px;
         -webkit-border-top-right-radius: 15px;
         -webkit-border-bottom-left-radius: 15px;
@@ -684,7 +710,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
         bottom: 0;
         left: 0;
         width: 100%;
-        background-color: #333;
+        background-color: #333333;
         padding: 10px 10px; }
         article .chef_info .details_container .recipe_details .icon_container, .sort_panel .chef_info .details_container .recipe_details .icon_container, .recipe_contaier .chef_info .details_container .recipe_details .icon_container, .recipe_header .chef_info .details_container .recipe_details .icon_container {
           float: right; }
@@ -704,16 +730,19 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
             article .chef_info .details_container .recipe_details .icon_container ul li .numbers, .sort_panel .chef_info .details_container .recipe_details .icon_container ul li .numbers, .recipe_contaier .chef_info .details_container .recipe_details .icon_container ul li .numbers, .recipe_header .chef_info .details_container .recipe_details .icon_container ul li .numbers {
               float: left;
               line-height: 19px;
-              color: #ccc;
+              color: #cccccc;
               font-size: 0.775em;
               padding-left: 5px;
               font-weight: bold; }
 
 .recipe_header {
   margin: 20px auto 0 auto; }
+  @media only screen and (max-width: 520px) {
+    .recipe_header {
+      margin: 0 auto; } }
 
 footer {
-  background-color: #333;
+  background-color: #333333;
   height: 50px;
   position: absolute;
   bottom: 0;
@@ -727,7 +756,7 @@ footer {
       display: inline;
       margin-right: 20px; }
       footer ul li a {
-        color: #ccc;
+        color: #cccccc;
         text-decoration: none;
         font-weight: bold;
         font-size: 0.875em; }
@@ -908,6 +937,9 @@ footer {
     content: "";
     display: table;
     clear: both; }
+  @media only screen and (max-width: 520px) {
+    .two {
+      width: 100%; } }
 
 .three {
   width: 33.3%;
@@ -944,7 +976,7 @@ footer {
           background-color: #e6e6e6;
           display: block;
           font-size: 0.775em;
-          color: #333;
+          color: #333333;
           text-decoration: none; }
           .register_container .account_panel ul li a:hover, .login_container .account_panel ul li a:hover, .account_container .account_panel ul li a:hover {
             background-color: #fff; }
@@ -976,7 +1008,7 @@ footer {
   -moz-border-radius: 5px;
   border-radius: 5px; }
   .btn:hover {
-    background-color: #333; }
+    background-color: #333333; }
 
 .ingredients_btn {
   color: #fff;
@@ -988,7 +1020,7 @@ footer {
   border: none;
   border: 2px solid #fff; }
   .ingredients_btn:hover {
-    background-color: #333; }
+    background-color: #333333; }
 
 .btn-left {
   color: #fff;
@@ -1000,7 +1032,7 @@ footer {
   border-bottom-left-radius: 3px;
   border-top-left-radius: 3px; }
   .btn-left:hover {
-    background-color: #333; }
+    background-color: #333333; }
 
 .btn-right {
   color: #fff;
@@ -1012,7 +1044,7 @@ footer {
   border-bottom-right-radius: 3px;
   border-top-right-radius: 3px; }
   .btn-right:hover {
-    background-color: #333; }
+    background-color: #333333; }
 
 .btn-remove {
   color: #f04124;
@@ -1022,7 +1054,7 @@ footer {
   line-height: 36px;
   margin: 10px 15px; }
   .btn-remove:hover {
-    color: #333; }
+    color: #333333; }
   @media only screen and (max-width: 520px) {
     .btn-remove {
       margin: 10px 5px; } }
@@ -1097,6 +1129,9 @@ footer {
 .correct {
   padding: 0 10px; }
 
+.overflow {
+  overflow: hidden; }
+
 hr {
   clear: both;
   margin: 20px 0;
@@ -1141,15 +1176,17 @@ hr {
         width: 500px; } }
     @media only screen and (max-width: 520px) {
       .message_container .message, .message_container .ingredients, .ingredients_container .message, .ingredients_container .ingredients {
+        max-height: 100%;
+        overflow: auto;
         width: 100%;
-        margin: 50px 0;
+        margin: 0 auto;
         -webkit-border-radius: 0px;
         -moz-border-radius: 0px;
         border-radius: 0px; } }
     .message_container .message h3, .message_container .ingredients h3, .ingredients_container .message h3, .ingredients_container .ingredients h3 {
       font-size: 1.5em;
       font-weight: bold;
-      color: #333;
+      color: #333333;
       margin-bottom: 10px; }
     .message_container .message .close, .message_container .ingredients .close, .ingredients_container .message .close, .ingredients_container .ingredients .close {
       position: absolute;
@@ -1157,7 +1194,7 @@ hr {
       right: 20px; }
       .message_container .message .close a, .message_container .ingredients .close a, .ingredients_container .message .close a, .ingredients_container .ingredients .close a {
         position: relative;
-        color: #333;
+        color: #333333;
         text-decoration: none; }
         .message_container .message .close a:hover, .message_container .ingredients .close a:hover, .ingredients_container .message .close a:hover, .ingredients_container .ingredients .close a:hover {
           color: #f06d06; }
@@ -1184,5 +1221,3 @@ hr {
 
 .show {
   display: block; }
-
-/*# sourceMappingURL=main.css.map */

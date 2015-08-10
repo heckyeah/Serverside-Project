@@ -50,14 +50,14 @@
 					</li>
 				</ul>
 			</div>
+			<div class="logo">
+				<a href="index.php"><img src="img/logo_small.png" alt=""></a>
+			</div>
 			<div class="search">
 				<form action="">
 					<input type="text" placeholder="Recipe Search" name="" id="">
 					<button><i class="fa fa-search"></i></button>
 				</form>	
-			</div>
-			<div class="logo">
-				<a href="index.php"><img src="img/logo.png" alt=""></a>
 			</div>
 		</div>
 	</nav>

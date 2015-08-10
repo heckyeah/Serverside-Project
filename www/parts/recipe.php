@@ -1,23 +1,23 @@
 <div class="recipe_header">
 	<div class="chef_info">
-		<img src="img/recipes/cover/<?php echo $this->recipeInfo['recipe_image']; ?>" alt="">
+		<img src="img/recipes/cover/<?php echo $this->model->coverImage; ?>" alt="">
 		<a href="#" class="click btn">Edit Recipe</a>
 			<div class="message_container">
 				<div class="message">
 					<h3>Edit Recipe</h3>
 					<div class="close"><a href="#" class="shut"><i class="fa fa-times"></i></a></i></div>
-					<form action="index.php?page=recipe&recipeid=<?php echo $this->recipeInfo['recipe_id']; ?>" method="post" enctype="multipart/form-data">
+					<form action="index.php?page=recipe&recipeid=<?php echo $this->model->recipeID; ?>" method="post" enctype="multipart/form-data">
 						<div class="seperate">
 							<div class="two">
 								<label for="recipe-title">Recipe Title: </label>
-								<input type="text" name="recipe-title" id="recipe-title" value="<?php echo $this->recipeEditInfo['title']; ?>">
+								<input type="text" name="recipe-title" id="recipe-title" value="<?php echo $this->model->recipeTitle; ?>">
 
 								<label for="recipe-directions">Recipe Directions: </label>
-								<textarea name="recipe-directions" id="recipe-directions" ><?php echo $this->recipeEditInfo['directions']; ?></textarea>
+								<textarea name="recipe-directions" id="recipe-directions" ><?php echo $this->model->recipeDirections; ?></textarea>
 							</div>
 							<div class="two">
 								<label for="cook-time">How long does it take to cook? </label>
-								<input type="text" name="cook-time" id="cook-time" value="<?php echo $this->recipeEditInfo['cook_time']; ?>">
+								<input type="text" name="cook-time" id="cook-time" value="<?php echo $this->model->recipeTime; ?>">
 								<label for="">How many people does this serve?</label>
 								<select name="serves" class="select-menu">
 									<option value="1-2">1-2</option>
@@ -26,10 +26,11 @@
 								</select>
 
 								<label for="">Do you have a youtube video?</label>
-								<input type="text" placeholder="https://www.youtube.com/watch?v=Eja8FKLzBU4" name="recipe-video" id="recipe-video" value="https://www.youtube.com/<?php echo $this->recipeEditInfo['recipe_video']; ?>">
+								<input type="text" placeholder="https://www.youtube.com/watch?v=Eja8FKLzBU4" name="recipe-video" id="recipe-video" value="https://www.youtube.com/<?php echo $this->model->recipeVideo; ?>">
 
-								<label for="">Cover Photo: </label>
-								<input type="file" name="" id="">
+								<label for="recipe-image">Upload Image</label>
+								<input type="hidden" name="MAX_FILE_SIZE" value="1000000">
+								<input type="file" name="recipe-image" id="recipe-image">
 							</div>
 						</div>
 						<div class="one space">
@@ -52,7 +53,7 @@
 						</li>
 						<li>
 							<span class="time"></span>
-							<span class="numbers"><?php echo $this->recipeInfo['cook_time']; ?> M</span>
+							<span class="numbers"><?php echo $this->model->recipeTime; ?> M</span>
 						</li>
 					</ul>
 					
@@ -69,7 +70,7 @@
 	</div>
 </div>
 <article class="recipe_container">
-	<h2><?php echo $this->recipeInfo['title']; ?></h2>
+	<h2><?php echo $this->model->recipeTitle; ?></h2>
 	<div class="recipe_email">
 		<h3>Ingredients</h3>
 		<form action="index.php?page=recipe">
@@ -101,7 +102,7 @@
 						<?php
 
 							// Get all the ingredients
-							$result = $this->model->getIngredients();
+							$result = $this->model->getIngredientsToDisplay();
 
 							// Loop through the ingredients and put them into an array
 							$allIngredients = [];
@@ -150,7 +151,7 @@
 						<?php endfor; ?>
 					</div>
 					<div class="one space">
-						<input type="submit" value="Save Changes" class="btn">
+						<input type="submit" value="Save Changes" name="change-ingredients" id="change-ingredients" class="btn">
 					</div>
 				</form>
 			</div>
@@ -159,16 +160,17 @@
 	<div class="recipe_directions">
 		<h3>Directions</h3>
 		<div class="directions">
-			<p><?php echo $this->recipeInfo['directions']; ?><p>			
+			<p><?php echo $this->model->recipeDirections; ?><p>			
 		</div>
 	</div>
 	<hr>
 	<div class="recipe_video_section">
 		<h3>Video</h3>
 		<div class="video_container">
-			<iframe src="https://www.youtube.com/embed/<?php echo $this->recipeInfo['recipe_video']; ?>" frameborder="0" allowfullscreen></iframe>
+			<iframe src="https://www.youtube.com/embed/<?php echo $this->model->recipeVideo; ?>" frameborder="0" allowfullscreen></iframe>
 		</div>
 	</div>
+<!-- Comments Section 	
 	<hr>
 	<div class="comment_section">
 		<div class="comments_user">
@@ -191,5 +193,5 @@
 			<h3>Hekiera Mareroa</h3>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit odit, error maiores nostrum deleniti at fugiat, quibusdam repellat enim consequuntur, hic voluptatibus quod inventore pariatur. Fugiat tenetur illo, neque voluptatem.</p>
 		</div>
-	</div>
+	</div> -->
 </article>

@@ -4,7 +4,7 @@ $( function() {
   $("a.click").click( function( event ) {
     event.stopPropagation();
     // write classes and css to tags
-    $("body", "html").css({'overflow':'hidden'});
+    $("body", "html").addClass("overflow");
     $(".message").addClass("active");
     $(".message_container").addClass("show");
   });
@@ -15,7 +15,7 @@ $( function() {
   // make the background close the modal on click
   $("body, a.shut").click( function() {
     // change body css and remove classes
-    $("body", "html").css({'overflow':'auto'});
+    $("body", "html").removeClass("overflow");
     $(".message").removeClass("active");
     $(".message_container").removeClass("show");
   });
@@ -27,7 +27,7 @@ $( function() {
   $("button.click").click( function( event ) {
     event.stopPropagation();
     // write classes and css to tags
-    $("body", "html").css({'overflow':'hidden'});
+    $("body", "html").addClass("overflow");
     $(".ingredients").addClass("active");
     $(".ingredients_container").addClass("show");
   });
@@ -38,7 +38,7 @@ $( function() {
   // make the background close the modal on click
   $("body, a.shut").click( function() {
     // change body css and remove classes
-    $("body", "html").css({'overflow':'auto'});
+    $("body", "html").removeClass("overflow");
     $(".ingredients").removeClass("active");
     $(".ingredients_container").removeClass("show");
   });

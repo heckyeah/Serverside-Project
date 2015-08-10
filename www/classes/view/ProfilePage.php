@@ -63,6 +63,8 @@ class ProfilePage extends Page {
 
 			// If the result was good
 			if( $result ) {
+				// Redirect the user to login
+				header('Location: index.php?page=profile');
 				$this->userSuccess = 'Successfully changed your info';
 			} else {
 				$this->userFail = 'Info not updated';
