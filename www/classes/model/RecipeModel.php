@@ -2,6 +2,18 @@
 
 class RecipeModel extends Model {
 
+	public function getIngredients() {
+
+		$recipeID = $_GET['recipeid'];
+
+		$sql = "SELECT ingredients_id, ingredient_name, type
+				FROM ingredients";
+
+		// Run the query
+		return $this->dbc->query($sql);
+
+	}
+
 	public function getIngredientsToDisplay() {
 
 		$recipeID = $_GET['recipeid'];
@@ -95,7 +107,7 @@ class RecipeModel extends Model {
 						recipe_video = '$recipeVideo',
 						recipe_image = '$image'
 					WHERE recipe_id = $recipeID && user_id = $author;";
-				
+
 
 		} elseif( $result->num_rows == 0 ) {
 
@@ -121,6 +133,24 @@ class RecipeModel extends Model {
 
 		return false;
 
+	}
+
+	public function updateIngredients() {
+
+		$recipeID = $_GET['recipeid'];
+
+		// Loop through each tag
+		foreach( $_POST['ingredient'] as $tagID ) {
+			// Filter the ID just in case the user has tampered with it
+			$tagID = $this->filter($tagID);
+
+			// Prepare SQL
+			$sql = "UPDATE recipe_ingredients
+					WHERE $tagID = $recipeID";
+			die($sql);
+			// Run the query
+			$this->dbc->query($sql);
+		}
 	}
 
 }

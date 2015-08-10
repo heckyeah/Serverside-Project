@@ -15,7 +15,7 @@ class RecipePage extends Page {
 
 		// If the user has submitted the email change form
 		if( isset($_POST['change-ingredients']) ) {
-			$this->processRecipe();
+			$this->model->updateIngredients();
 		}
 
 		//Get profile data

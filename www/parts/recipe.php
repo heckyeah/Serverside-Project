@@ -96,13 +96,13 @@
 			<div class="ingredients">
 				<h3>Edit Ingredients</h3>
 				<div class="close"><a href="#" class="shut"><i class="fa fa-times"></i></a></i></div>
-				<form action="index.php?page=recipe&recipeid=<?php echo $this->recipeInfo['recipe_id']; ?>" method="post" enctype="multipart/form-data">
+				<form action="index.php?page=recipe&recipeid=<?php echo $this->model->recipeID; ?>" method="post" enctype="multipart/form-data">
 					<div class="seperate">
 						<label for="">Ingredients: </label>
 						<?php
 
 							// Get all the ingredients
-							$result = $this->model->getIngredientsToDisplay();
+							$result = $this->model->getIngredients();
 
 							// Loop through the ingredients and put them into an array
 							$allIngredients = [];
