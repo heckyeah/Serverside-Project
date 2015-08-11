@@ -1,7 +1,7 @@
 <div class="recipe_header">
 	<div class="chef_info">
 		<img src="img/recipes/cover/<?php echo $this->model->coverImage; ?>" alt="">
-		<a href="#" class="click btn">Edit Recipe</a>
+		<?php $this->editButtons('<a href="#" class="click btn">Edit Recipe</a>');?>
 			<div class="message_container">
 				<div class="message">
 					<h3>Edit Recipe</h3>
@@ -28,7 +28,7 @@
 								<label for="">Do you have a youtube video?</label>
 								<input type="text" placeholder="https://www.youtube.com/watch?v=Eja8FKLzBU4" name="recipe-video" id="recipe-video" value="https://www.youtube.com/<?php echo $this->model->recipeVideo; ?>">
 
-								<label for="recipe-image">Upload Image</label>
+								<label for="recipe-image">Cover Photo: </label>
 								<input type="hidden" name="MAX_FILE_SIZE" value="1000000">
 								<input type="file" name="recipe-image" id="recipe-image">
 							</div>
@@ -91,8 +91,9 @@
 				</tr>
 			</table>
 		</form>
-		<button class="click ingredients_btn">Edit Ingredients</button>
-		<div class="ingredients_container">
+
+		<?php $this->editButtons('<button class="click ingredients_btn">Edit Ingredients</button>');?>
+		<div class="ingredients_container" id="ingredient-close">
 			<div class="ingredients">
 				<h3>Edit Ingredients</h3>
 				<div class="close"><a href="#" class="shut"><i class="fa fa-times"></i></a></i></div>
@@ -124,21 +125,44 @@
 							// Reset the IDs
 							$allTypes = array_values($allTypes);
 
+							// Get the ingredients that are used on this recipe
+							$result = $this->model->getIngredientsToDisplay();
+
+							// Loop through the ingredients and put them into an array
+							$usedIngredients = [];
+
+							while( $row = $result->fetch_assoc() ) {
+								$usedIngredients[] = $row;
+							}
+
+							// echo '<pre>';
+							// print_r($usedIngredients);
+							// echo '</pre>';
+
 						?>
 
 						<?php for($i=0; $i<10; $i++) : ?>
 						<div class="two">
 							<select name="ingredient[]" class="ingredients select-menu">
-								<option disabled selected="selected">Select a Ingredient</option>
+								<option selected="selected">Empty</option>
 									<?php 
 										foreach( $allTypes as $type ) {
+
 											// Echo out the heading
 											echo '<optgroup label="'.$type.'">';
 											// Loop through all the ingredients and only echo the ones that relate to the type we are currently looping through
 											foreach( $allIngredients as $item ) {
 												// If the type of this ingredient == the type we are looping for
 												if( $item['type'] == $type ) {
-													echo '<option value="'.$item['ingredients_id'].'">';
+
+													// If the ID of the first usedIngredient is the same as the ingredientID we are looping over
+													if( isset($usedIngredients[$i]['ingID']) && $usedIngredients[$i]['ingID'] == $item['ingredients_id'] ) {
+														$selected = ' selected';
+													} else {
+														$selected = '';
+													}
+
+													echo '<option value="'.$item['ingredients_id'].'"'.$selected.'>';
 													echo $item['ingredient_name'];
 													echo '</option>';
 												}

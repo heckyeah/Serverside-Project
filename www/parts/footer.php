@@ -18,7 +18,7 @@
 <script src="http://stephband.info/jquery.event.swipe/js/jquery.event.swipe.js"></script>
 
 <script>$('.select-menu').selectmenu();
-		$( 'ul.ui-widget' ).addClass( "overflow" );</script>
+		$( 'ul.ui-widget' ).addClass( "height-max" );</script>
 <script>$('.banner').unslider({ fluid: true, dots: true });</script>
 
 	

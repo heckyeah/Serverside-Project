@@ -19,24 +19,29 @@ class AddRecipeModel extends Model {
 		$recipeServes 		= $_POST['serves'];
 		$recipeVideo 		= $_POST['recipe-video'];
 		$recipeVideo 		= substr("$recipeVideo", -11);
+		$author 			= $_SESSION['user_id'];
 
-		$author = $_SESSION['user_id'];
+		// If there is "recipe-image" in the post array then an image has been provided
+		if( isset($_POST['cover-image']) ) {
+			$image = $this->filter($_POST['cover-image']);
+		} else {
+			$image = 'default.jpg';
+		}
 
 		$sql = "INSERT INTO recipes 
-				VALUES (NULL, '$recipeTitle', '$recipeDirections', 'MacAndCheese.jpg', '$recipeTime', '$recipeServes', '$recipeVideo', $author, 0, 0, CURRENT_TIMESTAMP)";
-		
+				VALUES (NULL, '$recipeTitle', '$recipeDirections', '$image', '$recipeTime', '$recipeServes', '$recipeVideo', $author, 0, 0, CURRENT_TIMESTAMP)";
+
 		// Run the SQL
 		$this->dbc->query($sql);
 
 		// Get the ID of the brand new recipe
 		// We will use this to associate tags
 		$recipeID = $this->dbc->insert_id;
-
-		// Loop through each tag
+				// Loop through each tag
 		foreach( $_POST['ingredient'] as $tagID ) {
 			// Filter the ID just in case the user has tampered with it
 			$tagID = $this->filter($tagID);
-
+			
 			// Prepare SQL
 			$sql = "INSERT INTO
 						recipe_ingredients
@@ -45,7 +50,9 @@ class AddRecipeModel extends Model {
 			// Run the query
 			$this->dbc->query($sql);
 		}
+		
 
+		header('Location: index.php?page=recipe&recipeid='.$recipeID );
 	}
 
 }

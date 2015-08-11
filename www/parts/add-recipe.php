@@ -1,6 +1,6 @@
 <div class="add_recipe_container">
 	<div class="add_recipe">
-		<form action="index.php?page=addrecipe" method="POST">
+		<form action="index.php?page=addrecipe" method="POST" enctype="multipart/form-data">
 			<h3>Add recipe details</h3>
 			<div class="add_recipe_half">
 				<label for="recipe-title">Recipe Title: </label>
@@ -24,7 +24,8 @@
 				<input type="text" placeholder="https://www.youtube.com/watch?v=Eja8FKLzBU4" name="recipe-video" id="recipe-video">
 
 				<label for="">Cover Photo: </label>
-				<input type="file" name="" id="">
+				<input type="hidden" name="MAX_FILE_SIZE" value="1000000">
+				<input type="file" name="cover-image" id="cover-image">
 
 			</div>
 			<div class="add_recipe_half">

@@ -39,9 +39,11 @@ class RecipeModel extends Model {
 						recipe_image, 
 						cook_time, 
 						recipe_video, 
-						user_id
-				FROM recipes
-
+						recipes.user_id,
+						username
+				FROM users
+				JOIN recipes
+				ON users.user_id = recipes.user_id
 				WHERE recipe_id = $recipeID";
 
 		// Run the query
@@ -56,6 +58,7 @@ class RecipeModel extends Model {
 		$this->recipeDirections 	= $recipeData['directions'];
 		$this->recipeVideo 			= $recipeData['recipe_video'];
 		$this->recipeTime 			= $recipeData['cook_time'];
+		$this->recipeUser 			= $recipeData['username'];
 	}
 
 	public function updateRecipe() {
@@ -68,6 +71,14 @@ class RecipeModel extends Model {
 		$recipeVideo 		= substr($_POST['recipe-video'], -11);
 		$author 			= $_SESSION['user_id'];
 
+		if ($_SESSION['privilege'] == 'admin') {
+
+			// Get the ID of the recipe owner
+			$sql = "SELECT user_id FROM recipes WHERE recipe_id = $recipeID";
+			$result = $this->dbc->query($sql);
+			$result = $result->fetch_assoc();
+			$author = $result['user_id'];
+		}
 		// Query to see if there is existing info in the database
 		$sql = "SELECT recipe_image
 				FROM recipes
@@ -108,7 +119,6 @@ class RecipeModel extends Model {
 						recipe_image = '$image'
 					WHERE recipe_id = $recipeID && user_id = $author;";
 
-
 		} elseif( $result->num_rows == 0 ) {
 
 			// If there is "recipe-image" in the post array then an image has been provided
@@ -137,7 +147,12 @@ class RecipeModel extends Model {
 
 	public function updateIngredients() {
 
-		$recipeID = $_GET['recipeid'];
+		$recipeID = $this->filter($_GET['recipeid']);
+
+		$sql = "DELETE FROM recipe_ingredients
+				WHERE recipe_id = $recipeID";
+
+		$this->dbc->query($sql);
 
 		// Loop through each tag
 		foreach( $_POST['ingredient'] as $tagID ) {
@@ -145,12 +160,14 @@ class RecipeModel extends Model {
 			$tagID = $this->filter($tagID);
 
 			// Prepare SQL
-			$sql = "UPDATE recipe_ingredients
-					WHERE $tagID = $recipeID";
-			die($sql);
+			$sql = "INSERT INTO
+						recipe_ingredients
+					VALUES (NULL, $tagID, $recipeID)";
+
 			// Run the query
 			$this->dbc->query($sql);
 		}
+
 	}
 
 }
