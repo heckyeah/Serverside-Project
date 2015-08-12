@@ -23,7 +23,6 @@ class AccountModel extends Model {
 		} else {
 			return false;
 		}
-
 	}
 
 	public function checkEmailExists( $email ) {
@@ -120,6 +119,74 @@ class AccountModel extends Model {
 		} else {
 			return false;
 		}
+
+	}
+
+	public function changeAvatar() {
+
+		// Get the userID
+		$userID = $_SESSION['user_id'];
+
+		// Query to see if there is existing info in the database
+		$sql = "SELECT profile_image
+				FROM additional_info
+				WHERE user_id = $userID";
+
+		// Run the SQL
+		$result = $this->dbc->query($sql);
+
+		// If there is a result then do an update
+		if( $result->num_rows == 1 ) {
+			
+			// If the user has provided an image
+			if( isset($_POST['profile-image']) ) {
+				$image = $this->filter($_POST['profile-image']);
+
+				// Convert the result into an associative array
+				$data = $result->fetch_assoc();
+
+				if($data['profile_image'] != 'default.jpg') {
+					// Delete the old images
+					unlink('img/user/avatar/original/'.$data['profile_image']);
+					unlink('img/user/avatar/edited/'.$data['profile_image']);
+					unlink('img/user/avatar/icon/'.$data['profile_image']);
+				}
+			} else {
+				// Convert the result into an associative array
+				$data = $result->fetch_assoc();
+
+				// No new image
+				$image = $data['profile_image'];
+			}
+
+			// UPDATE
+			$sql = "UPDATE additional_info
+					SET profile_image = '$image'
+					WHERE user_id = $userID";
+
+		} elseif( $result->num_rows == 0 ) {
+
+			// If there is "profile-image" in the post array then an image has been provided
+			if( isset($_POST['profile-image']) ) {
+				$image = $this->filter($_POST['profile-image']);
+			} else {
+				$image = 'default.jpg';
+			}
+
+			// INSERT
+			$sql = "INSERT INTO users_additional_info (profile_image)
+					VALUES ('$image')";
+		}
+
+		// Run the SQL
+		$this->dbc->query($sql);
+
+		// If the query failed
+		if( $this->dbc->affected_rows == 1 ) {
+			return true;
+		}
+
+		return false;
 
 	}
 

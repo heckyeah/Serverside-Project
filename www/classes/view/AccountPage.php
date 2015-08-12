@@ -15,6 +15,11 @@ class AccountPage extends Page {
 	public function __construct($model) {
 		parent::__construct($model);
 
+		// If the user has submitted the avatar change form
+		if( isset($_POST['change-avatar']) ) {
+			$this->processChangeAvatar();
+		}
+
 		// If the user has submitted the email change form
 		if( isset($_POST['email-data']) ) {
 			$this->processEmailChange();
@@ -155,5 +160,49 @@ class AccountPage extends Page {
 			$this->model->updatePassword();
 			$this->passwordChangeSuccess = 'Your Password has been changed';
 		}
+	}
+
+	public function processChangeAvatar() {
+
+		if( isset($_FILES['profile-image']) && $_FILES['profile-image']['name'] != '' ) {
+
+			require 'vendor/ImageUploader.php';
+
+			// Create instance of the Image Uploader
+			$imageUploader = new ImageUploader();
+
+			// Attempt to upload the file
+			$result = $imageUploader->upload('profile-image', 'img/user/avatar/original/');
+
+			// If the upload was a success
+			if( $result == true ) {
+
+				// Get the file name
+				$imageName = $imageUploader->getImageName();
+
+				// Prepare the variables
+				$fileLocation = "img/user/avatar/original/$imageName";
+				$destination = "img/user/avatar/edited/";
+
+				// Make the recipe_image version
+				$imageUploader->resize($fileLocation, 110, $destination, $imageName);
+
+				// Make thumbnail
+				$destination = "img/user/avatar/icon/";
+				$imageUploader->resize($fileLocation, 34, $destination, $imageName);
+
+				$_POST['profile-image'] = $imageName;
+			} else {
+				// Something went wrong
+				$this->totalErrors++;
+				$this->userImageError = $imageUploader->errorMessage;
+			}
+		}
+		if ( $this->totalErrors == 0 ) {
+			$this->model->changeAvatar();
+
+		}
+
+
 	}
 }

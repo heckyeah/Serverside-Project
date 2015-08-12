@@ -4,7 +4,7 @@
 		<?php $this->alertMessage($this->passwordChangeSuccess, 'success_message'); ?>
 	</div>
 </div>
-<form action="index.php?page=account&accountinformation" method="post">
+<form action="index.php?page=account&accountinformation" method="post" enctype="multipart/form-data">
 	<div class="seperate">
 		<div class="one">
 			<h1>Change profile image</h1>
@@ -12,13 +12,14 @@
 		<div class="one">
 			<div class="seperate">
 				<label for="">Current Image: </label>
-				<img src="img/user/avatar/default.jpg" alt="" class="space">
+				<img src="img/user/avatar/edited/<?php echo $this->model->profileImage; ?>" alt="" class="space">
 			</div>
 			<div class="seperate">
+				<input type="hidden" name="MAX_FILE_SIZE" value="1000000">
 				<label for="profile">Profile Image: </label>
-				<input type="file" name="" id="profile">
+				<input type="file" name="profile-image" id="profile-image">
 			</div>
-			<input type="submit" class="btn space" value="Change Image">
+			<input type="submit" class="btn space" name="change-avatar" id="change-avatar" value="Change Image">
 		</div>
 	</div>
 </form>

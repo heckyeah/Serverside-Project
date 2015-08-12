@@ -60,7 +60,7 @@
 				</div>
 			</div>
 			<div class="profile_details">
-				<img src="img/user/avatar/default.jpg" alt="">
+				<img src="img/user/avatar/edited/<?php echo $this->model->profileImage; ?>" alt="">
 				<div class="name">
 					<h3>Hekiera Mareroa</h3>
 					<h4>Master Chef</h4>

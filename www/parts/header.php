@@ -17,7 +17,7 @@
 				<ul>
 					<li class="nav_menu">
 						<a href="#">
-							<img src="img/user/avatar/default_icon.jpg" alt="Hekiera Mareroa">
+							<img src="img/user/avatar/icon/<?php echo $this->model->profileImage; ?>" alt="Hekiera Mareroa">
 							<span><?php echo $text; ?><i class="fa fa-caret-down"></i></span>
 						</a>
 						<ul>

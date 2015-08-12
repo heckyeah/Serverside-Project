@@ -27,7 +27,7 @@
 			</div>
 			<img src="img/user/covers/edited/<?php echo $this->model->coverImage; ?>" alt="">
 			<div class="profile_details_container">
-				<img src="img/user/avatar/default.jpg" alt="My Profile">
+				<img src="img/user/avatar/edited/<?php echo $this->model->profileImage; ?>" alt="My Profile">
 				<div class="profile_details">
 					<a href="#"><h3><?php echo $this->model->username; ?></h3></a>
 					<span>Master Chef</span>

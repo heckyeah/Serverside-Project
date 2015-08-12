@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 10, 2015 at 06:52 am
+-- Generation Time: Aug 12, 2015 at 05:30 am
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `additional_info` (
 --
 
 INSERT INTO `additional_info` (`additional_info_id`, `first_name`, `last_name`, `bio`, `gender`, `profile_image`, `cover_image`, `age`, `user_id`) VALUES
-(2, 'Hekiera', 'Mareroa', '', 'M', 'default.jpg', '55c823b922e416.21415171SpiderMan.jpg', '22', 1),
+(2, 'Hekiera', 'Mareroa', '', 'M', '55caa7b6609cc7.60093089Untitled-1.jpg', '55c823b922e416.21415171SpiderMan.jpg', '22', 1),
 (3, 'Jack', 'Sparrow', '', 'M', 'default.jpg', 'placeholder_cover.jpg', '35', 2);
 
 -- --------------------------------------------------------
@@ -141,14 +141,14 @@ CREATE TABLE IF NOT EXISTS `recipes` (
   `favorite_id` int(10) unsigned NOT NULL,
   `comments_id` int(10) unsigned NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=52 ;
 
 --
 -- Dumping data for table `recipes`
 --
 
 INSERT INTO `recipes` (`recipe_id`, `title`, `directions`, `recipe_image`, `cook_time`, `serves`, `recipe_video`, `user_id`, `favorite_id`, `comments_id`, `time`) VALUES
-(23, 'Mac And Cheese', 'This is a mac and cheese recipe', '55c814bfaec926.52243285Untitled-1.jpg', '32', '3-4', 'NNudfQuu9qI', 1, 0, 0, '2015-08-10 03:42:33');
+(23, 'Mac And Cheese', 'This is a mac and cheese recipe', '55c9570268a799.08300378SpiderMan.jpg', '32', '3-4', 'NNudfQuu9qI', 1, 0, 0, '2015-08-11 01:59:30');
 
 -- --------------------------------------------------------
 
@@ -160,21 +160,17 @@ CREATE TABLE IF NOT EXISTS `recipe_ingredients` (
 `recipe_ingredients_id` int(10) unsigned NOT NULL,
   `ingredients_id` smallint(6) unsigned NOT NULL,
   `recipe_id` int(11) unsigned NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=119 ;
 
 --
 -- Dumping data for table `recipe_ingredients`
 --
 
 INSERT INTO `recipe_ingredients` (`recipe_ingredients_id`, `ingredients_id`, `recipe_id`) VALUES
-(17, 1, 23),
-(18, 4, 23),
-(19, 5, 23),
-(20, 6, 23),
-(21, 8, 23),
-(22, 9, 23),
-(23, 10, 23),
-(24, 1, 23);
+(115, 4, 23),
+(116, 5, 23),
+(117, 6, 23),
+(118, 8, 23);
 
 -- --------------------------------------------------------
 
@@ -286,12 +282,12 @@ MODIFY `page_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT for table `recipes`
 --
 ALTER TABLE `recipes`
-MODIFY `recipe_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
+MODIFY `recipe_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=52;
 --
 -- AUTO_INCREMENT for table `recipe_ingredients`
 --
 ALTER TABLE `recipe_ingredients`
-MODIFY `recipe_ingredients_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
+MODIFY `recipe_ingredients_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=119;
 --
 -- AUTO_INCREMENT for table `users`
 --
