@@ -165,10 +165,10 @@ class AccountModel extends Model {
 
 			// UPDATE
 			$sql = "UPDATE additional_info
-					SET profile_image = '$image'
-						first_name = '$firstname'
-						last_name = '$lastname'
-						bio = '$bio'
+					SET profile_image = '$image',
+						first_name = '$firstname',
+						last_name = '$lastname',
+						bio = '$bio',
 						gender = '$gender'
 					WHERE user_id = $userID";
 

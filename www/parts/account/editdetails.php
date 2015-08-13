@@ -19,6 +19,10 @@
 		$profileUsername = $userData['username'];
 	}
 
+	$firstname 	= $profileData['first_name'];
+	$lastname 	= $profileData['last_name'];
+	$bio 		= $profileData['bio'];
+
 ?>
 
 
@@ -31,15 +35,15 @@
 		</div>
 		<div class="two">
 			<label for="">First Name: </label>
-			<input type="text" name="first-name" id="first-name">
+			<input type="text" name="first-name" id="first-name" value="<?php echo $firstname; ?>">
 		</div>
 		<div class="two">
 			<label for="">Last Name: </label>
-			<input type="text" name="last-name" id="last-name">
+			<input type="text" name="last-name" id="last-name" value="<?php echo $lastname; ?>">
 		</div>
 		<div class="one">
 			<label for="">Describe yourself:</label>
-			<textarea name="bio" id="bio"></textarea>
+			<textarea name="bio" id="bio"><?php echo $bio; ?></textarea>
 		</div>
 		<div class="two">
 			<label for="">Gender:</label>
