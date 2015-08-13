@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 12, 2015 at 05:30 am
+-- Generation Time: Aug 13, 2015 at 07:55 am
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -36,15 +36,15 @@ CREATE TABLE IF NOT EXISTS `additional_info` (
   `cover_image` varchar(100) NOT NULL,
   `age` varchar(3) NOT NULL,
   `user_id` mediumint(8) unsigned NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `additional_info`
 --
 
 INSERT INTO `additional_info` (`additional_info_id`, `first_name`, `last_name`, `bio`, `gender`, `profile_image`, `cover_image`, `age`, `user_id`) VALUES
-(2, 'Hekiera', 'Mareroa', '', 'M', '55caa7b6609cc7.60093089Untitled-1.jpg', '55c823b922e416.21415171SpiderMan.jpg', '22', 1),
-(3, 'Jack', 'Sparrow', '', 'M', 'default.jpg', 'placeholder_cover.jpg', '35', 2);
+(2, 'Hekiera', 'Mareroa', '', 'M', '55caa7b6609cc7.60093089Untitled-1.jpg', '55cc198b68ea35.95611969Screen Shot 2015-06-30 at 12.16.03 pm.png', '22', 1),
+(10, 'dfbsfbsdfb', 'sdfbsdfbdsfb', 'dsfbdsfbdbf', 'M', '55cc2fc01e2311.37460753Screen Shot 2015-06-30 at 12.16.03 pm.png', '55cc30913e31f2.36020605Screen Shot 2015-08-07 at 1.23.47 pm.png', '', 7);
 
 -- --------------------------------------------------------
 
@@ -112,7 +112,7 @@ CREATE TABLE IF NOT EXISTS `pages` (
   `title` varchar(60) NOT NULL,
   `description` varchar(160) NOT NULL,
   `name` varchar(20) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `pages`
@@ -121,7 +121,8 @@ CREATE TABLE IF NOT EXISTS `pages` (
 INSERT INTO `pages` (`page_id`, `title`, `description`, `name`) VALUES
 (1, 'Munch | Home Page', 'This is the homepage.', 'home'),
 (2, 'Munch | About Us', 'This is the About Page.', 'about'),
-(3, 'Munch | Contact Us', 'This is the Contact Page.', 'contact');
+(3, 'Munch | Contact Us', 'This is the Contact Page.', 'contact'),
+(4, 'Munch Profile | ', 'This is your ptofile page', 'profile');
 
 -- --------------------------------------------------------
 
@@ -141,14 +142,16 @@ CREATE TABLE IF NOT EXISTS `recipes` (
   `favorite_id` int(10) unsigned NOT NULL,
   `comments_id` int(10) unsigned NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=52 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=54 ;
 
 --
 -- Dumping data for table `recipes`
 --
 
 INSERT INTO `recipes` (`recipe_id`, `title`, `directions`, `recipe_image`, `cook_time`, `serves`, `recipe_video`, `user_id`, `favorite_id`, `comments_id`, `time`) VALUES
-(23, 'Mac And Cheese', 'This is a mac and cheese recipe', '55c9570268a799.08300378SpiderMan.jpg', '32', '3-4', 'NNudfQuu9qI', 1, 0, 0, '2015-08-11 01:59:30');
+(23, 'Mac And Cheese', 'This is a mac and cheese recipe', '55c9570268a799.08300378SpiderMan.jpg', '32', '3-4', 'GygWlNzMD2c', 1, 0, 0, '2015-08-13 00:11:12'),
+(52, 'This is a recipe', 'Cat daddy', '55cc19de22b8e1.71534462Screen Shot 2015-08-07 at 1.23.47 pm.png', '23', '1-2', 'GygWlNzMD2c', 7, 0, 0, '2015-08-13 04:15:29'),
+(53, 'It usually doesnt rain', 'In sothern cali', '55cc26be92f097.73236677Screen Shot 2015-06-30 at 12.16.03 pm.png', '23', '3-4', 'GygWlNzMD2c', 7, 0, 0, '2015-08-13 05:10:26');
 
 -- --------------------------------------------------------
 
@@ -160,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `recipe_ingredients` (
 `recipe_ingredients_id` int(10) unsigned NOT NULL,
   `ingredients_id` smallint(6) unsigned NOT NULL,
   `recipe_id` int(11) unsigned NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=119 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=121 ;
 
 --
 -- Dumping data for table `recipe_ingredients`
@@ -170,7 +173,9 @@ INSERT INTO `recipe_ingredients` (`recipe_ingredients_id`, `ingredients_id`, `re
 (115, 4, 23),
 (116, 5, 23),
 (117, 6, 23),
-(118, 8, 23);
+(118, 8, 23),
+(119, 1, 52),
+(120, 1, 53);
 
 -- --------------------------------------------------------
 
@@ -186,7 +191,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `privilege` enum('admin','user') NOT NULL,
   `creation_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `active` enum('enabled','disabled') NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `users`
@@ -195,7 +200,11 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`user_id`, `username`, `password`, `email`, `privilege`, `creation_date`, `active`) VALUES
 (1, 'admin', '$2y$10$ldjZoQrSDpHLkkX0cYObUuN01yIQJUS5Xy0w09DUeMG/c13xqFj8q', 'admin@munch.co.nz', 'admin', '2015-08-03 00:23:48', 'enabled'),
 (2, 'user', '$2y$10$9nbE5hHwactVfijPvt/mfeh1cc9F1CF4HYuQ618WCVMyWO5bBkdii', 'user@munch.co.nz', 'user', '2015-08-03 00:23:48', 'enabled'),
-(3, 'Hekiera', '$2y$10$wxRS.hdJEIcX/b0eS3yriOeUsQFV3HDzLsAUMfEP65HHIYsl/j19.', 'h@h.com', 'user', '2015-08-03 01:28:56', 'enabled');
+(3, 'Hekiera', '$2y$10$wxRS.hdJEIcX/b0eS3yriOeUsQFV3HDzLsAUMfEP65HHIYsl/j19.', 'h@h.com', 'user', '2015-08-03 01:28:56', 'enabled'),
+(4, 'h3ckyeah', '$2y$10$QRdZaCE.Usiy0QcddRXzhebf2UgfrgAWD.5F6mvXa8lJkrX2W1HSO', 'heckyeah@gmail.com', 'user', '2015-08-13 01:41:25', 'enabled'),
+(5, 'Jack', '$2y$10$cYT9xRJtQJJI5W4DutFZzeRkWK.2.hGWUEThvxGQE7Iy38zKef5Ai', 'mat@golf.com', 'user', '2015-08-13 01:43:15', 'enabled'),
+(6, 'catdog', '$2y$10$SF7s3KIs6ADcA/RGHh/x8e5orGpyQNhxRBiFRRi7iYgVF/Ci9LdSe', 'sack@back.com', 'user', '2015-08-13 01:45:20', 'enabled'),
+(7, 'hekiera3', '$2y$10$xA4OyJdqR.2GNCSM3LWOcesRjf1ijFJlPCv2aTDH0yQZLnsw9OBhq', 'nak@nak.com', 'user', '2015-08-13 02:06:45', 'enabled');
 
 --
 -- Indexes for dumped tables
@@ -257,7 +266,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `additional_info`
 --
 ALTER TABLE `additional_info`
-MODIFY `additional_info_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `additional_info_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `comments`
 --
@@ -277,22 +286,22 @@ MODIFY `ingredients_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREM
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-MODIFY `page_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `page_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `recipes`
 --
 ALTER TABLE `recipes`
-MODIFY `recipe_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=52;
+MODIFY `recipe_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=54;
 --
 -- AUTO_INCREMENT for table `recipe_ingredients`
 --
 ALTER TABLE `recipe_ingredients`
-MODIFY `recipe_ingredients_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=119;
+MODIFY `recipe_ingredients_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=121;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-MODIFY `user_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `user_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- Constraints for dumped tables
 --

@@ -19,13 +19,13 @@ class Model {
 	public function getPageInfo() {
 
 		// Obtain the name of the requested page
-		$requestPage = $_GET['page'];
+		$requestPage = $this->filter($_GET['page']);
 
 		// Prepare the query
 		$sql = "SELECT title, description FROM pages WHERE name = '$requestPage'";
 
 		// Run the query
-		$result = $this->dbc->query( $sql );
+		return $this->dbc->query( $sql );
 
 		// Make sure there is data in the result
 		// if not then we need to get the 404 data instead
@@ -35,16 +35,9 @@ class Model {
 			$sql = "SELECT title, description FROM pages WHERE name = '404'   ";
 
 			// Run the query
-			$result = $this->dbc->query( $sql );
+			return $this->dbc->query( $sql );
 
 		}
-
-		// Convert the result into an associative array
-		$pageData = $result->fetch_assoc();
-
-		// Save the title and description in the properties above
-		$this->title 		= $pageData['title'];
-		$this->description 	= $pageData['description'];
 
 	}
 
@@ -53,27 +46,28 @@ class Model {
 	}
 
 	public function getAdditionalInfo() {
-		if ( isset($_SESSION['user_id']) ) {
-			$userID = $_SESSION['user_id'];
-		} else {
-			$userID = 0;
-		}
 
-		$sql ="	SELECT first_name, last_name, bio, profile_image, username
+		$userID = $_SESSION['user_id'];
+
+		$sql ="	SELECT first_name, last_name, bio, profile_image, cover_image
 				FROM additional_info
-				JOIN users
-				ON users.user_id = additional_info.user_id
-				WHERE additional_info.user_id = $userID";
+				WHERE user_id = $userID";
+
 
 		// Run the aql and capture it
-		$result = $this->dbc->query($sql);
+		return $this->dbc->query($sql);
 
-		// Turn it into an associative array and capture
-		$profileData = $result->fetch_assoc();
+	}
 
-		$this->username 	= $profileData['username'];
-		$this->profileImage = $profileData['profile_image'];
+	public function getUserInfo() {
 
+			$userID = $_SESSION['user_id'];
+
+			$sql = "SELECT username
+					FROM users
+					WHERE user_id = $userID";
+			
+			return $this->dbc->query($sql);
 	}
 
 }

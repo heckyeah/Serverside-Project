@@ -4,12 +4,9 @@ class LoginModel extends Model {
 
 	public function attemptLogin() {
 
-		// Extract the data from the POST array
-		$username = $_POST['username'];
-		$password = $_POST['password'];
-
-		// Filter the data
-		$username = $this->dbc->real_escape_string( $username );
+		// Extract the data from the POST array and filter
+		$username = $this->filter($_POST['username']);
+		$password = $this->filter($_POST['password']);
 
 		// Prepare SQL to find a user and get the hashed password
 		$sql = "SELECT user_id, password, privilege FROM users WHERE username = '$username'  ";

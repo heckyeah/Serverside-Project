@@ -5,7 +5,7 @@ class RegisterModel extends Model {
 	public function checkUsernameExists( $username ) {
 
 		// Filter the username just in case it has malicious code
-		$username = $this->dbc->real_escape_string( $username );
+		$username = $this->filter( $username );
 
 		// Prepare SQL
 		$sql = "SELECT username FROM users WHERE username = '$username'";
@@ -31,7 +31,7 @@ class RegisterModel extends Model {
 	public function checkEmailExists( $email ) {
 
 		// Filter the email address to make the SQL safe
-		$email = $this->dbc->real_escape_string( $email );
+		$email = $this->filter( $email );
 
 		// Prepare SQL
 		$sql = "SELECT email FROM users WHERE email = '$email'  ";
@@ -47,8 +47,8 @@ class RegisterModel extends Model {
 	public function registerNewAccount( $username, $email, $password ) {
 
 		// Filter the data
-		$username = $this->dbc->real_escape_string($username);
-		$email    = $this->dbc->real_escape_string($email);
+		$username = $this->filter($username);
+		$email    = $this->filter($email);
 
 		// Hash the password
 		require 'vendor/password.php';
@@ -70,8 +70,7 @@ class RegisterModel extends Model {
 		// Log user in by saving their details into the session
 		$_SESSION['username']  = $username;
 		$_SESSION['privilege'] = 'user';
-		$_SESSION['userI_id'] = $userID;
-
+		$_SESSION['user_id'] = $userID;
 	}
 
 }

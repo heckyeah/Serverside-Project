@@ -625,6 +625,18 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
             text-decoration: none; }
             article .chef_info .message_container .message .close a:hover, article .chef_info .message_container .ingredients .close a:hover, article .chef_info .ingredients_container .message .close a:hover, article .chef_info .ingredients_container .ingredients .close a:hover, .sort_panel .chef_info .message_container .message .close a:hover, .sort_panel .chef_info .message_container .ingredients .close a:hover, .sort_panel .chef_info .ingredients_container .message .close a:hover, .sort_panel .chef_info .ingredients_container .ingredients .close a:hover, .recipe_contaier .chef_info .message_container .message .close a:hover, .recipe_contaier .chef_info .message_container .ingredients .close a:hover, .recipe_contaier .chef_info .ingredients_container .message .close a:hover, .recipe_contaier .chef_info .ingredients_container .ingredients .close a:hover, .recipe_header .chef_info .message_container .message .close a:hover, .recipe_header .chef_info .message_container .ingredients .close a:hover, .recipe_header .chef_info .ingredients_container .message .close a:hover, .recipe_header .chef_info .ingredients_container .ingredients .close a:hover {
               color: #f06d06; }
+        article .chef_info .message_container .message form label, article .chef_info .message_container .ingredients form label, article .chef_info .ingredients_container .message form label, article .chef_info .ingredients_container .ingredients form label, .sort_panel .chef_info .message_container .message form label, .sort_panel .chef_info .message_container .ingredients form label, .sort_panel .chef_info .ingredients_container .message form label, .sort_panel .chef_info .ingredients_container .ingredients form label, .recipe_contaier .chef_info .message_container .message form label, .recipe_contaier .chef_info .message_container .ingredients form label, .recipe_contaier .chef_info .ingredients_container .message form label, .recipe_contaier .chef_info .ingredients_container .ingredients form label, .recipe_header .chef_info .message_container .message form label, .recipe_header .chef_info .message_container .ingredients form label, .recipe_header .chef_info .ingredients_container .message form label, .recipe_header .chef_info .ingredients_container .ingredients form label {
+          width: 100%;
+          display: block;
+          float: left;
+          margin-top: 10px;
+          font-weight: bold;
+          font-size: 0.775em; }
+        article .chef_info .message_container .message form input[type="file"], article .chef_info .message_container .ingredients form input[type="file"], article .chef_info .ingredients_container .message form input[type="file"], article .chef_info .ingredients_container .ingredients form input[type="file"], .sort_panel .chef_info .message_container .message form input[type="file"], .sort_panel .chef_info .message_container .ingredients form input[type="file"], .sort_panel .chef_info .ingredients_container .message form input[type="file"], .sort_panel .chef_info .ingredients_container .ingredients form input[type="file"], .recipe_contaier .chef_info .message_container .message form input[type="file"], .recipe_contaier .chef_info .message_container .ingredients form input[type="file"], .recipe_contaier .chef_info .ingredients_container .message form input[type="file"], .recipe_contaier .chef_info .ingredients_container .ingredients form input[type="file"], .recipe_header .chef_info .message_container .message form input[type="file"], .recipe_header .chef_info .message_container .ingredients form input[type="file"], .recipe_header .chef_info .ingredients_container .message form input[type="file"], .recipe_header .chef_info .ingredients_container .ingredients form input[type="file"] {
+          background-color: #f06d06;
+          margin: 10px 0;
+          padding: 10px;
+          color: #fff; }
         article .chef_info .message_container .message form .current_image, article .chef_info .message_container .ingredients form .current_image, article .chef_info .ingredients_container .message form .current_image, article .chef_info .ingredients_container .ingredients form .current_image, .sort_panel .chef_info .message_container .message form .current_image, .sort_panel .chef_info .message_container .ingredients form .current_image, .sort_panel .chef_info .ingredients_container .message form .current_image, .sort_panel .chef_info .ingredients_container .ingredients form .current_image, .recipe_contaier .chef_info .message_container .message form .current_image, .recipe_contaier .chef_info .message_container .ingredients form .current_image, .recipe_contaier .chef_info .ingredients_container .message form .current_image, .recipe_contaier .chef_info .ingredients_container .ingredients form .current_image, .recipe_header .chef_info .message_container .message form .current_image, .recipe_header .chef_info .message_container .ingredients form .current_image, .recipe_header .chef_info .ingredients_container .message form .current_image, .recipe_header .chef_info .ingredients_container .ingredients form .current_image {
           margin: 0;
           text-align: left; }
@@ -1198,6 +1210,18 @@ hr {
         text-decoration: none; }
         .message_container .message .close a:hover, .message_container .ingredients .close a:hover, .ingredients_container .message .close a:hover, .ingredients_container .ingredients .close a:hover {
           color: #f06d06; }
+    .message_container .message form label, .message_container .ingredients form label, .ingredients_container .message form label, .ingredients_container .ingredients form label {
+      width: 100%;
+      display: block;
+      float: left;
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 0.775em; }
+    .message_container .message form input[type="file"], .message_container .ingredients form input[type="file"], .ingredients_container .message form input[type="file"], .ingredients_container .ingredients form input[type="file"] {
+      background-color: #f06d06;
+      margin: 10px 0;
+      padding: 10px;
+      color: #fff; }
     .message_container .message form .current_image, .message_container .ingredients form .current_image, .ingredients_container .message form .current_image, .ingredients_container .ingredients form .current_image {
       margin: 0;
       text-align: left; }

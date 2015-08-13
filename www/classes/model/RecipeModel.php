@@ -4,7 +4,7 @@ class RecipeModel extends Model {
 
 	public function getIngredients() {
 
-		$recipeID = $_GET['recipeid'];
+		$recipeID = $this->filter($_GET['recipeid']);
 
 		$sql = "SELECT ingredients_id, ingredient_name, type
 				FROM ingredients";
@@ -16,7 +16,7 @@ class RecipeModel extends Model {
 
 	public function getIngredientsToDisplay() {
 
-		$recipeID = $_GET['recipeid'];
+		$recipeID = $this->filter($_GET['recipeid']);
 
 		$sql = "SELECT ingredients.ingredients_id AS ingID, ingredient_name, type
 				FROM ingredients
@@ -31,7 +31,7 @@ class RecipeModel extends Model {
 
 	public function getRecipe() {
 
-		$recipeID = $_GET['recipeid'];
+		$recipeID = $this->filter($_GET['recipeid']);
 
 		$sql = "SELECT 	recipe_id, 
 						title, 
@@ -63,12 +63,12 @@ class RecipeModel extends Model {
 
 	public function updateRecipe() {
 
-		$recipeID 			= $_GET['recipeid'];
-		$recipeTitle 		= $_POST['recipe-title'];
-		$recipeDirections 	= $_POST['recipe-directions'];
-		$recipeTime 		= $_POST['cook-time'];
-		$recipeServes 		= $_POST['serves'];
-		$recipeVideo 		= substr($_POST['recipe-video'], -11);
+		$recipeID 			= $this->filter($_GET['recipeid']);
+		$recipeTitle 		= $this->filter($_POST['recipe-title']);
+		$recipeDirections 	= $this->filter($_POST['recipe-directions']);
+		$recipeTime 		= $this->filter($_POST['cook-time']);
+		$recipeServes 		= $this->filter($_POST['serves']);
+		$recipeVideo 		= $this->filter(substr($_POST['recipe-video'], -11));
 		$author 			= $_SESSION['user_id'];
 
 		if ($_SESSION['privilege'] == 'admin') {
@@ -167,6 +167,20 @@ class RecipeModel extends Model {
 			// Run the query
 			$this->dbc->query($sql);
 		}
+
+	}
+
+	public function getRecipeDetails() {
+		$recipeID = $_GET['recipeid'];
+
+		$sql ="	SELECT username, (SELECT profile_image FROM additional_info WHERE users.user_id = additional_info.user_id ) AS profile_image
+				FROM users                    
+				JOIN recipes
+				ON users.user_id = recipes.user_id
+                WHERE recipe_id = $recipeID ";
+
+		// Run the aql and capture it
+		return $this->dbc->query($sql);
 
 	}
 

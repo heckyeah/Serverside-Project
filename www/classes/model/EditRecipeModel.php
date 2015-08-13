@@ -13,7 +13,7 @@ class EditRecipeModel extends Model {
 
 	public function getRecipeForEdit() {
 
-		$recipeID = $_GET['recipeid'];
+		$recipeID = $this->filter($_GET['recipeid']);
 
 		$sql = "SELECT recipe_id, title, directions, recipe_image, cook_time, recipe_video, user_id
 				FROM recipes

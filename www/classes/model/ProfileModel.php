@@ -7,9 +7,9 @@ class ProfileModel extends Model {
 		
 		$username = $_SESSION['username'];
 
-		$sql = "	SELECT recipe_id, title, recipe_image, cook_time, username, first_name, last_name
-					FROM recipes JOIN users JOIN additional_info
-					ON users.user_id = recipes.user_id && additional_info.user_id = users.user_id
+		$sql = "	SELECT recipe_id, username, recipe_image, cook_time, title 
+					FROM recipes JOIN users 
+					ON recipes.user_id = users.user_id
 					WHERE users.username = '$username'
 					ORDER BY time 
 					DESC LIMIT 12
@@ -85,29 +85,6 @@ class ProfileModel extends Model {
 
 	}
 
-	public function getAdditionalInfo() {
 
-		if ( isset($_SESSION['user_id']) ) {
-			$userID = $_SESSION['user_id'];
-		} else {
-			$userID = 0;
-		}
-
-		$sql ="	SELECT first_name, last_name, bio, profile_image, username, cover_image
-				FROM additional_info
-				JOIN users
-				ON users.user_id = additional_info.user_id
-				WHERE additional_info.user_id = $userID";
-
-		// Run the aql and capture it
-		$result = $this->dbc->query($sql);
-
-		// Turn it into an associative array and capture
-		$profileData = $result->fetch_assoc();
-
-		$this->username 	= $profileData['username'];
-		$this->profileImage = $profileData['profile_image'];
-		$this->coverImage = $profileData['cover_image'];
-	}
 
 }

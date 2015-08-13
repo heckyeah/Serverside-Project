@@ -10,16 +10,8 @@ while( $row = $result->fetch_assoc() ) {
 			</div>';
 	echo 	'<div class="information">
 			<h3><a href="index.php?page=recipe&recipeid='.$row['recipe_id'].'">'.$row['title'].'</a></h3>
-			<p>by <a href="index.php?page=profile&user='.$row['username'].'">'.$row['first_name'].' '.$row['last_name'].'</a></p>
+			<p>by <a href="index.php?page=profile&user='.$row['username'].'">'.$row['username'].'</a></p>
 			<hr>
-			<div class="left">
-			<span class="favorite"></span>
-			<span class="numbers">15</span>
-			</div>
-			<div class="left">
-			<span class="comments"></span>
-			<span class="numbers">5</span>
-			</div>
 			<div class="right">
 			<span class="time"></span>
 			<span class="numbers">'.$row['cook_time'].' M</span>

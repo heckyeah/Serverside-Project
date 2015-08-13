@@ -104,7 +104,7 @@ class AccountModel extends Model {
 		require 'vendor/password.php';
 
 		// Get password from form
-		$newPassword = $_POST['new-password'];
+		$newPassword = $this->filter($_POST['new-password']);
 
 		$newPassword = password_hash( $newPassword, PASSWORD_BCRYPT);
 
@@ -122,13 +122,17 @@ class AccountModel extends Model {
 
 	}
 
-	public function changeAvatar() {
+	public function updateInfo() {
 
 		// Get the userID
-		$userID = $_SESSION['user_id'];
+		$userID 	= $_SESSION['user_id'];
+		$firstname 	= $_POST['first-name'];
+		$lastname 	= $_POST['last-name'];
+		$bio 		= $_POST['bio'];
+		$gender 	= $_POST['gender'];
 
 		// Query to see if there is existing info in the database
-		$sql = "SELECT profile_image
+		$sql = "SELECT profile_image, first_name, last_name, bio, gender
 				FROM additional_info
 				WHERE user_id = $userID";
 
@@ -162,6 +166,10 @@ class AccountModel extends Model {
 			// UPDATE
 			$sql = "UPDATE additional_info
 					SET profile_image = '$image'
+						first_name = '$firstname'
+						last_name = '$lastname'
+						bio = '$bio'
+						gender = '$gender'
 					WHERE user_id = $userID";
 
 		} elseif( $result->num_rows == 0 ) {
@@ -174,8 +182,8 @@ class AccountModel extends Model {
 			}
 
 			// INSERT
-			$sql = "INSERT INTO users_additional_info (profile_image)
-					VALUES ('$image')";
+			$sql = "INSERT INTO additional_info (additional_info_id, first_name, last_name, bio, gender, profile_image, user_id)
+					VALUES (NULL, '$firstname', '$lastname', '$bio', '$gender', '$image', $userID )";
 		}
 
 		// Run the SQL

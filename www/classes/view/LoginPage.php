@@ -6,7 +6,7 @@ class LoginPage extends Page {
 	private $usernameError;
 	private $passwordError;
 	private $loginError;
-	private $username;
+	protected $username;
 	
 	public function __construct( $model ) {
 
@@ -24,7 +24,7 @@ class LoginPage extends Page {
 
 	public function contentHTML() {
 
-		if (isset( $_GET['notlogged']) ) {
+		if (!isset( $_SESSION['username']) ) {
 			$heading = 'You must login to visit this page';
 		} else {
 			$heading = 'Log into your account';

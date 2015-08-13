@@ -13,12 +13,12 @@ class AddRecipeModel extends Model {
 
 	public function addRecipe() {
 
-		$recipeTitle 		= $_POST['recipe-title'];
-		$recipeDirections 	= $_POST['recipe-directions'];
-		$recipeTime 		= $_POST['cook-time'];
-		$recipeServes 		= $_POST['serves'];
-		$recipeVideo 		= $_POST['recipe-video'];
-		$recipeVideo 		= substr("$recipeVideo", -11);
+		$recipeTitle 		= $this->filter($_POST['recipe-title']);
+		$recipeDirections 	= $this->filter($_POST['recipe-directions']);
+		$recipeTime 		= $this->filter($_POST['cook-time']);
+		$recipeServes 		= $this->filter($_POST['serves']);
+		$recipeVideo 		= $this->filter($_POST['recipe-video']);
+		$recipeVideo 		= $this->filter(substr("$recipeVideo", -11));
 		$author 			= $_SESSION['user_id'];
 
 		// If there is "recipe-image" in the post array then an image has been provided

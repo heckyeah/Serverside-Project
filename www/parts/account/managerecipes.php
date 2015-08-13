@@ -22,10 +22,4 @@
 			<input type="submit" class="btn space" value="Add Ingredient">
 		</div>
 	</form>
-	<form action="ndex.php?page=account&managerecipes">
-		<div class="one">
-			<h2>Edit Recipe</h2>
-		</div>
-		
-	</form>
 </div>

@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<?php 
+		$result = $this->model->getPageInfo();
+		$pageInfo = $result->fetch_assoc();
+
+		$title 		= $pageInfo['title'];
+		$description 		= $pageInfo['description'];
+
+		$result = $this->model->getUserInfo();
+		$userInfo = $result->fetch_assoc();
+
+		$username 	= $userInfo['username'];
+	?>
 	<meta charset="UTF-8">
 	<title><?php echo $title; if ($_GET['page'] == 'profile') { echo $username; } ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,13 +27,37 @@
 		<div class="container">
 			<div class="account_drop">
 				<ul>
+					<?php 
+
+					$profile = $this->model->getAdditionalInfo();
+
+					if ( $profile->num_rows == 1 ) {
+						$profileData = $profile->fetch_assoc();
+						$profileImage = $profileData['profile_image'];
+					} else {
+						$profileImage = 'default.jpg';
+					}
+
+					// If the user is logged in then show their username in link
+					// Otherwise just show "account"
+					if( isset($_SESSION['username']) ) {
+						$avatar 	= $profileImage;
+						$profile 	= $_SESSION['username'];
+					} else {
+						$profile 	= 'Account';
+						$avatar 	= '';
+					}
+
+					?>
+
 					<li class="nav_menu">
 						<a href="#">
-							<img src="img/user/avatar/icon/<?php echo $this->model->profileImage; ?>" alt="Hekiera Mareroa">
-							<span><?php echo $text; ?><i class="fa fa-caret-down"></i></span>
+							<?php if( isset($_SESSION['username'] ) ) { echo '<img src="img/user/avatar/icon/'.$avatar.'" alt="">'; } ?>
+							<span><?php echo $profile; ?><i class="fa fa-caret-down"></i></span>
 						</a>
 						<ul>
 							<?php
+
 							    // If the user is not logged in
 							    if( !isset($_SESSION['username']) ) : ?>
 							    

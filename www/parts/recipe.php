@@ -2,43 +2,43 @@
 	<div class="chef_info">
 		<img src="img/recipes/cover/<?php echo $this->model->coverImage; ?>" alt="">
 		<?php $this->editButtons('<a href="#" class="click btn">Edit Recipe</a>');?>
-			<div class="message_container">
-				<div class="message">
-					<h3>Edit Recipe</h3>
-					<div class="close"><a href="#" class="shut"><i class="fa fa-times"></i></a></i></div>
-					<form action="index.php?page=recipe&recipeid=<?php echo $this->model->recipeID; ?>" method="post" enctype="multipart/form-data">
-						<div class="seperate">
-							<div class="two">
-								<label for="recipe-title">Recipe Title: </label>
-								<input type="text" name="recipe-title" id="recipe-title" value="<?php echo $this->model->recipeTitle; ?>">
+		<div class="message_container">
+			<div class="message">
+				<h3>Edit Recipe</h3>
+				<div class="close"><a href="#" class="shut"><i class="fa fa-times"></i></a></i></div>
+				<form action="index.php?page=recipe&recipeid=<?php echo $this->model->recipeID; ?>" method="post" enctype="multipart/form-data">
+					<div class="seperate">
+						<div class="two">
+							<label for="recipe-title">Recipe Title: </label>
+							<input type="text" name="recipe-title" id="recipe-title" value="<?php echo $this->model->recipeTitle; ?>">
 
-								<label for="recipe-directions">Recipe Directions: </label>
-								<textarea name="recipe-directions" id="recipe-directions" ><?php echo $this->model->recipeDirections; ?></textarea>
-							</div>
-							<div class="two">
-								<label for="cook-time">How long does it take to cook? </label>
-								<input type="text" name="cook-time" id="cook-time" value="<?php echo $this->model->recipeTime; ?>">
-								<label for="">How many people does this serve?</label>
-								<select name="serves" class="select-menu">
-									<option value="1-2">1-2</option>
-									<option value="3-4">3-4</option>
-									<option value="5+">5+</option>
-								</select>
-
-								<label for="">Do you have a youtube video?</label>
-								<input type="text" placeholder="https://www.youtube.com/watch?v=Eja8FKLzBU4" name="recipe-video" id="recipe-video" value="https://www.youtube.com/<?php echo $this->model->recipeVideo; ?>">
-
-								<label for="recipe-image">Cover Photo: </label>
-								<input type="hidden" name="MAX_FILE_SIZE" value="1000000">
-								<input type="file" name="recipe-image" id="recipe-image">
-							</div>
+							<label for="recipe-directions">Recipe Directions: </label>
+							<textarea name="recipe-directions" id="recipe-directions" ><?php echo $this->model->recipeDirections; ?></textarea>
 						</div>
-						<div class="one space">
-							<input type="submit" name="edit-recipe" id="edit-recipe" value="Save Changes" class="btn">
+						<div class="two">
+							<label for="cook-time">How long does it take to cook? </label>
+							<input type="text" name="cook-time" id="cook-time" value="<?php echo $this->model->recipeTime; ?>">
+							<label for="">How many people does this serve?</label>
+							<select name="serves" class="select-menu">
+								<option value="1-2">1-2</option>
+								<option value="3-4">3-4</option>
+								<option value="5+">5+</option>
+							</select>
+
+							<label for="">Do you have a youtube video?</label>
+							<input type="text" placeholder="https://www.youtube.com/watch?v=Eja8FKLzBU4" name="recipe-video" id="recipe-video" value="https://www.youtube.com/<?php echo $this->model->recipeVideo; ?>">
+
+							<label for="recipe-image">Cover Photo: </label>
+							<input type="hidden" name="MAX_FILE_SIZE" value="1000000">
+							<input type="file" name="recipe-image" id="recipe-image">
 						</div>
-					</form>
-				</div>
+					</div>
+					<div class="one space">
+						<input type="submit" name="edit-recipe" id="edit-recipe" value="Save Changes" class="btn">
+					</div>
+				</form>
 			</div>
+		</div>
 		<div class="details_container">
 			<div class="recipe_details">
 				<div class="icon_container">
@@ -59,10 +59,23 @@
 					
 				</div>
 			</div>
+			<?php 
+				$result = $this->model->getRecipeDetails();
+				$profileData = $result->fetch_assoc();
+
+				if ( $result->num_rows == 1 && !$profileData['profile_image'] == NULL ) {
+					$profileImage = $profileData['profile_image'];
+					$profileUsername = $profileData['username'];
+				} else {
+					$profileImage = 'default.jpg';
+					$profileUsername = $profileData['username'];
+				}
+
+			?>
 			<div class="profile_details">
-				<img src="img/user/avatar/edited/<?php echo $this->model->profileImage; ?>" alt="">
+				<img src="img/user/avatar/edited/<?php echo $profileImage; ?>" alt="">
 				<div class="name">
-					<h3>Hekiera Mareroa</h3>
+					<h3><?php echo $profileUsername; ?></h3>
 					<h4>Master Chef</h4>
 				</div>
 			</div>

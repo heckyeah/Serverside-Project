@@ -1,3 +1,30 @@
+<?php 
+	$aInfo = $this->model->getAdditionalInfo();
+	$profileData = $aInfo->fetch_assoc();
+
+	if ( $aInfo->num_rows == 1 ) {
+		$profileImage = $profileData['profile_image'];
+		if ( !$profileData['first_name'] == '' && !$profileData['last_name'] == '') {
+			$profileUsername = $profileData['first_name'].' '.$profileData['last_name'];
+		}
+		if ($profileData['cover_image'] == '') {
+			$profileCover = 'default.jpg';
+		} else {
+			$profileCover = $profileData['cover_image'];
+		}
+	} else {
+		$profileImage = 'default.jpg';
+		$profileCover = 'default.jpg';
+	}
+
+	 if ( $profileData['first_name'] == '' && $profileData['last_name'] == '') {
+		$uInfo = $this->model->getUserInfo(); 
+		$userData = $uInfo->fetch_assoc();
+		$profileUsername = $userData['username'];
+	}
+
+?>
+
 <article>
 	<div class="profile_container">
 		<div class="cover">
@@ -10,12 +37,12 @@
 						<form action="index.php?page=profile" method="post" enctype="multipart/form-data">
 							<div class="current_image">
 								<span>Current Image:</span>
-								<img src="img/user/covers/placeholder_cover.jpg" alt="">
+								<img src="img/user/covers/edited/<?php echo $profileCover; ?>" alt="">
 							</div>
 							<p>Select a photo from your computer</p>
 							<div>
 								<input type="hidden" name="MAX_FILE_SIZE" value="1000000">
-								<label class="btn" for="cover-image">Upload Image</label>
+								<label for="cover-image">Upload Image</label>
 								<input type="file" name="cover-image" id="cover-image">
 							</div>
 							<div>
@@ -25,11 +52,11 @@
 					</div>
 				</div>
 			</div>
-			<img src="img/user/covers/edited/<?php echo $this->model->coverImage; ?>" alt="">
+			<img src="img/user/covers/edited/<?php echo $profileCover; ?>" alt="">
 			<div class="profile_details_container">
-				<img src="img/user/avatar/edited/<?php echo $this->model->profileImage; ?>" alt="My Profile">
+				<img src="img/user/avatar/edited/<?php echo $profileImage; ?>" alt="My Profile">
 				<div class="profile_details">
-					<a href="#"><h3><?php echo $this->model->username; ?></h3></a>
+					<a href="#"><h3><?php echo $profileUsername; ?></h3></a>
 					<span>Master Chef</span>
 				</div>
 			</div>

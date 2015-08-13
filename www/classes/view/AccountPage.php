@@ -16,8 +16,8 @@ class AccountPage extends Page {
 		parent::__construct($model);
 
 		// If the user has submitted the avatar change form
-		if( isset($_POST['change-avatar']) ) {
-			$this->processChangeAvatar();
+		if( isset($_POST['update-details']) ) {
+			$this->processChangeInfo();
 		}
 
 		// If the user has submitted the email change form
@@ -162,7 +162,7 @@ class AccountPage extends Page {
 		}
 	}
 
-	public function processChangeAvatar() {
+	public function processChangeInfo() {
 
 		if( isset($_FILES['profile-image']) && $_FILES['profile-image']['name'] != '' ) {
 
@@ -199,7 +199,7 @@ class AccountPage extends Page {
 			}
 		}
 		if ( $this->totalErrors == 0 ) {
-			$this->model->changeAvatar();
+			$this->model->updateInfo();
 
 		}
 

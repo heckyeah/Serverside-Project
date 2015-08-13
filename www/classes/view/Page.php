@@ -3,8 +3,6 @@
 class Page {
 
 	// Properties
-	public $title;
-	public $description;
 	public $model;
 
 	// Constructor
@@ -14,15 +12,19 @@ class Page {
 		// Get page data
 		$model->getPageInfo();
 
-		//Get profile data
-		$this->model->getAdditionalInfo();
+		//Get additional data
+		$model->getAdditionalInfo();
+
 	}
 
 	// Function to build the HTML
 	public function buildHTML() {
-		$title 			= $this->model->title;
-		$description 	= $this->model->description;
-		$username 		= $this->model->username;
+
+		//Get user data
+		$result = $this->model->getUserInfo();
+		// Convert the result into an associative array
+		$userData = $result->fetch_assoc();
+		$this->username 	= $userData['username'];
 
 		// If the user is logged in then show their username in link
 		// Otherwise just show "account"

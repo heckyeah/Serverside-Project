@@ -19,8 +19,8 @@ class ProfilePage extends Page {
 	// Methods
 	public function contentHTML() {
 
-		$username		= $this->model->username;
-		$profileImage	= $this->model->profileImage;
+		$username		= $_SESSION['username'];
+
 
 		# Profile
 		include 'parts/profile.php';
