@@ -12,6 +12,13 @@ class AccountPage extends Page {
 	private $confirmPasswordError;
 	private $passwordChangeSuccess;
 
+	private $firstnameError;
+	private $lastnameError;
+	private $bioError;
+	private $detailsSuccess;
+
+
+
 	public function __construct($model) {
 		parent::__construct($model);
 
@@ -28,6 +35,11 @@ class AccountPage extends Page {
 		// If the user has submitted the password change form
 		if( isset($_POST['password-data']) ) {
 			$this->processPasswordChange();
+		}
+
+		// If the user has submitted the avatar change form
+		if( isset($_POST['insert-ingredient']) ) {
+			$this->addIngredient();
 		}
 
 	}
@@ -58,9 +70,9 @@ class AccountPage extends Page {
 			} elseif ( isset( $_GET['manageusers']) ) {
 				// The edit recipe page
 				$post = 'parts/account/manageusers.php';
-			} elseif ( isset( $_GET['managerecipes']) ) {
+			} elseif ( isset( $_GET['addingredients']) ) {
 				// The edit recipe page
-				$post = 'parts/account/managerecipes.php';
+				$post = 'parts/account/addingredients.php';
 			} else {
 				$post = '';
 			}
@@ -164,6 +176,25 @@ class AccountPage extends Page {
 
 	public function processChangeInfo() {
 
+		$firstname	= $_POST['first-name'];
+		$lastname	= $_POST['last-name'];
+		$bio		= $_POST['bio'];
+
+		if ( strlen($firstname) > 40 ) {
+			$this->firstnameError = 'First name is too long please abbreviate or use a nickname. 40 Character max.';
+			$this->totalErrors++;
+		}
+
+		if ( strlen($lastname) > 40 ) {
+			$this->lastnameError = 'Last name is too long please abbreviate or use a nickname. 40 Character max.';
+			$this->totalErrors++;
+		}
+
+		if ( strlen($bio) > 400 ) {
+			$this->bioError = 'Your description is too long please abbreviate. 400 Character max.';
+			$this->totalErrors++;
+		}
+
 		if( isset($_FILES['profile-image']) && $_FILES['profile-image']['name'] != '' ) {
 
 			require 'vendor/ImageUploader.php';
@@ -199,10 +230,16 @@ class AccountPage extends Page {
 			}
 		}
 		if ( $this->totalErrors == 0 ) {
+
 			$this->model->updateInfo();
+			$this->detailsSuccess = 'Your details have been updated successfully.';
 
 		}
+	}
 
+	public function addIngredient() {
+
+		$this->model->insertIngredient();
 
 	}
 }

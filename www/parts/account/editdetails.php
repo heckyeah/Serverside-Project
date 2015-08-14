@@ -22,13 +22,16 @@
 	$firstname 	= $profileData['first_name'];
 	$lastname 	= $profileData['last_name'];
 	$bio 		= $profileData['bio'];
+	$age 		= $profileData['age'];
+	$gender 	= $profileData['gender'];
 
 ?>
 
 
-<form action="index.php?page=account" method="post" enctype="multipart/form-data">
+<form action="index.php?page=account&editdetails" method="post" enctype="multipart/form-data">
 	<div class="seperate">
 		<div class="one">
+			<?php $this->alertMessage($this->detailsSuccess, 'success_message'); ?>
 			<h1>Change your details </h1>
 		</div>
 		<div class="seperate">
@@ -36,40 +39,80 @@
 		<div class="two">
 			<label for="">First Name: </label>
 			<input type="text" name="first-name" id="first-name" value="<?php echo $firstname; ?>">
+			<?php $this->alertMessage($this->firstnameError, 'error_message'); ?>
 		</div>
 		<div class="two">
 			<label for="">Last Name: </label>
 			<input type="text" name="last-name" id="last-name" value="<?php echo $lastname; ?>">
-		</div>
-		<div class="one">
-			<label for="">Describe yourself:</label>
-			<textarea name="bio" id="bio"><?php echo $bio; ?></textarea>
+			<?php $this->alertMessage($this->lastnameError, 'error_message'); ?>
 		</div>
 		<div class="two">
 			<label for="">Gender:</label>
-			<div class="three">
-				<input type="radio" name="gender" id="male" value="M"><label for="male" class="radio">Male</label>
-			</div>
-			<div class="three">
-				<input type="radio" name="gender" id="female" value="F"><label for="female" class="radio">Female</label>
-			</div>
-			<div class="three">
-				<input type="radio" name="gender" id="other" value="O"><label for="other" class="radio">Other</label>
-			</div>
+
+			<?php 
+				$array = ['M','F','O'];
+				foreach ($array as $value) {
+					if ($value == 'M') {
+						if ( $gender == 'M' ) {
+							$checked = 'checked';
+						} else {
+							$checked = '';
+						}
+						$text = 'Male';
+					} elseif ($value == 'F') {
+						if ( $gender == 'F' ) {
+							$checked = 'checked';
+						} else {
+							$checked = '';
+						}
+						$text = 'Female';
+					} elseif ($value == 'O') {
+						if ( $gender == 'O' ) {
+							$checked = 'checked';
+						} else {
+							$checked = '';
+						}
+						$text = 'Other';
+					}
+
+				 	echo '<div class="three">';
+					echo '<input type="radio" name="gender" id="'.$value.'" value="'.$value.'" '.$checked.'>';
+					echo '<label class="radio">'.$text.'</label>';
+					echo '</div>';
+				 }
+			?>
 		</div>
 		<div class="two">
 			<label for="">Age: </label>
 			<div class="three">
 				<select name="age" id="age" class="select-menu">
 					<option selected disabled >Age</option>
-					<option value="18">18</option>
-					<option value="19">19</option>
+					<?php 
+						$i=17;
+						while( $i<100 ) {
+						
+						if ( !$age == '' && $age == $i ) {
+							$selected = 'selected';
+						} else {
+							$selected = '';
+						}
+
+						echo '<option '.$selected.' vlaue="'.$i.'">';
+						echo $i;
+						echo '</option>';
+						$i++;
+					} ?>
 				</select>
 			</div>
 		</div>
 		<div class="one">
+			<label for="">Describe yourself:</label>
+			<textarea name="bio" id="bio"><?php echo $bio; ?></textarea>
+			<?php $this->alertMessage($this->bioError, 'error_message'); ?>
+		</div>
+		<div class="one">
 				<div class="seperate">
-					<input type="hidden" name="MAX_FILE_SIZE" value="1000000">
+					<input type="hidden" name="MAX_FILE_SIZE" value="2000000">
 					<label for="profile">Profile Image: </label>
 					<input type="file" name="profile-image" id="profile-image">
 				</div>

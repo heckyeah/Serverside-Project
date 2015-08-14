@@ -40,16 +40,17 @@ class Model {
 		}
 
 	}
-
+	// Instead of wrighting it the long way
 	protected function filter($value) {
 		return $this->dbc->real_escape_string( $value );
 	}
 
+	// Gets the addtional indo of the user for the pages that need it
 	public function getAdditionalInfo() {
 
 		$userID = $_SESSION['user_id'];
 
-		$sql ="	SELECT first_name, last_name, bio, profile_image, cover_image
+		$sql ="	SELECT first_name, last_name, bio, profile_image, cover_image, age, gender
 				FROM additional_info
 				WHERE user_id = $userID";
 
@@ -58,7 +59,7 @@ class Model {
 		return $this->dbc->query($sql);
 
 	}
-
+	// Just grabs the username for where the username is used on the website
 	public function getUserInfo() {
 
 			$userID = $_SESSION['user_id'];

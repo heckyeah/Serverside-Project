@@ -7,5 +7,4 @@
 <ul>
 	<li><h2>Recipes</h2></li>
 	<li><a href="index.php?page=addrecipe">Add Recipe</a></li>
-	<li><a href="index.php?page=account&editrecipe">Edit Recipes</a></li>
 </ul>

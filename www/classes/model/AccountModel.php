@@ -125,14 +125,27 @@ class AccountModel extends Model {
 	public function updateInfo() {
 
 		// Get the userID
-		$userID 	= $_SESSION['user_id'];
-		$firstname 	= $_POST['first-name'];
-		$lastname 	= $_POST['last-name'];
-		$bio 		= $_POST['bio'];
-		$gender 	= $_POST['gender'];
+		$userID 	= $this->filter($_SESSION['user_id']);
+		$firstname 	= $this->filter($_POST['first-name']);
+		$lastname 	= $this->filter($_POST['last-name']);
+		$bio 		= $this->filter($_POST['bio']);
+
+		if (!isset($_POST['gender'])) {
+			$gender = '';
+		} else {
+			$gender = $this->filter($_POST['gender']);
+		}
+
+		if (!isset($_POST['age'])) {
+			$age = '';
+		} else {
+			$age = $this->filter($_POST['age']);
+		}
+		
+		
 
 		// Query to see if there is existing info in the database
-		$sql = "SELECT profile_image, first_name, last_name, bio, gender
+		$sql = "SELECT profile_image, first_name, last_name, bio, gender, age
 				FROM additional_info
 				WHERE user_id = $userID";
 
@@ -169,7 +182,8 @@ class AccountModel extends Model {
 						first_name = '$firstname',
 						last_name = '$lastname',
 						bio = '$bio',
-						gender = '$gender'
+						gender = '$gender',
+						age = '$age'
 					WHERE user_id = $userID";
 
 		} elseif( $result->num_rows == 0 ) {
@@ -182,10 +196,10 @@ class AccountModel extends Model {
 			}
 
 			// INSERT
-			$sql = "INSERT INTO additional_info (additional_info_id, first_name, last_name, bio, gender, profile_image, user_id)
-					VALUES (NULL, '$firstname', '$lastname', '$bio', '$gender', '$image', $userID )";
+			$sql = "INSERT INTO additional_info (additional_info_id, first_name, last_name, bio, gender, profile_image, user_id, age)
+					VALUES (NULL, '$firstname', '$lastname', '$bio', '$gender', '$image', $userID, $age )";
 		}
-
+		
 		// Run the SQL
 		$this->dbc->query($sql);
 
@@ -194,6 +208,31 @@ class AccountModel extends Model {
 			return true;
 		}
 
+		return false;
+
+	}
+
+	public function getIngredientTypes() {
+
+		$sql = "SELECT type FROM ingredients";
+
+		return $this->dbc->query($sql);
+
+	}
+
+	public function insertIngredient() {
+
+		$ingredient = $_POST['ingredient-name'];
+		$type = $_POST['type'];
+
+		$sql = "INSERT INTO ingredients (ingredient_name, type)
+				VALUES ('$ingredient', '$type')";
+
+		$this->dbc->query($sql);
+
+		if( $this->dbc->affected_rows == 1 ) {
+			return true;
+		}
 		return false;
 
 	}

@@ -69,8 +69,8 @@ class ProfileModel extends Model {
 			}
 
 			// INSERT
-			$sql = "INSERT INTO users_additional_info (cover_image)
-					VALUES ('$image')";
+			$sql = "INSERT INTO additional_info (cover_image, user_id)
+					VALUES ('$image', $userID)";
 		}
 
 		// Run the SQL
