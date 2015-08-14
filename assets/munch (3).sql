@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 13, 2015 at 07:55 am
+-- Generation Time: Aug 14, 2015 at 05:22 am
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -36,15 +36,15 @@ CREATE TABLE IF NOT EXISTS `additional_info` (
   `cover_image` varchar(100) NOT NULL,
   `age` varchar(3) NOT NULL,
   `user_id` mediumint(8) unsigned NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `additional_info`
 --
 
 INSERT INTO `additional_info` (`additional_info_id`, `first_name`, `last_name`, `bio`, `gender`, `profile_image`, `cover_image`, `age`, `user_id`) VALUES
-(2, 'Hekiera', 'Mareroa', '', 'M', '55caa7b6609cc7.60093089Untitled-1.jpg', '55cc198b68ea35.95611969Screen Shot 2015-06-30 at 12.16.03 pm.png', '22', 1),
-(10, 'dfbsfbsdfb', 'sdfbsdfbdsfb', 'dsfbdsfbdbf', 'M', '55cc2fc01e2311.37460753Screen Shot 2015-06-30 at 12.16.03 pm.png', '55cc30913e31f2.36020605Screen Shot 2015-08-07 at 1.23.47 pm.png', '', 7);
+(12, 'Hek', 'Mar', 'Im maori yeah...', 'M', '55cd342e88b971.01947501SpiderMan.jpg', '55cd4876e342b0.36551842SpiderMan.jpg', '22', 7),
+(16, '', '', '', 'M', '', '55cd5e829d21f4.91934203SpiderMan.jpg', '', 1);
 
 -- --------------------------------------------------------
 
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `ingredients` (
   `ingredient_name` varchar(40) NOT NULL,
   `type` enum('meat','vegetable','dairy','starch','fruit','etc') NOT NULL,
   `alpha_order` enum('a','b','c','d','e') NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `ingredients`
@@ -99,7 +99,9 @@ INSERT INTO `ingredients` (`ingredients_id`, `ingredient_name`, `type`, `alpha_o
 (7, 'Creame', 'dairy', 'd'),
 (8, 'Cheese', 'dairy', 'd'),
 (9, 'Tomato Sauce', 'etc', 'e'),
-(10, 'Olive Oil', 'etc', 'e');
+(10, 'Olive Oil', 'etc', 'e'),
+(11, 'Bacon', 'meat', 'a'),
+(12, 'Chicken Breast', 'meat', 'a');
 
 -- --------------------------------------------------------
 
@@ -266,7 +268,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `additional_info`
 --
 ALTER TABLE `additional_info`
-MODIFY `additional_info_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `additional_info_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `comments`
 --
@@ -281,7 +283,7 @@ MODIFY `favorites_id` int(10) unsigned NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `ingredients`
 --
 ALTER TABLE `ingredients`
-MODIFY `ingredients_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `ingredients_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `pages`
 --
