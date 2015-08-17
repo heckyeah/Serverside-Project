@@ -252,6 +252,8 @@ nav {
     .banner .dots li.active {
       background: #fff;
       opacity: 1; }
+  .banner ul {
+    width: 100%; }
 
 .sort_panel {
   padding: 20px 0 10px 0; }
@@ -493,7 +495,7 @@ article, .sort_panel, .recipe_contaier, .recipe_header {
     article ul, .sort_panel ul, .recipe_contaier ul, .recipe_header ul {
       display: block;
       margin: 0 auto;
-      width: 230px; } }
+      width: auto; } }
   article ul li, .sort_panel ul li, .recipe_contaier ul li, .recipe_header ul li {
     width: 230px;
     background-color: #333333;
@@ -763,14 +765,22 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%; }
+  @media only screen and (max-width: 520px) {
+    footer {
+      height: auto; }
+      footer:after {
+        content: "";
+        display: table;
+        clear: both; } }
   footer ul {
-    width: 1000px;
+    width: 100%;
     padding: 0 10px;
     margin: 0 auto;
     line-height: 50px; }
     footer ul li {
-      display: inline;
-      margin-right: 20px; }
+      display: block;
+      margin-right: 20px;
+      float: left; }
       footer ul li a {
         color: #cccccc;
         text-decoration: none;
@@ -975,6 +985,12 @@ footer {
     content: "";
     display: table;
     clear: both; }
+  @media only screen and (max-width: 1020px) {
+    .register_container, .login_container, .account_container {
+      width: 750px; } }
+  @media only screen and (max-width: 770px) {
+    .register_container, .login_container, .account_container {
+      width: 500px; } }
   @media only screen and (max-width: 520px) {
     .register_container, .login_container, .account_container {
       width: 100%; } }
@@ -982,6 +998,9 @@ footer {
     width: 230px;
     padding: 10px;
     float: left; }
+    @media only screen and (max-width: 1020px) {
+      .register_container .account_panel, .login_container .account_panel, .account_container .account_panel {
+        width: 100%; } }
     .register_container .account_panel ul, .login_container .account_panel ul, .account_container .account_panel ul {
       padding: 0 10px;
       margin-bottom: 10px; }
@@ -1006,12 +1025,43 @@ footer {
   .register_container .account_form, .login_container .account_form, .account_container .account_form {
     width: 750px;
     float: left; }
+    @media only screen and (max-width: 770px) {
+      .register_container .account_form, .login_container .account_form, .account_container .account_form {
+        width: 100%; } }
+    @media only screen and (max-width: 1020px) {
+      .register_container .account_form, .login_container .account_form, .account_container .account_form {
+        width: 100%; } }
   .register_container form:after, .login_container form:after, .account_container form:after {
     content: "";
     display: table;
     clear: both; }
   .register_container .register_form, .register_container .login_form, .register_container .account_form, .login_container .register_form, .login_container .login_form, .login_container .account_form, .account_container .register_form, .account_container .login_form, .account_container .account_form {
     padding: 10px; }
+    .register_container .register_form label, .register_container .login_form label, .register_container .account_form label, .login_container .register_form label, .login_container .login_form label, .login_container .account_form label, .account_container .register_form label, .account_container .login_form label, .account_container .account_form label {
+      width: 100%;
+      display: block;
+      float: left;
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 0.775em; }
+    .register_container .register_form input[type="text"], .register_container .login_form input[type="text"], .register_container .account_form input[type="text"], .login_container .register_form input[type="text"], .login_container .login_form input[type="text"], .login_container .account_form input[type="text"], .account_container .register_form input[type="text"], .account_container .login_form input[type="text"], .account_container .account_form input[type="text"] {
+      width: 100%;
+      display: block;
+      float: left;
+      padding: 10px;
+      margin: 10px 0; }
+    .register_container .register_form input[type="password"], .register_container .login_form input[type="password"], .register_container .account_form input[type="password"], .login_container .register_form input[type="password"], .login_container .login_form input[type="password"], .login_container .account_form input[type="password"], .account_container .register_form input[type="password"], .account_container .login_form input[type="password"], .account_container .account_form input[type="password"] {
+      width: 100%;
+      display: block;
+      float: left;
+      padding: 10px;
+      margin: 10px 0; }
+    .register_container .register_form input[type="email"], .register_container .login_form input[type="email"], .register_container .account_form input[type="email"], .login_container .register_form input[type="email"], .login_container .login_form input[type="email"], .login_container .account_form input[type="email"], .account_container .register_form input[type="email"], .account_container .login_form input[type="email"], .account_container .account_form input[type="email"] {
+      width: 100%;
+      display: block;
+      float: left;
+      padding: 10px;
+      margin: 10px 0; }
 
 .btn {
   color: #fff;
@@ -1147,6 +1197,11 @@ footer {
 
 .overflow {
   overflow: hidden; }
+
+.text-center {
+  text-align: center;
+  font-size: 1.5em;
+  padding: 10px 0; }
 
 hr {
   clear: both;

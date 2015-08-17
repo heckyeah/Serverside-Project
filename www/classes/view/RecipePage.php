@@ -88,11 +88,12 @@ class RecipePage extends Page {
 
 	public function editButtons($button) {
 
-		$username = $this->model->recipeUser;
-
-		if ( $_SESSION['username'] == $username || $_SESSION['privilege'] == 'admin' ) {
+		if (isset($_SESSION['username'])) {
+			$username = $this->model->recipeUser;
+			if ( $_SESSION['username'] == $username || $_SESSION['privilege'] == 'admin' ) {
 			echo $button;
-		}
+			}
+		} 
 
 	}
 

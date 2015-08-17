@@ -25,7 +25,7 @@ class LoginPage extends Page {
 	public function contentHTML() {
 
 		if (!isset( $_SESSION['username']) ) {
-			$heading = 'You must login to visit this page';
+			$heading = 'You must login first';
 		} else {
 			$heading = 'Log into your account';
 		}

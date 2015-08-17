@@ -4,10 +4,10 @@
 			<h1>Registration Form</h1>
 
 			<label>Username: </label>
-			<input type="text" name="username" placeholder="iambatman" value="<?php echo $this->username; ?>">
+			<input type="text" name="username" placeholder="Username" value="<?php echo $this->username; ?>">
 			<?php $this->alertMessage($this->usernameError, 'error_message' ); ?>
 			<label>E-Mail: </label>
-			<input type="email" name="email" placeholder="bat@cave.com" value="<?php echo $this->email; ?>">
+			<input type="email" name="email" placeholder="example@munch.com" value="<?php echo $this->email; ?>">
 			<?php $this->alertMessage($this->emailError, 'error_message'); ?>
 			<label>Password: </label>
 			<input type="password" name="password1">

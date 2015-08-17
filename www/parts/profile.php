@@ -3,15 +3,22 @@
 	$profileData = $aInfo->fetch_assoc();
 
 	if ( $aInfo->num_rows == 1 ) {
-		$profileImage = $profileData['profile_image'];
 		if ( !$profileData['first_name'] == '' && !$profileData['last_name'] == '') {
 			$profileUsername = $profileData['first_name'].' '.$profileData['last_name'];
 		}
+
 		if ($profileData['cover_image'] == '') {
 			$profileCover = 'default.jpg';
 		} else {
 			$profileCover = $profileData['cover_image'];
 		}
+
+		if ($profileData['profile_image'] == '') {
+			$profileImage = 'default.jpg';
+		} else {
+			$profileImage = $profileData['profile_image'];
+		}
+
 	} else {
 		$profileImage = 'default.jpg';
 		$profileCover = 'default.jpg';

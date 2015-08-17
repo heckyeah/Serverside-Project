@@ -10,7 +10,7 @@ while( $row = $result->fetch_assoc() ) {
 			</div>';
 	echo 	'<div class="information">
 			<h3><a href="index.php?page=recipe&recipeid='.$row['recipe_id'].'">'.$row['title'].'</a></h3>
-			<p>by <a href="index.php?page=profile&user='.$row['username'].'">'.$row['username'].'</a></p>
+			<p>by '.$row['username'].'</p>
 			<hr>
 			<div class="right">
 			<span class="time"></span>

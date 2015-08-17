@@ -4,15 +4,17 @@
 			<h3>Add recipe details</h3>
 			<div class="add_recipe_half">
 				<label for="recipe-title">Recipe Title: </label>
-				<input type="text" name="recipe-title" id="recipe-title">
+				<input type="text" name="recipe-title" id="recipe-title" value="<?php echo $this->recipeTitle; ?>">
 				<?php $this->alertMessage($this->recipeTitleError, 'error_message'); ?>
 
 				<label for="recipe-directions">Recipe Directions: </label>
-				<textarea name="recipe-directions" id="recipe-directions" ></textarea>
+				<textarea name="recipe-directions" id="recipe-directions" ><?php echo $this->recipeDirections; ?></textarea>
 				<?php $this->alertMessage($this->recipeDirectionsError, 'error_message'); ?>
 
 				<label for="cook-time">How long does it take to cook? </label>
-				<input type="text" name="cook-time" id="cook-time">
+				<input type="text" name="cook-time" id="cook-time" value"<?php echo $this->recipeTime; ?>">
+				<?php $this->alertMessage($this->recipeTimeError, 'error_message'); ?>
+
 				<label for="">How many people does this serve?</label>
 				<select name="serves" class="select-menu">
 					<option value="1-2">1-2</option>
@@ -21,11 +23,12 @@
 				</select>
 
 				<label for="">Do you have a youtube video?</label>
-				<input type="text" placeholder="https://www.youtube.com/watch?v=Eja8FKLzBU4" name="recipe-video" id="recipe-video">
+				<input type="text" placeholder="https://www.youtube.com/watch?v=Eja8FKLzBU4" name="recipe-video" id="recipe-video" value="<?php echo $this->recipeVideo; ?>">
 
 				<label for="">Cover Photo: </label>
-				<input type="hidden" name="MAX_FILE_SIZE" value="1000000">
+				<input type="hidden" name="MAX_FILE_SIZE" value="2000000">
 				<input type="file" name="cover-image" id="cover-image">
+				<?php $this->alertMessage($this->userImageError, 'error_message'); ?>
 
 			</div>
 			<div class="add_recipe_half">

@@ -11,7 +11,7 @@ class Model {
 	public function __construct() {
 
 		// Connect to the database and save the connection in the property above
-		$this->dbc = new mysqli('localhost', 'root', '', 'munch');
+		$this->dbc = new mysqli('localhost', DB_USER, DB_PASSWORD, DB_NAME);
 
 	}
 
@@ -62,13 +62,13 @@ class Model {
 	// Just grabs the username for where the username is used on the website
 	public function getUserInfo() {
 
-			$userID = $_SESSION['user_id'];
+		$userID = $_SESSION['user_id'];
 
-			$sql = "SELECT username
-					FROM users
-					WHERE user_id = $userID";
-			
-			return $this->dbc->query($sql);
+		$sql = "SELECT username
+				FROM users
+				WHERE user_id = $userID";
+		
+		return $this->dbc->query($sql);
 	}
 
 }

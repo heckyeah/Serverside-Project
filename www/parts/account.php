@@ -20,7 +20,7 @@
 			if ( !$post == '') {
 				include $post;
 			} else {
-				echo 'error';
+				echo 'This is your user account page, where you can edit your details.';
 			}
 		?>
 	</div>

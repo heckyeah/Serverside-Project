@@ -44,14 +44,6 @@
 				<div class="icon_container">
 					<ul>
 						<li>
-							<span class="favorite"></span>
-							<span class="numbers">14</span>
-						</li>
-						<li>
-							<span class="comments"></span>
-							<span class="numbers">32</span>
-						</li>
-						<li>
 							<span class="time"></span>
 							<span class="numbers"><?php echo $this->model->recipeTime; ?> M</span>
 						</li>
@@ -200,13 +192,17 @@
 			<p><?php echo $this->model->recipeDirections; ?><p>			
 		</div>
 	</div>
-	<hr>
-	<div class="recipe_video_section">
-		<h3>Video</h3>
-		<div class="video_container">
-			<iframe src="https://www.youtube.com/embed/<?php echo $this->model->recipeVideo; ?>" frameborder="0" allowfullscreen></iframe>
-		</div>
-	</div>
+			<?php 
+				if ( !$this->model->recipeVideo == '' ) {
+					echo '<hr>';
+					echo '<div class="recipe_video_section">';
+					echo '<h3>Video</h3>';
+					echo '<div class="video_container">';
+			 		echo '<iframe src="https://www.youtube.com/embed/'.$this->model->recipeVideo.'" frameborder="0" allowfullscreen></iframe>';
+			 		echo '</div>';
+					echo '</div>';
+			 	}
+			?>
 <!-- Comments Section 	
 	<hr>
 	<div class="comment_section">

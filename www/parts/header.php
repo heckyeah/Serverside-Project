@@ -1,17 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<?php 
+	<?php
+
+		// If the user is logged in then get their details
+		if( isset($_SESSION['username']) ) {
+
+			// Get basic user info
+			$result = $this->model->getUserInfo();
+			$userInfo = $result->fetch_assoc();
+
+			// Attempt to get additional info
+			$profile = $this->model->getAdditionalInfo();
+
+			// If there is info
+			if ( $profile->num_rows == 1 ) {
+				$profileData = $profile->fetch_assoc();
+				$profileImage = $profileData['profile_image'];
+			} else {
+				$profileImage = 'default.jpg';
+			}
+
+			$username 	= $userInfo['username'];
+			// Obtain the user info
+			// Store the user info inside some variables
+			} else { // else prepare some default values
+				// Create the same variables as above
+				$username = '';
+				$profileImage = '';
+			}
+
+
 		$result = $this->model->getPageInfo();
 		$pageInfo = $result->fetch_assoc();
 
-		$title 		= $pageInfo['title'];
-		$description 		= $pageInfo['description'];
+		$title 			= $pageInfo['title'];
+		$description 	= $pageInfo['description'];
 
-		$result = $this->model->getUserInfo();
-		$userInfo = $result->fetch_assoc();
-
-		$username 	= $userInfo['username'];
+		
 	?>
 	<meta charset="UTF-8">
 	<title><?php echo $title; if ($_GET['page'] == 'profile') { echo $username; } ?></title>
@@ -29,20 +55,16 @@
 				<ul>
 					<?php 
 
-					$profile = $this->model->getAdditionalInfo();
-
-					if ( $profile->num_rows == 1 ) {
-						$profileData = $profile->fetch_assoc();
-						$profileImage = $profileData['profile_image'];
-					} else {
-						$profileImage = 'default.jpg';
-					}
+					
 
 					// If the user is logged in then show their username in link
 					// Otherwise just show "account"
-					if( isset($_SESSION['username']) ) {
+					if( isset($_SESSION['username']) && !$profileImage == '' ) {
 						$avatar 	= $profileImage;
 						$profile 	= $_SESSION['username'];
+					} else if (isset($_SESSION['username']) && $profileImage == '' ) {
+						$profile 	= $_SESSION['username'];
+						$avatar 	= 'default.jpg';
 					} else {
 						$profile 	= 'Account';
 						$avatar 	= '';

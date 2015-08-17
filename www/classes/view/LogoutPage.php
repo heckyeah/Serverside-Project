@@ -11,7 +11,7 @@ class LogoutPage extends Page {
 			// Unsets the session so that the there is no privilege or user
 			unset($_SESSION['username']);
 			unset($_SESSION['privilege']);
-
+			unset($_SESSION['user_id']);
 		}
 
 	}
@@ -22,5 +22,7 @@ class LogoutPage extends Page {
 		include 'parts/logout.php';
 
 	}
+
+
 
 }
